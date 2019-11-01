@@ -30,7 +30,7 @@ export default function Footer(props) {
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
+          {/* <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/?ref=mkr-footer"
@@ -67,19 +67,18 @@ export default function Footer(props) {
                 Licenses
               </a>
             </ListItem>
-          </List>
+          </List> */}
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
+          &copy; {1900 + new Date().getYear()}, made with{" "}
           <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
+          Max Struever (duh). <br/>Design based off of <a
+            href="https://www.creative-tim.com/product/material-kit-react"
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            this template
+          </a>...sorry, I'm not that creative.
         </div>
       </div>
     </footer>

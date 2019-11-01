@@ -4,8 +4,8 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
+import ImportantDevices from "@material-ui/icons/ImportantDevices";
+import Home from "@material-ui/icons/Home";
 import Favorite from "@material-ui/icons/Favorite";
 // core components
 import Header from "components/Header/Header.js";
@@ -17,7 +17,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/christian.jpg";
+import profile from "assets/img/faces/Max-small-sq.jpg";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -47,7 +47,7 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        brand="Max Struever"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -56,7 +56,7 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax small filter image={require("assets/img/nyc-bg.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
@@ -67,9 +67,9 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
-                    <Button justIcon link className={classes.margin5}>
+                    <h3 className={classes.title}>Maxwell (Max) Struever</h3>
+                    <h6>Developer, Enthusiastic</h6>
+                    {/* <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
                     <Button justIcon link className={classes.margin5}>
@@ -77,6 +77,43 @@ export default function ProfilePage(props) {
                     </Button>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-facebook"} />
+                    </Button> */}
+
+                    <Button
+                      title="LinkedIn"
+                      to="https://www.linkedin.com/in/maxstruever/"
+                    >
+                      <i className="fab fa-linkedin"></i>
+                    </Button>
+                    <Button
+                      title="Instagram"
+                      to="https://www.instagram.com/madmaxlax/"
+                    >
+                      <i className="fab fa-instagram"></i>
+                    </Button>
+                    <Button
+                      title="Facebook"
+                      to="https://www.facebook.com/max.struever"
+                    >
+                      <i className="fab fa-facebook"></i>
+                    </Button>
+                    <Button
+                      title="Twitter"
+                      to="https://www.twitter.com/madmaxlax"
+                    >
+                      <i className="fab fa-twitter"></i>
+                    </Button>
+                    <Button
+                      title="My Spotify Account"
+                      to="https://open.spotify.com/user/126021708?si=oKlU_c_dSqKQi-zFbI5kvg"
+                    >
+                      <i className="fab fa-spotify"></i>
+                    </Button>
+                    <Button
+                      title="My Github repos"
+                      to="https://github.com/madmaxlax"
+                    >
+                      <i className="fab fa-github"></i>
                     </Button>
                   </div>
                 </div>
@@ -84,10 +121,11 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+              What's Good? <br/>
+I'm Max Struever.
+Sometimes Maxwell Struever.
+I'm a geek who loves sports. Activities and country music are my love languages.
+Please check out my <a href="http://portfolio.maxstruever.com">portfolio</a> while I work on my site. 
               </p>
             </div>
             <GridContainer justify="center">
@@ -97,8 +135,8 @@ export default function ProfilePage(props) {
                   color="primary"
                   tabs={[
                     {
-                      tabButton: "Studio",
-                      tabIcon: Camera,
+                      tabButton: "Work",
+                      tabIcon: ImportantDevices,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
@@ -129,8 +167,8 @@ export default function ProfilePage(props) {
                       )
                     },
                     {
-                      tabButton: "Work",
-                      tabIcon: Palette,
+                      tabButton: "Home(s)",
+                      tabIcon: Home,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
@@ -166,7 +204,7 @@ export default function ProfilePage(props) {
                       )
                     },
                     {
-                      tabButton: "Favorite",
+                      tabButton: "Favorites",
                       tabIcon: Favorite,
                       tabContent: (
                         <GridContainer justify="center">
