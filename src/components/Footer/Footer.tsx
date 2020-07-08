@@ -1,31 +1,8 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
-import React from "react";
-// nodejs library to set properties for components
-// nodejs library that concatenates classes
-import classNames from "classnames";
-import { List, ListItem, withStyles } from "@material-ui/core";
-
-// @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
-
+import React from "react";
+import classNames from "classnames";
 import footerStyle from "../../assets/jss/material-kit-react/components/footerStyle";
+import { withStyles } from "@material-ui/core";
 
 interface IFooter {
   classes?: any;
@@ -46,12 +23,12 @@ function Footer({ ...props }: IFooter) {
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
-          <List className={classes.list}>
+          {/* <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
                 href="https://www.creative-tim.com/?ref=mkr-footer"
                 className={classes.block}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 Creative Tim
               </a>
@@ -60,7 +37,7 @@ function Footer({ ...props }: IFooter) {
               <a
                 href="https://www.creative-tim.com/presentation?ref=mkr-footer"
                 className={classes.block}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 About us
               </a>
@@ -69,7 +46,7 @@ function Footer({ ...props }: IFooter) {
               <a
                 href="http://blog.creative-tim.com/?ref=mkr-footer"
                 className={classes.block}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 Blog
               </a>
@@ -78,24 +55,21 @@ function Footer({ ...props }: IFooter) {
               <a
                 href="https://www.creative-tim.com/license?ref=mkr-footer"
                 className={classes.block}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 Licenses
               </a>
             </ListItem>
-          </List>
+          </List> */}
         </div>
         <div className={classes.right}>
-          &copy; {new Date().getUTCFullYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=mkr-footer"
+          &copy; 1989-{(new Date()).getFullYear()}, made with <Favorite className={classes.icon} /> by Max Struever (duh). <br/>Design based off of <a
+            href="https://www.creative-tim.com/product/material-kit-react"
             className={aClasses}
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+            this template
+          </a>...sorry, I'm not that creative.
         </div>
       </div>
     </footer>

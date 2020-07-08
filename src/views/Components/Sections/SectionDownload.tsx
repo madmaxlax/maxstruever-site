@@ -1,3 +1,7 @@
+import Button from "../../../components/CustomButtons/Button";
+// @material-ui/icons
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
 /*!
 
 =========================================================
@@ -17,16 +21,12 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { WithStyles } from "@material-ui/styles";
+// core components
+import downloadStyle from "../../../assets/jss/material-kit-react/views/componentsSections/downloadStyle";
 // nodejs library to set properties for components
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Button from "../../../components/CustomButtons/Button";
-// core components
-import downloadStyle from "../../../assets/jss/material-kit-react/views/componentsSections/downloadStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface ISectionDownload extends WithStyles<typeof downloadStyle> {}
 class SectionDownload extends React.Component<ISectionDownload> {
@@ -49,7 +49,7 @@ class SectionDownload extends React.Component<ISectionDownload> {
               <Button color="primary" size="lg">
                 <a
                   href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-download-section"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style={{ color: "white" }}
                 >
                   Free React Download
@@ -58,7 +58,7 @@ class SectionDownload extends React.Component<ISectionDownload> {
               <Button color="primary" size="lg">
                 <a
                   href="https://www.creative-tim.com/product/material-kit?ref=mkr-download-section"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style={{ color: "white" }}
                 >
                   Free HTML Downoad
@@ -75,7 +75,7 @@ class SectionDownload extends React.Component<ISectionDownload> {
                 We{"'"}ve launched{" "}
                 <a
                   href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkr-download-section"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                 >
                   Material Kit PRO React{" "}
                 </a>
@@ -88,7 +88,7 @@ class SectionDownload extends React.Component<ISectionDownload> {
               <Button color="rose" size="lg">
                 <a
                   href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkr-download-section"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style={{ color: "white" }}
                 >
                   Material Kit PRO
@@ -97,7 +97,7 @@ class SectionDownload extends React.Component<ISectionDownload> {
               <Button color="rose" size="lg">
                 <a
                   href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mkr-download-section"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style={{ color: "white" }}
                 >
                   Material Dashboard PRO

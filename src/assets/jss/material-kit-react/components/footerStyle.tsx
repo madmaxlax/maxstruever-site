@@ -16,6 +16,7 @@
 
 */
 import { container, primaryColor } from "../../material-kit-react";
+
 import { createStyles } from "@material-ui/core";
 
 const footerStyle = createStyles({
@@ -37,7 +38,8 @@ const footerStyle = createStyles({
   right: {
     padding: "15px 0",
     margin: "0",
-    float: "right"
+    float: "right",
+    textAlign: "right",
   },
   footer: {
     padding: "0.9375rem 0",

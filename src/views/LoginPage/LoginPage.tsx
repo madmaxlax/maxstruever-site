@@ -1,3 +1,20 @@
+import Button from "../../components/CustomButtons/Button";
+import Card from "../../components/Card/Card";
+import CardBody from "../../components/Card/CardBody";
+import CardFooter from "../../components/Card/CardFooter";
+import CardHeader from "../../components/Card/CardHeader";
+import CustomInput from "../../components/CustomInput/CustomInput";
+// @material-ui/icons
+import Email from "@material-ui/icons/Email";
+import Footer from "../../components/Footer/Footer";
+import GridContainer from "../../components/Grid/GridContainer";
+import GridItem from "../../components/Grid/GridItem";
+// core components
+import Header from "../../components/Header/Header";
+import HeaderLinks from "../../components/Header/HeaderLinks";
+import Icon from "@material-ui/core/Icon";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import People from "@material-ui/icons/People";
 /*!
 
 =========================================================
@@ -16,31 +33,12 @@
 
 */
 import React from "react";
+import { WithStyles } from "@material-ui/styles";
+import image from "../../assets/img/bg7.jpg";
+import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage";
 // nodejs library to set properties for components
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
-// core components
-import Header from "../../components/Header/Header";
-import HeaderLinks from "../../components/Header/HeaderLinks";
-import Footer from "../../components/Footer/Footer";
-import GridContainer from "../../components/Grid/GridContainer";
-import GridItem from "../../components/Grid/GridItem";
-import Button from "../../components/CustomButtons/Button";
-import Card from "../../components/Card/Card";
-import CardBody from "../../components/Card/CardBody";
-import CardHeader from "../../components/Card/CardHeader";
-import CardFooter from "../../components/Card/CardFooter";
-import CustomInput from "../../components/CustomInput/CustomInput";
-
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage";
-
-import image from "../../assets/img/bg7.jpg";
-import { WithStyles } from "@material-ui/styles";
 
 interface ILoginPageProps extends WithStyles<typeof loginPageStyle> {}
 interface ILoginPageState {
@@ -93,7 +91,7 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                           color="transparent"
                           onClick={e => e.preventDefault()}
                         >
@@ -102,7 +100,7 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                           color="transparent"
                           onClick={e => e.preventDefault()}
                         >
@@ -111,7 +109,7 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank"
+                          target="_blank" rel="noopener noreferrer"
                           color="transparent"
                           onClick={e => e.preventDefault()}
                         >

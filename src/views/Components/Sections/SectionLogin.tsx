@@ -1,3 +1,17 @@
+import Button from "../../../components/CustomButtons/Button";
+import Card from "../../../components/Card/Card";
+import CardBody from "../../../components/Card/CardBody";
+import CardFooter from "../../../components/Card/CardFooter";
+import CardHeader from "../../../components/Card/CardHeader";
+import CustomInput from "../../../components/CustomInput/CustomInput";
+import Email from "@material-ui/icons/Email";
+// core components
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
+import Icon from "@material-ui/core/Icon";
+import InputAdornment from "@material-ui/core/InputAdornment";
+// @material-ui/icons
+import People from "@material-ui/icons/People";
 /*!
 
 =========================================================
@@ -16,26 +30,11 @@
 
 */
 import React from "react";
+import { WithStyles } from "@material-ui/styles";
+import loginStyle from "../../../assets/jss/material-kit-react/views/componentsSections/loginStyle";
 // nodejs library to set properties for components
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import People from "@material-ui/icons/People";
-import Email from "@material-ui/icons/Email";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Card from "../../../components/Card/Card";
-import CardHeader from "../../../components/Card/CardHeader";
-import CardBody from "../../../components/Card/CardBody";
-import CardFooter from "../../../components/Card/CardFooter";
-import Button from "../../../components/CustomButtons/Button";
-import CustomInput from "../../../components/CustomInput/CustomInput";
-
-import loginStyle from "../../../assets/jss/material-kit-react/views/componentsSections/loginStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface ISectionLogin extends WithStyles<typeof loginStyle> {}
 class SectionLogin extends React.Component<ISectionLogin> {
@@ -54,7 +53,7 @@ class SectionLogin extends React.Component<ISectionLogin> {
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         color="transparent"
                         onClick={e => e.preventDefault()}
                       >
@@ -65,7 +64,7 @@ class SectionLogin extends React.Component<ISectionLogin> {
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         color="transparent"
                         onClick={e => e.preventDefault()}
                       >
@@ -76,7 +75,7 @@ class SectionLogin extends React.Component<ISectionLogin> {
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                         color="transparent"
                         onClick={e => e.preventDefault()}
                       >

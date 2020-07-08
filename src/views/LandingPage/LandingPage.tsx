@@ -1,45 +1,18 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-// nodejs library to set properties for components
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-
-// @material-ui/icons
-
-// core components
-import Header from "../../components/Header/Header";
+import Button from "../../components/CustomButtons/Button";
 import Footer from "../../components/Footer/Footer";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
-import Button from "../../components/CustomButtons/Button";
+import Header from "../../components/Header/Header";
 import HeaderLinks from "../../components/Header/HeaderLinks";
 import Parallax from "../../components/Parallax/Parallax";
-
-import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage";
-
-// Sections for this page
 import ProductSection from "../LandingPage/Sections/ProductSection";
+import React from "react";
 import TeamSection from "../LandingPage/Sections/TeamSection";
-import WorkSection from "../LandingPage/Sections/WorkSection";
 import { WithStyles } from "@material-ui/styles";
+import WorkSection from "../LandingPage/Sections/WorkSection";
+import classNames from "classnames";
+import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const dashboardRoutes = [];
 
@@ -57,7 +30,7 @@ class LandingPage extends React.Component<ILandingPage> {
           fixed
           changeColorOnScroll={{
             height: 400,
-            color: "white"
+            color: "white",
           }}
           {...rest}
         />
