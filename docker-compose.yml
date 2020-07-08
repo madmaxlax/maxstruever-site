@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  client:
+    container_name: maxstruever-site
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - PORT=3000
+    tty: true
