@@ -102,6 +102,12 @@ class ProfilePage extends React.Component<IProfilePage> {
                         <i className="fab fa-spotify"></i>
                       </Button>
                       <Button
+                        title="Posts on Medium"
+                        to="https://medium.com/@madmaxlax"
+                      >
+                        <i className="fab fa-medium"></i>
+                      </Button>
+                      <Button
                         title="My Github repos"
                         to="https://github.com/madmaxlax"
                       >
