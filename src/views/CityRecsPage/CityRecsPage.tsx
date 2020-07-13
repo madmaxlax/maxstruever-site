@@ -1,17 +1,14 @@
-import { Container } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
+
 import Footer from '../../components/Footer/Footer';
-import GridContainer from '../../components/Grid/GridContainer';
-import GridItem from '../../components/Grid/GridItem';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
 import React from 'react';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
-import profile from '../../assets/img/faces/Max-small-sq.jpg';
 
 const useStyles = makeStyles((theme) => ({
-  iframe: {},
   profile: {
     textAlign: 'center',
     '& img': {
@@ -21,16 +18,17 @@ const useStyles = makeStyles((theme) => ({
       transform: 'translate3d(0, -50%, 0)',
     },
   },
-  description: {
+  content: {
     paddingBottom: 30,
     margin: '1.071rem auto 30px',
-    maxWidth: '600px',
     color: '#999',
     textAlign: 'center',
   },
-  name: {
-    marginTop: '-80px',
+  iframe: {
+    minHeight: 2600, width: '100%' 
   },
+
+  name: {},
   main: {
     background: '#FFFFFF',
     position: 'relative',
@@ -68,29 +66,31 @@ const ProfilePage: React.FC<{}> = () => {
           color: 'white',
         }}
       />
-      <Parallax small filter random />
+      <Parallax xSmall filter random />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <Container>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
+            <Grid container justify="center">
+              <Grid item xs={12} sm={12} md={8}>
                 <div className={classes.profile}>
-                  <div>
-                    
-                  </div>
+                  <div></div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>City Travel Recommendations</h3>
-                    <h6>Various lists of activities and places to stay in different cities I've compiled over the years</h6>
+                    <h6>
+                      Various lists of activities and places to stay in different cities I've
+                      compiled over the years
+                    </h6>
                   </div>
                 </div>
-              </GridItem>
-            </GridContainer>
-            <div className={classes.description}>
-              <p>
-                You tried to go to {window.location.pathname}
-                <br />
-                but that page doesn't exist. Perhaps a bad link?
-              </p>
+              </Grid>
+            </Grid>
+            <div className={classes.content}>
+              <iframe
+              title="City Recs from Google Docs"
+              frameBorder="0"
+                className={classes.iframe}
+                src="//drive.google.com/embeddedfolderview?id=0B994MvzpbbuzfjFrVFVkVTc1dmtBMktWSldnMVA0M2R5QjN6dVlGSXB2anVmQkVVTWEyWHc#list"
+              ></iframe>
             </div>
           </Container>
         </div>

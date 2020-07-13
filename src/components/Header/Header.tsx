@@ -16,23 +16,23 @@
 
 */
 import * as React from "react";
+
+import AppBar from "@material-ui/core/AppBar";
+import Button from "@material-ui/core/Button";
+import Drawer from "@material-ui/core/Drawer";
+import Hidden from "@material-ui/core/Hidden";
+import IconButton from "@material-ui/core/IconButton";
+// @material-ui/icons
+import Menu from "@material-ui/icons/Menu";
+import Toolbar from "@material-ui/core/Toolbar";
+import { WithStyles } from "@material-ui/styles";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-
+import headerStyle from "../../assets/jss/material-kit-react/components/headerStyle";
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
-// @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
-import headerStyle from "../../assets/jss/material-kit-react/components/headerStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface IHeaderState {
   mobileOpen: boolean;
@@ -113,7 +113,7 @@ class Header extends React.Component<IHeader, IHeaderState> {
     });
     // var mobileOpen: boolean = this.state;
 
-    const brandComponent = <Button className={classes.title}>{brand}</Button>;
+    const brandComponent = <Button className={classes.title} href="/">{brand}</Button>;
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>

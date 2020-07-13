@@ -29,7 +29,7 @@ function HeaderLinks({ ...props }) {
             <a href="http://portfolio.maxstruever.com/" className={classes.dropdownLink}>
               Portfolio
             </a>,
-            <Link to="/cities" className={classes.dropdownLink}>
+            <Link to="/city-recs" className={classes.dropdownLink}>
               City Recommendations
             </Link>,
             <Link to="/referals" className={classes.dropdownLink}>
