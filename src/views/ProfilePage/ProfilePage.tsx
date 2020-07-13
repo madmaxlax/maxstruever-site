@@ -73,43 +73,57 @@ class ProfilePage extends React.Component<IProfilePage> {
   
                       <Button
                         title="LinkedIn"
-                        to="https://www.linkedin.com/in/maxstruever/"
+                        href="https://www.linkedin.com/in/maxstruever/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-linkedin"></i>
                       </Button>
                       <Button
                         title="Instagram"
-                        to="https://www.instagram.com/madmaxlax/"
+                        href="https://www.instagram.com/madmaxlax/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-instagram"></i>
                       </Button>
                       <Button
                         title="Facebook"
-                        to="https://www.facebook.com/max.struever"
+                        href="https://www.facebook.com/max.struever"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-facebook"></i>
                       </Button>
                       <Button
                         title="Twitter"
-                        to="https://www.twitter.com/madmaxlax"
+                        href="https://www.twitter.com/madmaxlax"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-twitter"></i>
                       </Button>
                       <Button
                         title="My Spotify Account"
-                        to="https://open.spotify.com/user/126021708?si=oKlU_c_dSqKQi-zFbI5kvg"
+                        href="https://open.spotify.com/user/126021708?si=oKlU_c_dSqKQi-zFbI5kvg"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-spotify"></i>
                       </Button>
                       <Button
                         title="Posts on Medium"
-                        to="https://medium.com/@madmaxlax"
+                        href="https://medium.com/@madmaxlax"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-medium"></i>
                       </Button>
                       <Button
                         title="My Github repos"
-                        to="https://github.com/madmaxlax"
+                        href="https://github.com/madmaxlax"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i className="fab fa-github"></i>
                       </Button>
