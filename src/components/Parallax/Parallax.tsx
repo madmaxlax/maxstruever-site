@@ -1,31 +1,49 @@
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames';
+import { makeStyles } from '@material-ui/styles';
+// core components
+import parallaxStyle from '../../assets/jss/material-kit-react/components/parallaxStyle';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
 
-// core components
-import parallaxStyle from "../../assets/jss/material-kit-react/components/parallaxStyle";
-import { WithStyles } from "@material-ui/styles";
+const useStyles = makeStyles((theme) => ({
+  parallax: {
+    height: '90vh',
+    maxHeight: '1000px',
+    overflow: 'hidden',
+    position: 'relative',
+    backgroundPosition: 'center center',
+    backgroundSize: 'cover',
+    margin: '0',
+    padding: '0',
+    border: '0',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  filter: {
+    '&:before': {
+      background: 'rgba(0, 0, 0, 0.5)',
+    },
+    '&:after,&:before': {
+      position: 'absolute',
+      zIndex: 1,
+      width: '100%',
+      height: '100%',
+      display: 'block',
+      left: '0',
+      top: '0',
+      content: "''",
+    },
+  },
+  small: {
+    height: '380px',
+  },
+  xSmall: {
+    height: 100,
+  },
+}));
 
 interface IParallaxProps {
   className?: string;
@@ -34,58 +52,61 @@ interface IParallaxProps {
   style?: string;
   image?: string;
   small?: boolean;
+  random?: boolean;
 }
 
 interface IParallaxState {
   transform: string;
+  imageToUse: string;
 }
 
-interface IParallax extends IParallaxProps, WithStyles<typeof parallaxStyle> {}
-class Parallax extends React.Component<IParallax, IParallaxState> {
-  constructor(props: IParallax, state: IParallaxState) {
-    super(props, state);
-    var windowScrollTop = window.pageYOffset / 3;
-    this.state = {
-      transform: "translate3d(0," + windowScrollTop + "px,0)"
-    };
-  }
-  componentDidMount() {
+const bgImages = ['/nyc-bg.jpg', '/balt-bg.jpg', '/ams-bg.jpg', '/ams-bg2.jpg', '/ams-bg3.jpg'];
+
+const Parallax = (props: IParallaxProps) => {
+
+  var windowScrollTop = window.pageYOffset / 3;
+  const [transform, setTransform] = React.useState('translate3d(0,' + windowScrollTop + 'px,0)');
+  const [imageToUse, setImageToUse] = React.useState( props.random
+    ? bgImages[Math.floor(Math.random() * bgImages.length)]
+    : props.image);
+
+   
+  componentDidMoun() {
     var windowScrollTop = window.pageYOffset / 3;
     this.setState({
-      transform: "translate3d(0," + windowScrollTop + "px,0)"
+      transform: 'translate3d(0,' + windowScrollTop + 'px,0)',
     });
-    window.addEventListener("scroll", this.resetTransform);
+    window.addEventListener('scroll', this.resetTransform);
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.resetTransform);
+    window.removeEventListener('scroll', this.resetTransform);
   }
   resetTransform = () => {
     var windowScrollTop = window.pageYOffset / 3;
     this.setState({
-      transform: "translate3d(0," + windowScrollTop + "px,0)"
+      transform: 'translate3d(0,' + windowScrollTop + 'px,0)',
     });
   };
-  render() {
-    const { classes, filter, className, children, image, small } = this.props;
+    const { classes, filter, className, children, image, small, random = false } = props;
     const parallaxClasses = classNames({
       [classes.parallax]: true,
       [classes.filter]: filter,
       [classes.small]: small,
-      [className]: className !== undefined
+      [className]: className !== undefined,
     });
+
     return (
       <div
         className={parallaxClasses}
         style={{
           // style,
-          backgroundImage: "url(" + image + ")",
-          ...this.state
+          backgroundImage: 'url(' + this.state.imageToUse + ')',
+          ...this.state,
         }}
       >
         {children}
       </div>
     );
-  }
 }
 
 // Parallax.propTypes = {
@@ -98,6 +119,4 @@ class Parallax extends React.Component<IParallax, IParallaxState> {
 //   small: PropTypes.bool
 // };
 
-export default withStyles<never, never, IParallaxProps>(parallaxStyle)(
-  Parallax
-);
+export default Parallax;

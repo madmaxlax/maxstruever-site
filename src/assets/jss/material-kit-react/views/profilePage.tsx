@@ -17,8 +17,8 @@
 */
 import { container, title } from "../../material-kit-react";
 
-import imagesStyle from "../../material-kit-react/imagesStyles";
 import { createStyles } from "@material-ui/core";
+import imagesStyle from "../../material-kit-react/imagesStyles";
 
 const profilePageStyle = createStyles({
   container,
@@ -32,7 +32,8 @@ const profilePageStyle = createStyles({
     }
   },
   description: {
-    margin: "1.071rem auto 0",
+    paddingBottom: 30,
+    margin: "1.071rem auto 30px",
     maxWidth: "600px",
     color: "#999",
     textAlign: "center"
