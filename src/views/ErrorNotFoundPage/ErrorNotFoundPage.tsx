@@ -15,7 +15,7 @@ interface IProfilePage extends WithStyles<typeof profilePageStyle> {}
 class ProfilePage extends React.Component<IProfilePage> {
   
   render() {
-    document.title = 'Error: Page Not Found | Max Struever';
+    document.title = 'Page Not Found | Max Struever';
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(classes.imgRaised, classes.imgRoundedCircle, classes.imgFluid);
     return (

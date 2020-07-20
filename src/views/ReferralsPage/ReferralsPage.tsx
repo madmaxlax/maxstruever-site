@@ -1,10 +1,13 @@
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, InputAdornment } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
 
+import CustomInput from '../../components/CustomInput/CustomInput';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
-import React from 'react';
+import { People } from '@material-ui/icons';
+import ReferralItem from '../../components/ReferralItem/ReferralItem';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
 
@@ -25,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   iframe: {
-    minHeight: 2600, width: '100%' 
+    minHeight: 2600,
+    width: '100%',
   },
 
   name: {},
@@ -47,12 +51,27 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '32px',
     textDecoration: 'none',
   },
+  referralsList:{
+
+  }
 }));
 
-const CityRecsPage: React.FC<{}> = () => {
+const ReferralsPage: React.FC<{}> = () => {
   const classes = useStyles();
+  const [data, setData] = useState({ cards: [] });
+  const [filterString, setFilterString] = useState('');
 
-  document.title = 'City Recommendations | Max Struever';
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    const resp = await fetch('https://trello.com/b/sYeK1UkI/max-struever-referral-links.json');
+    const trelloData = await resp.json();
+    setData(trelloData)
+    console.log(trelloData);
+  };
+  document.title = 'Referral Links | Max Struever';
 
   return (
     <div>
@@ -75,22 +94,32 @@ const CityRecsPage: React.FC<{}> = () => {
                 <div className={classes.profile}>
                   <div></div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>City Travel Recommendations</h3>
-                    <h6>
-                      Various lists of activities and places to stay in different cities I've
-                      compiled over the years
-                    </h6>
+                    <h3 className={classes.title}>Referrals / Links</h3>
+                    <h6>Various referral links for discounts and other benefits</h6>
                   </div>
                 </div>
               </Grid>
             </Grid>
             <div className={classes.content}>
-              <iframe
-              title="City Recs from Google Docs"
-              frameBorder="0"
-                className={classes.iframe}
-                src="//drive.google.com/embeddedfolderview?id=0B994MvzpbbuzfjFrVFVkVTc1dmtBMktWSldnMVA0M2R5QjN6dVlGSXB2anVmQkVVTWEyWHc#list"
-              ></iframe>
+              <CustomInput
+                  labelText="Filter: "
+                  id="material"
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                  inputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <People />
+                      </InputAdornment>
+                    )
+                  }}
+                /> <br/>
+              <ul className={classes.referralsList}>
+                  {data.cards.map((card, i) => (
+                    <ReferralItem card={card} key={i}/>
+                  ))}
+              </ul>
             </div>
           </Container>
         </div>
@@ -99,4 +128,4 @@ const CityRecsPage: React.FC<{}> = () => {
     </div>
   );
 };
-export default CityRecsPage;
+export default ReferralsPage;

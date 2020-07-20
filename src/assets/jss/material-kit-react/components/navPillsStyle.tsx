@@ -1,3 +1,4 @@
+import { Theme, createStyles } from "@material-ui/core";
 /*!
 
 =========================================================
@@ -16,14 +17,13 @@
 
 */
 import {
-  roseColor,
-  primaryColor,
+  dangerColor,
   infoColor,
+  primaryColor,
+  roseColor,
   successColor,
-  warningColor,
-  dangerColor
+  warningColor
 } from "../../material-kit-react";
-import { createStyles, Theme } from "@material-ui/core";
 
 const navPillsStyle = (theme: Theme) =>
   createStyles({
@@ -51,6 +51,9 @@ const navPillsStyle = (theme: Theme) =>
     },
     fixed: {
       overflow: "visible"
+    },
+    swipeableTab:{
+      overflow:"hidden"
     },
     horizontalDisplay: {
       display: "block"

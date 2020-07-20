@@ -1,3 +1,6 @@
+// core components
+import GridContainer from "../Grid/GridContainer";
+import GridItem from "../Grid/GridItem";
 /*!
 
 =========================================================
@@ -16,22 +19,16 @@
 
 */
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
 // nodejs library to set properties for components
 import SwipeableViews from "react-swipeable-views";
-
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import { WithStyles } from "@material-ui/styles";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+import navPillsStyle from "../../assets/jss/material-kit-react/components/navPillsStyle";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-
-// core components
-import GridContainer from "../Grid/GridContainer";
-import GridItem from "../Grid/GridItem";
-
-import navPillsStyle from "../../assets/jss/material-kit-react/components/navPillsStyle";
-import { WithStyles } from "@material-ui/styles";
 
 // interface IShape {
 //   tabButton: string;
@@ -124,7 +121,7 @@ class NavPills extends React.Component<INavPills, INavPillsState> {
           onChangeIndex={this.handleChangeIndex}
         >
           {tabs.map((prop, key) => {
-            return <div key={key}>{prop.tabContent}</div>;
+            return <div key={key} className={classes.swipeableTab}>{prop.tabContent}</div>;
           })}
         </SwipeableViews>
       </div>
