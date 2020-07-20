@@ -1,3 +1,10 @@
+import Button from "../../../components/CustomButtons/ButtonLink";
+import Card from "../../../components/Card/Card";
+import CardBody from "../../../components/Card/CardBody";
+import CardFooter from "../../../components/Card/CardFooter";
+// core components
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
 /*!
 
 =========================================================
@@ -16,28 +23,21 @@
 
 */
 import React from "react";
+import { WithStyles } from "@material-ui/styles";
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
 import classNames from "classnames";
+import team1 from "../../../assets/img/faces/avatar.jpg";
+import team2 from "../../../assets/img/faces/christian.jpg";
+import team3 from "../../../assets/img/faces/kendall.jpg";
+import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // @material-ui/icons
 
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Button from "../../../components/CustomButtons/Button";
-import Card from "../../../components/Card/Card";
-import CardBody from "../../../components/Card/CardBody";
-import CardFooter from "../../../components/Card/CardFooter";
 
-import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle";
 
-import team1 from "../../../assets/img/faces/avatar.jpg";
-import team2 from "../../../assets/img/faces/christian.jpg";
-import team3 from "../../../assets/img/faces/kendall.jpg";
-import { WithStyles } from "@material-ui/styles";
 
 interface ITeamSection extends WithStyles<typeof teamStyle> {}
 class TeamSection extends React.Component<ITeamSection> {

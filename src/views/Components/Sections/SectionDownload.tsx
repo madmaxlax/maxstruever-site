@@ -1,4 +1,4 @@
-import Button from "../../../components/CustomButtons/Button";
+import Button from "../../../components/CustomButtons/ButtonLink";
 // @material-ui/icons
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";

@@ -16,27 +16,28 @@
 
 */
 import * as React from "react";
+
+// core components
+import Button from "../CustomButtons/ButtonLink";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Divider from "@material-ui/core/Divider";
+import Grow from "@material-ui/core/Grow";
+import Icon from "@material-ui/core/Icon";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import { WithStyles } from "@material-ui/styles";
 // nodejs library that concatenates classes
 import classNames from "classnames";
+import customDropdownStyle from "../../assets/jss/material-kit-react/components/customDropdownStyle";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Paper from "@material-ui/core/Paper";
-import Grow from "@material-ui/core/Grow";
-import Divider from "@material-ui/core/Divider";
-import Icon from "@material-ui/core/Icon";
-import Popper from "@material-ui/core/Popper";
 
-// core components
-import Button from "../CustomButtons/Button";
 
-import customDropdownStyle from "../../assets/jss/material-kit-react/components/customDropdownStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface ICustomDropdownProps {
   hoverColor?: string;

@@ -1,3 +1,8 @@
+import Button from "../../../components/CustomButtons/ButtonLink";
+import CustomInput from "../../../components/CustomInput/CustomInput";
+// core components
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
 /*!
 
 =========================================================
@@ -16,20 +21,15 @@
 
 */
 import React from "react";
+import { WithStyles } from "@material-ui/styles";
 // nodejs library to set properties for components
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+import workStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle";
 
 // @material-ui/icons
 
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import CustomInput from "../../../components/CustomInput/CustomInput";
-import Button from "../../../components/CustomButtons/Button";
 
-import workStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface IWorkSection extends WithStyles<typeof workStyle> {}
 class WorkSection extends React.Component<IWorkSection> {

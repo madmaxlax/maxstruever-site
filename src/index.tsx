@@ -1,6 +1,6 @@
 import "./assets/css/material-kit-react.css";
 
-import { Route, Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import CityRecsPage from "./views/CityRecsPage/CityRecsPage";
 import Components from "./views/Components/Components";
@@ -10,11 +10,9 @@ import ErrorNotFoundPage from "./views/ErrorNotFoundPage/ErrorNotFoundPage";
 import ProfilePage from "./views/ProfilePage/ProfilePage";
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
 
-var hist = createBrowserHistory();
 ReactDOM.render(
-  <Router history={hist}>
+  <Router >
      <Switch>
       {/* <Route path="/landing-page" component={LandingPage} /> */}
       {/* <Route path="/login-page" component={LoginPage} /> */}

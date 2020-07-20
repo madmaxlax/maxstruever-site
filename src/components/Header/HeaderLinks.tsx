@@ -1,5 +1,5 @@
 import { Apps } from "@material-ui/icons";
-import Button from "../CustomButtons/Button";
+import Button from "../CustomButtons/ButtonLink";
 import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
@@ -32,8 +32,8 @@ function HeaderLinks({ ...props }) {
             <Link to="/city-recs" className={classes.dropdownLink}>
               City Recommendations
             </Link>,
-            <Link to="/referals" className={classes.dropdownLink}>
-              Referal Links
+            <Link to="/referrals" className={classes.dropdownLink}>
+              Referral Links
             </Link>
           ]}
         />

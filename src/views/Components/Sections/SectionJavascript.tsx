@@ -1,3 +1,20 @@
+import Button from "../../../components/CustomButtons/ButtonLink";
+import Close from "@material-ui/icons/Close";
+// react plugin for creating date-time-picker
+import Datetime from "react-datetime";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import FormControl from "@material-ui/core/FormControl";
+// core components
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
+import IconButton from "@material-ui/core/IconButton";
+import InputLabel from "@material-ui/core/InputLabel";
+// @material-ui/icons
+import LibraryBooks from "@material-ui/icons/LibraryBooks";
+import Popover from "@material-ui/core/Popover";
 /*!
 
 =========================================================
@@ -16,30 +33,13 @@
 
 */
 import React from "react";
-// react plugin for creating date-time-picker
-import Datetime from "react-datetime";
+import Slide from "@material-ui/core/Slide";
+import Tooltip from "@material-ui/core/Tooltip";
+import { TransitionProps } from "@material-ui/core/transitions/transition";
+import { WithStyles } from "@material-ui/styles";
+import javascriptStyles from "../../../assets/jss/material-kit-react/views/componentsSections/javascriptStyles";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import Slide from "@material-ui/core/Slide";
-import IconButton from "@material-ui/core/IconButton";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Tooltip from "@material-ui/core/Tooltip";
-import Popover from "@material-ui/core/Popover";
-// @material-ui/icons
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import Close from "@material-ui/icons/Close";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Button from "../../../components/CustomButtons/Button";
-import javascriptStyles from "../../../assets/jss/material-kit-react/views/componentsSections/javascriptStyles";
-import { WithStyles } from "@material-ui/styles";
-import { TransitionProps } from "@material-ui/core/transitions/transition";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps,

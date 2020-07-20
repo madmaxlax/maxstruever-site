@@ -1,4 +1,4 @@
-import Button from "../../../components/CustomButtons/Button";
+import Button from "../../../components/CustomButtons/ButtonLink";
 import Card from "../../../components/Card/Card";
 import CardBody from "../../../components/Card/CardBody";
 import CardFooter from "../../../components/Card/CardFooter";

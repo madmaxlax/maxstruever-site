@@ -1,3 +1,20 @@
+import Badge from "../../../components/Badge/Badge";
+import Button from "../../../components/CustomButtons/ButtonLink";
+import Check from "@material-ui/icons/Check";
+import Checkbox from "@material-ui/core/Checkbox";
+import CustomInput from "../../../components/CustomInput/CustomInput";
+import CustomLinearProgress from "../../../components/CustomLinearProgress/CustomLinearProgress";
+// @material-ui/icons
+import Favorite from "@material-ui/icons/Favorite";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+// core components
+import GridContainer from "../../../components/Grid/GridContainer";
+import GridItem from "../../../components/Grid/GridItem";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Paginations from "../../../components/Pagination/Pagination";
+import People from "@material-ui/icons/People";
+import Radio from "@material-ui/core/Radio";
 /*!
 
 =========================================================
@@ -16,31 +33,13 @@
 
 */
 import React from "react";
+import Switch from "@material-ui/core/Switch";
+import { WithStyles } from "@material-ui/styles";
+import basicsStyle from "../../../assets/jss/material-kit-react/views/componentsSections/basicsStyle";
 // plugin that creates slider
 import nouislider from "nouislider";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Radio from "@material-ui/core/Radio";
-import Switch from "@material-ui/core/Switch";
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-import People from "@material-ui/icons/People";
-import Check from "@material-ui/icons/Check";
-import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Button from "../../../components/CustomButtons/Button";
-import CustomInput from "../../../components/CustomInput/CustomInput";
-import CustomLinearProgress from "../../../components/CustomLinearProgress/CustomLinearProgress";
-import Paginations from "../../../components/Pagination/Pagination";
-import Badge from "../../../components/Badge/Badge";
-
-import basicsStyle from "../../../assets/jss/material-kit-react/views/componentsSections/basicsStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface ISectionBasicsState {
   checked: number[];

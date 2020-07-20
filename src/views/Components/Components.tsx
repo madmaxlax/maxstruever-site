@@ -1,28 +1,29 @@
 import React, { Component } from "react";
-import HeaderWithStyle from "../../components/Header/Header";
-import withStyles from "@material-ui/core/styles/withStyles";
-import classNames from "classnames";
-import { Link } from "react-router-dom";
 
-import Button from "../../components/CustomButtons/Button";
-import HeaderLinks from "../../components/Header/HeaderLinks";
-import Parallax from "../../components/Parallax/Parallax";
+import Button from "../../components/CustomButtons/ButtonLink";
+import Footer from "../../components/Footer/Footer";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
-import componentsStyle from "../../assets/jss/material-kit-react/views/components";
-import Footer from "../../components/Footer/Footer";
+import HeaderLinks from "../../components/Header/HeaderLinks";
+import HeaderWithStyle from "../../components/Header/Header";
+import { Link } from "react-router-dom";
+import Parallax from "../../components/Parallax/Parallax";
 import SectionBasics from "./Sections/SectionBasics";
-import SectionNavbars from "./Sections/SectionNavbars";
-import SectionTabs from "./Sections/SectionTabs";
-import SectionPills from "./Sections/SectionPills";
-import SectionNotifications from "./Sections/SectionNotifications";
-import SectionTypography from "./Sections/SectionTypography";
-import SectionJavascript from "./Sections/SectionJavascript";
 import SectionCarousel from "./Sections/SectionCarousel";
 import SectionCompletedExamples from "./Sections/SectionCompletedExamples";
-import SectionLogin from "./Sections/SectionLogin";
-import SectionExamples from "./Sections/SectionExamples";
 import SectionDownload from "./Sections/SectionDownload";
+import SectionExamples from "./Sections/SectionExamples";
+import SectionJavascript from "./Sections/SectionJavascript";
+import SectionLogin from "./Sections/SectionLogin";
+import SectionNavbars from "./Sections/SectionNavbars";
+import SectionNotifications from "./Sections/SectionNotifications";
+import SectionPills from "./Sections/SectionPills";
+import SectionTabs from "./Sections/SectionTabs";
+import SectionTypography from "./Sections/SectionTypography";
+import classNames from "classnames";
+import componentsStyle from "../../assets/jss/material-kit-react/views/components";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 interface IComponentsState {
   color: string;
   fixedClasses: string;

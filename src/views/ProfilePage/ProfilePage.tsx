@@ -1,6 +1,6 @@
 import {Favorite, Home, ImportantDevices} from "@material-ui/icons";
 
-import Button from "../../components/CustomButtons/Button";
+import Button from "../../components/CustomButtons/ButtonLink";
 import Footer from "../../components/Footer/Footer";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
