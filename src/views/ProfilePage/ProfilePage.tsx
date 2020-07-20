@@ -16,17 +16,7 @@ import { WithStyles } from '@material-ui/styles';
 import classNames from 'classnames';
 import profile from '../../assets/img/faces/Max-small-sq.jpg';
 import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage';
-import studio1 from '../../assets/img/examples/studio-1.jpg';
-import studio2 from '../../assets/img/examples/studio-2.jpg';
-import studio3 from '../../assets/img/examples/studio-3.jpg';
-import studio4 from '../../assets/img/examples/studio-4.jpg';
-import studio5 from '../../assets/img/examples/studio-5.jpg';
 import withStyles from '@material-ui/core/styles/withStyles';
-import work1 from '../../assets/img/examples/olu-eletu.jpg';
-import work2 from '../../assets/img/examples/clem-onojeghuo.jpg';
-import work3 from '../../assets/img/examples/cynthia-del-rio.jpg';
-import work4 from '../../assets/img/examples/mariya-georgieva.jpg';
-import work5 from '../../assets/img/examples/clem-onojegaw.jpg';
 
 interface IProfilePage extends WithStyles<typeof profilePageStyle> {}
 class ProfilePage extends React.Component<IProfilePage> {
@@ -227,7 +217,9 @@ class ProfilePage extends React.Component<IProfilePage> {
                               <Typography>I can solve a rubiks cube in about 2 minutes </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
-                              <Typography>I can speak Dutch and passed the citizenship exams</Typography>
+                              <Typography>
+                                I can speak Dutch and passed the citizenship exams
+                              </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>

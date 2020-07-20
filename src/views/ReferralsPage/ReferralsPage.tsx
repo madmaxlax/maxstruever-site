@@ -2,14 +2,16 @@ import { Container, Grid, InputAdornment } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 
 import CustomInput from '../../components/CustomInput/CustomInput';
+import { FilterList } from '@material-ui/icons';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
-import { People } from '@material-ui/icons';
 import ReferralItem from '../../components/ReferralItem/ReferralItem';
 import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
+import queryString from 'query-string';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   profile: {
@@ -51,15 +53,21 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '32px',
     textDecoration: 'none',
   },
-  referralsList:{
-
-  }
+  referralsList: {
+    '&>*': {
+      transition: 'all 100ms',
+    },
+  },
 }));
 
 const ReferralsPage: React.FC<{}> = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [data, setData] = useState({ cards: [] });
-  const [filterString, setFilterString] = useState('');
+  const { q: filterStarter } = queryString.parse(window.location.search) as {
+    q: string;
+  };
+  const [filterString, setFilterString] = useState(filterStarter || '');
 
   useEffect(() => {
     loadData();
@@ -68,8 +76,7 @@ const ReferralsPage: React.FC<{}> = () => {
   const loadData = async () => {
     const resp = await fetch('https://trello.com/b/sYeK1UkI/max-struever-referral-links.json');
     const trelloData = await resp.json();
-    setData(trelloData)
-    console.log(trelloData);
+    setData(trelloData);
   };
   document.title = 'Referral Links | Max Struever';
 
@@ -102,24 +109,45 @@ const ReferralsPage: React.FC<{}> = () => {
             </Grid>
             <div className={classes.content}>
               <CustomInput
-                  labelText="Filter: "
-                  id="material"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <People />
-                      </InputAdornment>
+                labelText="Filter: "
+                id="material"
+                formControlProps={{
+                  fullWidth: true,
+                }}
+                inputProps={{
+                  value: filterString,
+                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+                    setFilterString(e.target.value);
+                    if (history.replace) {
+                      const newurl =
+                        window.location.pathname + '?q=' + e.target.value;
+                      history.replace(newurl);
+                    }
+                  },
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <FilterList />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <br />
+              <Grid container spacing={2} className={classes.referralsList}>
+                {data.cards.map((card, i) => {
+                  const filterStringLower = filterString.trim().toLowerCase();
+                  const cardMatched =
+                    !Boolean(filterString) ||
+                    card.desc.toLowerCase()?.includes(filterStringLower) ||
+                    card.name.toLowerCase()?.includes(filterStringLower);
+                  return (
+                    cardMatched && (
+                      <Grid item xs={6} sm={3} key={i}>
+                        <ReferralItem card={card} />
+                      </Grid>
                     )
-                  }}
-                /> <br/>
-              <ul className={classes.referralsList}>
-                  {data.cards.map((card, i) => (
-                    <ReferralItem card={card} key={i}/>
-                  ))}
-              </ul>
+                  );
+                })}
+              </Grid>
             </div>
           </Container>
         </div>
