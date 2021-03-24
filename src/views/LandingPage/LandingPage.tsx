@@ -1,22 +1,22 @@
-import Button from "../../components/CustomButtons/ButtonLink";
-import Footer from "../../components/Footer/Footer";
-import GridContainer from "../../components/Grid/GridContainer";
-import GridItem from "../../components/Grid/GridItem";
-import Header from "../../components/Header/Header";
-import HeaderLinks from "../../components/Header/HeaderLinks";
-import Parallax from "../../components/Parallax/Parallax";
-import ProductSection from "../LandingPage/Sections/ProductSection";
-import React from "react";
-import TeamSection from "../LandingPage/Sections/TeamSection";
-import { WithStyles } from "@material-ui/styles";
-import WorkSection from "../LandingPage/Sections/WorkSection";
-import classNames from "classnames";
-import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import React from 'react';
+import landingPageStyle from '../../assets/jss/material-kit-react/views/landingPage';
+import Button from '../../components/CustomButtons/ButtonLink';
+import Footer from '../../components/Footer/Footer';
+import GridContainer from '../../components/Grid/GridContainer';
+import GridItem from '../../components/Grid/GridItem';
+import Header from '../../components/Header/Header';
+import HeaderLinks from '../../components/Header/HeaderLinks';
+import Parallax from '../../components/Parallax/Parallax';
+import ProductSection from '../LandingPage/Sections/ProductSection';
+import TeamSection from '../LandingPage/Sections/TeamSection';
+import WorkSection from '../LandingPage/Sections/WorkSection';
 
-const dashboardRoutes = [];
+const dashboardRoutes = [] as any[];
 
-interface ILandingPage extends WithStyles<typeof landingPageStyle> {}
+type ILandingPage = WithStyles<typeof landingPageStyle>;
 class LandingPage extends React.Component<ILandingPage> {
   render() {
     const { classes, ...rest } = this.props;
@@ -30,20 +30,18 @@ class LandingPage extends React.Component<ILandingPage> {
           fixed
           changeColorOnScroll={{
             height: 400,
-            color: "white",
+            color: 'white',
           }}
           {...rest}
         />
-        <Parallax filter image={require("../../assets/img/landing-bg.jpg")}>
+        <Parallax filter image={require('../../assets/img/landing-bg.jpg')}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <h1 className={classes.title}>Your Story Starts With Us.</h1>
                 <h4>
-                  Every landing page needs a small description after the big
-                  bold title, that{"'"}s why we added this text here. Add here
-                  all the information that can make you or your product create
-                  the first impression.
+                  Every landing page needs a small description after the big bold title, that{"'"}s why we added this
+                  text here. Add here all the information that can make you or your product create the first impression.
                 </h4>
                 <br />
                 <Button

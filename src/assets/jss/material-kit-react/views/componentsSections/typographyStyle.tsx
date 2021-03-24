@@ -15,49 +15,48 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { container, title } from "../../../material-kit-react";
-
-import imagesStyles from "../../imagesStyles";
-import { createStyles } from "@material-ui/core";
+import { createStyles } from '@material-ui/core';
+import { container, title } from '../../../material-kit-react';
+import imagesStyles from '../../imagesStyles';
 
 const typographyStyle = createStyles({
   section: {
-    padding: "70px 0"
+    padding: '70px 0',
   },
   container,
   space50: {
-    height: "50px",
-    display: "block"
+    height: '50px',
+    display: 'block',
   },
   title: {
     ...title,
-    marginTop: "30px",
-    minHeight: "32px",
-    textDecoration: "none"
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
   },
   typo: {
-    paddingLeft: "25%",
-    marginBottom: "40px",
-    position: "relative",
-    width: "100%"
+    paddingLeft: '25%',
+    marginBottom: '40px',
+    position: 'relative',
+    width: '100%',
   },
   note: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    bottom: "10px",
-    color: "#c0c1c2",
-    display: "block",
+    bottom: '10px',
+    color: '#c0c1c2',
+    display: 'block',
     fontWeight: 400,
-    fontSize: "13px",
-    lineHeight: "13px",
-    left: "0",
-    marginLeft: "20px",
-    position: "absolute",
-    width: "260px"
+    fontSize: '13px',
+    lineHeight: '13px',
+    left: '0',
+    marginLeft: '20px',
+    position: 'absolute',
+    width: '260px',
   },
   marginLeft: {
-    marginLeft: "auto !important"
+    marginLeft: 'auto !important',
   },
-  ...imagesStyles
+  ...imagesStyles,
 });
 
 export default typographyStyle;

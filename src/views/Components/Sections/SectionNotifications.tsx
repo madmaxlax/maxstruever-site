@@ -15,20 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 // @material-ui/icons
-import Check from "@material-ui/icons/Check";
-import Warning from "@material-ui/icons/Warning";
+import Check from '@material-ui/icons/Check';
+import Warning from '@material-ui/icons/Warning';
 // core components
-import SnackbarContent from "../../../components/Snackbar/SnackbarContent";
-import Clearfix from "../../../components/Clearfix/Clearfix";
-import notificationsStyles from "../../../assets/jss/material-kit-react/views/componentsSections/notificationsStyles";
+import SnackbarContent from '../../../components/Snackbar/SnackbarContent';
+import Clearfix from '../../../components/Clearfix/Clearfix';
+import notificationsStyles from '../../../assets/jss/material-kit-react/views/componentsSections/notificationsStyles';
 
-interface ISectionNotificationsProps
-  extends WithStyles<typeof notificationsStyles> {}
+type ISectionNotificationsProps = WithStyles<typeof notificationsStyles>;
 class SectionNotifications extends React.Component<ISectionNotificationsProps> {
   render() {
     const { classes } = this.props;
@@ -42,8 +41,7 @@ class SectionNotifications extends React.Component<ISectionNotificationsProps> {
         <SnackbarContent
           message={
             <span>
-              <b>INFO ALERT:</b> You{"'"}ve got some friends nearby, stop
-              looking at your phone and find them...
+              <b>INFO ALERT:</b> You{"'"}ve got some friends nearby, stop looking at your phone and find them...
             </span>
           }
           close
@@ -53,8 +51,7 @@ class SectionNotifications extends React.Component<ISectionNotificationsProps> {
         <SnackbarContent
           message={
             <span>
-              <b>SUCCESS ALERT:</b> You{"'"}ve got some friends nearby, stop
-              looking at your phone and find them...
+              <b>SUCCESS ALERT:</b> You{"'"}ve got some friends nearby, stop looking at your phone and find them...
             </span>
           }
           close
@@ -64,8 +61,7 @@ class SectionNotifications extends React.Component<ISectionNotificationsProps> {
         <SnackbarContent
           message={
             <span>
-              <b>WARNING ALERT:</b> You{"'"}ve got some friends nearby, stop
-              looking at your phone and find them...
+              <b>WARNING ALERT:</b> You{"'"}ve got some friends nearby, stop looking at your phone and find them...
             </span>
           }
           close
@@ -75,8 +71,7 @@ class SectionNotifications extends React.Component<ISectionNotificationsProps> {
         <SnackbarContent
           message={
             <span>
-              <b>DANGER ALERT:</b> You{"'"}ve got some friends nearby, stop
-              looking at your phone and find them...
+              <b>DANGER ALERT:</b> You{"'"}ve got some friends nearby, stop looking at your phone and find them...
             </span>
           }
           close

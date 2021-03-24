@@ -15,23 +15,22 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { conatinerFluid } from "../../../material-kit-react";
-
-import imagesStyle from "../../imagesStyles";
-import { createStyles } from "@material-ui/core";
+import { createStyles } from '@material-ui/core';
+import { conatinerFluid } from '../../../material-kit-react';
+import imagesStyle from '../../imagesStyles';
 
 const exampleStyle = createStyles({
   section: {
-    padding: "70px 0"
+    padding: '70px 0',
   },
   container: {
     ...conatinerFluid,
-    textAlign: "center"
+    textAlign: 'center',
   },
   ...imagesStyle,
   link: {
-    textDecoration: "none"
-  }
+    textDecoration: 'none',
+  },
 });
 
 export default exampleStyle;

@@ -1,10 +1,10 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
-import Card from "../../../components/Card/Card";
-import CardBody from "../../../components/Card/CardBody";
-import CardFooter from "../../../components/Card/CardFooter";
+import Button from '../../../components/CustomButtons/ButtonLink';
+import Card from '../../../components/Card/Card';
+import CardBody from '../../../components/Card/CardBody';
+import CardFooter from '../../../components/Card/CardFooter';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 /*!
 
 =========================================================
@@ -22,32 +22,25 @@ import GridItem from "../../../components/Grid/GridItem";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { WithStyles } from "@material-ui/styles";
+import React from 'react';
+import { WithStyles } from '@material-ui/styles';
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
-import classNames from "classnames";
-import team1 from "../../../assets/img/faces/avatar.jpg";
-import team2 from "../../../assets/img/faces/christian.jpg";
-import team3 from "../../../assets/img/faces/kendall.jpg";
-import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle";
+import classNames from 'classnames';
+import team1 from '../../../assets/img/faces/avatar.jpg';
+import team2 from '../../../assets/img/faces/christian.jpg';
+import team3 from '../../../assets/img/faces/kendall.jpg';
+import teamStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // @material-ui/icons
 
-
-
-
-interface ITeamSection extends WithStyles<typeof teamStyle> {}
+type ITeamSection = WithStyles<typeof teamStyle>;
 class TeamSection extends React.Component<ITeamSection> {
   render() {
     const { classes } = this.props;
-    const imageClasses = classNames(
-      classes.imgRaised,
-      classes.imgRoundedCircle,
-      classes.imgFluid
-    );
+    const imageClasses = classNames(classes.imgRaised, classes.imgRoundedCircle, classes.imgFluid);
     return (
       <div className={classes.section}>
         <h2 className={classes.title}>Here is our team</h2>
@@ -65,33 +58,20 @@ class TeamSection extends React.Component<ITeamSection> {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
+                    You can write here details about one of your team members. You can give more details about what they
+                    do. Feel free to add some <a href="#pablo">links</a> for people to be able to follow them outside
+                    the site.
                   </p>
                 </CardBody>
                 <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-twitter'} />
                   </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-instagram"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-instagram'} />
                   </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-facebook"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-facebook'} />
                   </Button>
                 </CardFooter>
               </Card>
@@ -108,26 +88,17 @@ class TeamSection extends React.Component<ITeamSection> {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
+                    You can write here details about one of your team members. You can give more details about what they
+                    do. Feel free to add some <a href="#pablo">links</a> for people to be able to follow them outside
+                    the site.
                   </p>
                 </CardBody>
                 <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-twitter'} />
                   </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-linkedin"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-linkedin'} />
                   </Button>
                 </CardFooter>
               </Card>
@@ -144,33 +115,20 @@ class TeamSection extends React.Component<ITeamSection> {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
+                    You can write here details about one of your team members. You can give more details about what they
+                    do. Feel free to add some <a href="#pablo">links</a> for people to be able to follow them outside
+                    the site.
                   </p>
                 </CardBody>
                 <CardFooter className={classes.justifyCenter}>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-twitter"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-twitter'} />
                   </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-instagram"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-instagram'} />
                   </Button>
-                  <Button
-                    justIcon
-                    color="transparent"
-                    className={classes.margin5}
-                  >
-                    <i className={classes.socials + " fab fa-facebook"} />
+                  <Button justIcon color="transparent" className={classes.margin5}>
+                    <i className={classes.socials + ' fab fa-facebook'} />
                   </Button>
                 </CardFooter>
               </Card>

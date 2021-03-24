@@ -15,23 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 // @material-ui/icons
 
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 
-import completedStyle from "../../../assets/jss/material-kit-react/views/componentsSections/completedStyle";
-import { WithStyles } from "@material-ui/styles";
+import completedStyle from '../../../assets/jss/material-kit-react/views/componentsSections/completedStyle';
+import { WithStyles } from '@material-ui/styles';
 
-interface ISectionCompletedExamples extends WithStyles<typeof completedStyle> {}
-class SectionCompletedExamples extends React.Component<
-  ISectionCompletedExamples
-> {
+type ISectionCompletedExamples = WithStyles<typeof completedStyle>;
+class SectionCompletedExamples extends React.Component<ISectionCompletedExamples> {
   render() {
     const { classes } = this.props;
     return (
@@ -41,10 +39,9 @@ class SectionCompletedExamples extends React.Component<
             <GridItem xs={12} sm={12} md={8}>
               <h2>Completed with examples</h2>
               <h4>
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you{"'"}re good
-                to go. More importantly, looking at them will give you a picture
-                of what you can build with this powerful kit.
+                The kit comes with three pre-built pages to help you get started faster. You can change the text and
+                images and you{"'"}re good to go. More importantly, looking at them will give you a picture of what you
+                can build with this powerful kit.
               </h4>
             </GridItem>
           </GridContainer>

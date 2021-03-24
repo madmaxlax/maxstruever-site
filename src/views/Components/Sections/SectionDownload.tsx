@@ -1,7 +1,7 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
-// @material-ui/icons
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
+// nodejs library to set properties for components
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
 /*!
 
 =========================================================
@@ -21,12 +21,12 @@ import GridItem from "../../../components/Grid/GridItem";
 */
 /*eslint-disable*/
 import React from "react";
-import { WithStyles } from "@material-ui/styles";
 // core components
 import downloadStyle from "../../../assets/jss/material-kit-react/views/componentsSections/downloadStyle";
-// nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import Button from '../../../components/CustomButtons/ButtonLink';
+// @material-ui/icons
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 
 interface ISectionDownload extends WithStyles<typeof downloadStyle> {}
 class SectionDownload extends React.Component<ISectionDownload> {

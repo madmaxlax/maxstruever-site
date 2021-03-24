@@ -15,8 +15,8 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { container } from "../../material-kit-react";
 import { createStyles } from "@material-ui/core";
+import { container } from "../../material-kit-react";
 
 const signupPageStyle = createStyles({
   container: {

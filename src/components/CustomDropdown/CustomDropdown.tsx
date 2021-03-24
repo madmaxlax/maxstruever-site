@@ -15,36 +15,33 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import * as React from "react";
-
-// core components
-import Button from "../CustomButtons/ButtonLink";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Divider from "@material-ui/core/Divider";
-import Grow from "@material-ui/core/Grow";
-import Icon from "@material-ui/core/Icon";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import Paper from "@material-ui/core/Paper";
-import Popper from "@material-ui/core/Popper";
-import { WithStyles } from "@material-ui/styles";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-import customDropdownStyle from "../../assets/jss/material-kit-react/components/customDropdownStyle";
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Divider from '@material-ui/core/Divider';
+import Grow from '@material-ui/core/Grow';
+import Icon from '@material-ui/core/Icon';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import * as React from 'react';
+import customDropdownStyle from '../../assets/jss/material-kit-react/components/customDropdownStyle';
+// core components
+import Button from '../CustomButtons/ButtonLink';
+
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
-
-
-
 
 interface ICustomDropdownProps {
   hoverColor?: string;
   buttonText?: any;
   buttonIcon?: any;
-  dropdownList?: any;
-  buttonProps?: object;
+  dropdownList?: any[];
+  buttonProps?: any;
   dropup?: boolean;
   dropdownHeader?: any;
   rtlActive?: boolean;
@@ -59,19 +56,14 @@ interface ICustomDropdownState {
   open: boolean;
 }
 
-interface ICustomDropdown
-  extends ICustomDropdownProps,
-    WithStyles<typeof customDropdownStyle> {}
+interface ICustomDropdown extends ICustomDropdownProps, WithStyles<typeof customDropdownStyle> {}
 
-class CustomDropdown extends React.Component<
-  ICustomDropdown,
-  ICustomDropdownState
-> {
+class CustomDropdown extends React.Component<ICustomDropdown, ICustomDropdownState> {
   anchorEl: any;
   constructor(props: ICustomDropdown, state: ICustomDropdownState) {
     super(props, state);
     this.state = {
-      open: false
+      open: false,
     };
   }
   // static defaultProps = {
@@ -79,16 +71,16 @@ class CustomDropdown extends React.Component<
   //   hoverColor = "primary";
   // };
   handleClick = () => {
-    this.setState(state => ({ open: !state.open }));
+    this.setState((state) => ({ open: !state.open }));
   };
-  handleClose = param => {
+  handleClose = (param: any) => {
     this.setState({ open: false });
     if (this.props && this.props.onClick) {
       this.props.onClick(param);
     }
   };
 
-  handleCloseAway = event => {
+  handleCloseAway = (event: any) => {
     // console.log("Target: ", event.target);
     // console.log("AnchorEl: ", this.anchorEl);
     // console.log("current target: ", event.currentTarget);
@@ -111,37 +103,35 @@ class CustomDropdown extends React.Component<
       dropup,
       dropdownHeader,
       caret = true,
-      hoverColor = "primary",
+      hoverColor = 'primary',
       left,
       rtlActive,
       noLiPadding,
-      classes
+      classes,
     } = this.props;
 
     //  const this.props.caret= true;
     const caretClasses = classNames({
       [classes.caret]: true,
       [classes.caretActive]: this.state.open,
-      [classes.caretRTL]: rtlActive
+      [classes.caretRTL]: rtlActive,
     });
 
     const dropdownItem = classNames({
       [classes.dropdownItem]: true,
-      [classes[hoverColor + "Hover"]]: true,
+      [classes[(hoverColor + 'Hover') as keyof typeof classes]]: true,
       [classes.noLiPadding]: noLiPadding,
-      [classes.dropdownItemRTL]: rtlActive
+      [classes.dropdownItemRTL]: rtlActive,
     });
     let icon = null;
     // let buttonI = this.props.buttonIcon;
 
     switch (typeof buttonIcon) {
-      case "object":
+      case 'object':
         icon = <this.props.buttonIcon className={classes.buttonIcon} />;
         break;
-      case "string":
-        icon = (
-          <Icon className={classes.buttonIcon}>{this.props.buttonIcon}</Icon>
-        );
+      case 'string':
+        icon = <Icon className={classes.buttonIcon}>{this.props.buttonIcon}</Icon>;
         break;
       default:
         icon = null;
@@ -152,10 +142,10 @@ class CustomDropdown extends React.Component<
         <div>
           <Button
             aria-label="Notifications"
-            aria-owns={this.state.open ? "menu-list" : null}
+            aria-owns={this.state.open ? 'menu-list' : null}
             aria-haspopup="true"
             {...buttonProps}
-            buttonRef={node => {
+            buttonRef={(node: any) => {
               this.anchorEl = node;
             }}
             onClick={this.handleClick}
@@ -171,57 +161,40 @@ class CustomDropdown extends React.Component<
           anchorEl={this.anchorEl}
           transition
           disablePortal
-          placement={
-            dropup
-              ? left
-                ? "top-start"
-                : "top"
-              : left
-              ? "bottom-start"
-              : "bottom"
-          }
+          placement={dropup ? (left ? 'top-start' : 'top') : left ? 'bottom-start' : 'bottom'}
           className={classNames({
             [classes.popperClose]: !this.state.open,
-            [classes.popperResponsive]: true
+            [classes.popperResponsive]: true,
           })}
         >
           {() => (
             <Grow
               in={this.state.open}
               //  id="menu-list"
-              style={
-                dropup
-                  ? { transformOrigin: "0 100% 0" }
-                  : { transformOrigin: "0 0 0" }
-              }
+              style={dropup ? { transformOrigin: '0 100% 0' } : { transformOrigin: '0 0 0' }}
             >
               <Paper className={classes.dropdown}>
                 <ClickAwayListener onClickAway={this.handleCloseAway}>
                   <MenuList role="menu" className={classes.menuList}>
                     {dropdownHeader !== undefined ? (
-                      <MenuItem
-                        onClick={() => this.handleClose(dropdownHeader)}
-                        className={classes.dropdownHeader}
-                      >
+                      // eslint-disable-next-line max-len
+                      <MenuItem onClick={() => this.handleClose(dropdownHeader)} className={classes.dropdownHeader}>
                         {dropdownHeader}
                       </MenuItem>
                     ) : null}
-                    {dropdownList.map((prop, key) => {
+                    {dropdownList?.map((prop: any, key) => {
                       if (prop.divider) {
                         return (
                           <Divider
                             key={key}
-                            onClick={() => this.handleClose("divider")}
+                            onClick={() => this.handleClose('divider')}
                             className={classes.dropdownDividerItem}
                           />
                         );
                       }
                       return (
-                        <MenuItem
-                          key={key}
-                          onClick={() => this.handleClose(prop)}
-                          className={dropdownItem}
-                        >
+                        // eslint-disable-next-line max-len
+                        <MenuItem key={key} onClick={() => this.handleClose(prop)} className={dropdownItem}>
                           {prop}
                         </MenuItem>
                       );
@@ -237,6 +210,5 @@ class CustomDropdown extends React.Component<
   }
 }
 
-export default withStyles<never, never, ICustomDropdownProps>(
-  customDropdownStyle
-)(CustomDropdown);
+// eslint-disable-next-line max-len
+export default withStyles<never, never, ICustomDropdownProps>(customDropdownStyle)(CustomDropdown as any);

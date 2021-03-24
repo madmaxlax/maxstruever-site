@@ -15,41 +15,34 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import classNames from 'classnames';
+import React from 'react';
+import infoStyle from '../../assets/jss/material-kit-react/components/infoStyle';
 
-import infoStyle from "../../assets/jss/material-kit-react/components/infoStyle";
-import { WithStyles } from "@material-ui/styles";
 
 interface IInfoArea extends WithStyles<typeof infoStyle> {
   icon: any;
   title: string;
   description: string;
-  iconColor:
-    | "primary"
-    | "warning"
-    | "danger"
-    | "success"
-    | "info"
-    | "rose"
-    | "gray";
+  iconColor: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose' | 'gray';
 
   vertical: boolean;
 }
 function InfoArea({ ...props }: IInfoArea) {
-  const { classes, title, description, iconColor = "gray", vertical } = props;
+  const { classes, title, description, iconColor = 'gray', vertical } = props;
   const iconWrapper = classNames({
     [classes.iconWrapper]: true,
     [classes[iconColor]]: true,
-    [classes.iconWrapperVertical]: vertical
+    [classes.iconWrapperVertical]: vertical,
   });
   const iconClasses = classNames({
     [classes.icon]: true,
-    [classes.iconVertical]: vertical
+    [classes.iconVertical]: vertical,
   });
   return (
     <div className={classes.infoArea}>

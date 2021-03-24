@@ -1,15 +1,18 @@
-import { Apps } from '@material-ui/icons';
-import Button from '../CustomButtons/ButtonLink';
-import CustomDropdown from '../CustomDropdown/CustomDropdown';
-import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import React from 'react';
-import Tooltip from '@material-ui/core/Tooltip';
-import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
 import withStyles from '@material-ui/core/styles/withStyles';
+import Tooltip from '@material-ui/core/Tooltip';
+import { Apps } from '@material-ui/icons';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
+import Button from '../CustomButtons/ButtonLink';
+import CustomDropdown from '../CustomDropdown/CustomDropdown';
 
-function HeaderLinks({ ...props }) {
+interface HeaderLinksProps {
+  classes: any;
+}
+function HeaderLinks(props: HeaderLinksProps) {
   const { classes } = props;
   return (
     <List className={classes.list}>
@@ -23,19 +26,19 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link key={1} to="/" className={classes.dropdownLink}>
               Home
             </Link>,
-            <a href="http://resume.maxstruever.com/" className={classes.dropdownLink}>
+            <a key={2} href="http://resume.maxstruever.com/" className={classes.dropdownLink}>
               Download Resume
             </a>,
-            <a href="http://portfolio.maxstruever.com/" className={classes.dropdownLink}>
+            <a key={3} href="http://portfolio.maxstruever.com/" className={classes.dropdownLink}>
               Portfolio
             </a>,
-            <Link to="/city-recs" className={classes.dropdownLink}>
+            <Link key={4} to="/city-recs" className={classes.dropdownLink}>
               City Recommendations
             </Link>,
-            <Link to="/referrals" className={classes.dropdownLink}>
+            <Link key={5} to="/referrals" className={classes.dropdownLink}>
               Referral Links
             </Link>,
           ]}

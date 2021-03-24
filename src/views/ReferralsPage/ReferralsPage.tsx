@@ -1,18 +1,18 @@
 import { Container, Grid, InputAdornment } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
-
-import CustomInput from '../../components/CustomInput/CustomInput';
 import { FilterList } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import queryString from 'query-string';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import CustomInput from '../../components/CustomInput/CustomInput';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
 import ReferralItem from '../../components/ReferralItem/ReferralItem';
-import classNames from 'classnames';
-import { makeStyles } from '@material-ui/styles';
-import queryString from 'query-string';
-import { useHistory } from 'react-router-dom';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useStyles = makeStyles((theme) => ({
   profile: {
     textAlign: 'center',
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ReferralsPage: React.FC<{}> = () => {
+const ReferralsPage = () => {
   const classes = useStyles();
   const history = useHistory();
   const [data, setData] = useState({ cards: [] });
@@ -119,8 +119,7 @@ const ReferralsPage: React.FC<{}> = () => {
                   onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
                     setFilterString(e.target.value);
                     if (history.replace) {
-                      const newurl =
-                        window.location.pathname + '?q=' + e.target.value;
+                      const newurl = window.location.pathname + '?q=' + e.target.value;
                       history.replace(newurl);
                     }
                   },
@@ -133,7 +132,7 @@ const ReferralsPage: React.FC<{}> = () => {
               />
               <br />
               <Grid container spacing={2} className={classes.referralsList}>
-                {data.cards.map((card, i) => {
+                {data.cards.map((card: any, i) => {
                   const filterStringLower = filterString.trim().toLowerCase();
                   const cardMatched =
                     !Boolean(filterString) ||

@@ -15,24 +15,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 // core components
-import typographyStyle from "../../assets/jss/material-kit-react/components/typographyStyle";
-import { WithStyles } from "@material-ui/styles";
+import typographyStyle from '../../assets/jss/material-kit-react/components/typographyStyle';
 
 interface IPrimary extends WithStyles<typeof typographyStyle> {
   children?: any;
 }
 function Primary({ ...props }: IPrimary) {
   const { classes, children } = props;
-  return (
-    <div className={classes.defaultFontStyle + " " + classes.primaryText}>
-      {children}
-    </div>
-  );
+  return <div className={classes.defaultFontStyle + ' ' + classes.primaryText}>{children}</div>;
 }
 
 export default withStyles(typographyStyle)(Primary);

@@ -1,8 +1,8 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
-import CustomInput from "../../../components/CustomInput/CustomInput";
+import Button from '../../../components/CustomButtons/ButtonLink';
+import CustomInput from '../../../components/CustomInput/CustomInput';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 /*!
 
 =========================================================
@@ -20,18 +20,16 @@ import GridItem from "../../../components/Grid/GridItem";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { WithStyles } from "@material-ui/styles";
+import React from 'react';
+import { WithStyles } from '@material-ui/styles';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import workStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle";
+import withStyles from '@material-ui/core/styles/withStyles';
+import workStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/workStyle';
 
 // @material-ui/icons
 
-
-
-interface IWorkSection extends WithStyles<typeof workStyle> {}
+type IWorkSection = WithStyles<typeof workStyle>;
 class WorkSection extends React.Component<IWorkSection> {
   render() {
     const { classes } = this.props;
@@ -41,10 +39,8 @@ class WorkSection extends React.Component<IWorkSection> {
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Work with us</h2>
             <h4 className={classes.description}>
-              Divide details about your product or agency work into parts. Write
-              a few lines about each one and contact us about any further
-              collaboration. We will responde get back to you in a couple of
-              hours.
+              Divide details about your product or agency work into parts. Write a few lines about each one and contact
+              us about any further collaboration. We will responde get back to you in a couple of hours.
             </h4>
             <form>
               <GridContainer>
@@ -53,7 +49,7 @@ class WorkSection extends React.Component<IWorkSection> {
                     labelText="Your Name"
                     id="name"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: true,
                     }}
                   />
                 </GridItem>
@@ -62,7 +58,7 @@ class WorkSection extends React.Component<IWorkSection> {
                     labelText="Your Email"
                     id="email"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: true,
                     }}
                   />
                 </GridItem>
@@ -71,20 +67,15 @@ class WorkSection extends React.Component<IWorkSection> {
                   id="message"
                   formControlProps={{
                     fullWidth: true,
-                    className: classes.textArea
+                    className: classes.textArea,
                   }}
                   inputProps={{
                     multiline: true,
-                    rows: 5
+                    rows: 5,
                   }}
                 />
                 <GridContainer justify="center">
-                  <GridItem
-                    xs={12}
-                    sm={12}
-                    md={4}
-                    className={classes.textCenter}
-                  >
+                  <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
                     <Button color="primary">Send Message</Button>
                   </GridItem>
                 </GridContainer>

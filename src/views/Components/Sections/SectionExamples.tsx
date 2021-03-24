@@ -1,10 +1,10 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
+import Button from '../../../components/CustomButtons/ButtonLink';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 // nodejs library to set properties for components
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 /*!
 
 =========================================================
@@ -22,18 +22,16 @@ import { Link } from "react-router-dom";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { WithStyles } from "@material-ui/styles";
-import exampleStyle from "../../../assets/jss/material-kit-react/views/componentsSections/exampleStyle";
-import landing from "../../../assets/img/landing.jpg";
-import profile from "../../../assets/img/profile.jpg";
+import React from 'react';
+import { WithStyles } from '@material-ui/styles';
+import exampleStyle from '../../../assets/jss/material-kit-react/views/componentsSections/exampleStyle';
+import landing from '../../../assets/img/landing.jpg';
+import profile from '../../../assets/img/profile.jpg';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 // @material-ui/icons
 
-
-
-interface ISectionExamples extends WithStyles<typeof exampleStyle> {}
+type ISectionExamples = WithStyles<typeof exampleStyle>;
 class SectionExamples extends React.Component<ISectionExamples> {
   render() {
     const { classes } = this.props;
@@ -46,13 +44,7 @@ class SectionExamples extends React.Component<ISectionExamples> {
                 <img
                   src={landing}
                   alt="..."
-                  className={
-                    classes.imgRaised +
-                    " " +
-                    classes.imgRounded +
-                    " " +
-                    classes.imgFluid
-                  }
+                  className={classes.imgRaised + ' ' + classes.imgRounded + ' ' + classes.imgFluid}
                 />
                 <Button color="primary" size="lg" simple>
                   View landing page
@@ -64,13 +56,7 @@ class SectionExamples extends React.Component<ISectionExamples> {
                 <img
                   src={profile}
                   alt="..."
-                  className={
-                    classes.imgRaised +
-                    " " +
-                    classes.imgRounded +
-                    " " +
-                    classes.imgFluid
-                  }
+                  className={classes.imgRaised + ' ' + classes.imgRounded + ' ' + classes.imgFluid}
                 />
                 <Button color="primary" size="lg" simple>
                   View profile page

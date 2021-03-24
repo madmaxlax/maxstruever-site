@@ -15,25 +15,25 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
 
 // mterial-ui components
-import withStyles from "@material-ui/core/styles/withStyles";
-import { createStyles, WithStyles } from "@material-ui/core";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { createStyles, WithStyles } from '@material-ui/core';
 
 const style = createStyles({
   clearfix: {
-    display: "table",
-    content: " ",
+    display: 'table',
+    content: ' ',
 
-    "&:after": {
-      clear: "both"
-    }
-  }
+    '&:after': {
+      clear: 'both',
+    },
+  },
 });
 
-interface IClearfix extends WithStyles<typeof style> {}
+type IClearfix = WithStyles<typeof style>;
 function Clearfix({ ...props }: IClearfix) {
   const { classes } = props;
   return <div className={classes.clearfix} />;

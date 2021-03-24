@@ -15,13 +15,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 // core components
-import typographyStyle from "../../assets/jss/material-kit-react/components/typographyStyle";
-import { WithStyles } from "@material-ui/styles";
+import typographyStyle from '../../assets/jss/material-kit-react/components/typographyStyle';
 
 interface IQuote extends WithStyles<typeof typographyStyle> {
   text: any;
@@ -30,7 +30,7 @@ interface IQuote extends WithStyles<typeof typographyStyle> {
 function Quote({ ...props }: IQuote) {
   const { classes, text, author } = props;
   return (
-    <blockquote className={classes.defaultFontStyle + " " + classes.quote}>
+    <blockquote className={classes.defaultFontStyle + ' ' + classes.quote}>
       <p className={classes.quoteText}>{text}</p>
       <small className={classes.quoteAuthor}>{author}</small>
     </blockquote>

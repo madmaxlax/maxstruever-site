@@ -15,33 +15,33 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import { createStyles } from '@material-ui/core';
 import {
-  warningCardHeader,
-  successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
-} from "../../material-kit-react";
-import { createStyles } from "@material-ui/core";
+  primaryCardHeader,
+  successCardHeader,
+  warningCardHeader
+} from '../../material-kit-react';
 const cardHeaderStyle = createStyles({
   cardHeader: {
-    borderRadius: "3px",
-    padding: "1rem 15px",
-    marginLeft: "15px",
-    marginRight: "15px",
-    marginTop: "-30px",
-    border: "0",
-    marginBottom: "0"
+    borderRadius: '3px',
+    padding: '1rem 15px',
+    marginLeft: '15px',
+    marginRight: '15px',
+    marginTop: '-30px',
+    border: '0',
+    marginBottom: '0',
   },
   cardHeaderPlain: {
-    marginLeft: "0px",
-    marginRight: "0px"
+    marginLeft: '0px',
+    marginRight: '0px',
   },
   warningCardHeader,
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,
-  primaryCardHeader
+  primaryCardHeader,
 });
 
 export default cardHeaderStyle;

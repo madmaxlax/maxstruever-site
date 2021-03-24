@@ -1,6 +1,11 @@
 // core components
-import GridContainer from "../Grid/GridContainer";
-import GridItem from "../Grid/GridItem";
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+import { WithStyles } from '@material-ui/styles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
 /*!
 
 =========================================================
@@ -18,17 +23,12 @@ import GridItem from "../Grid/GridItem";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
-import SwipeableViews from "react-swipeable-views";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
-import { WithStyles } from "@material-ui/styles";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-import navPillsStyle from "../../assets/jss/material-kit-react/components/navPillsStyle";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import SwipeableViews from 'react-swipeable-views';
+import navPillsStyle from '../../assets/jss/material-kit-react/components/navPillsStyle';
+import GridContainer from '../Grid/GridContainer';
+import GridItem from '../Grid/GridItem';
 
 // interface IShape {
 //   tabButton: string;
@@ -38,7 +38,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 interface INavPillsProps {
   active?: number;
   tabs?: any;
-  color?: "primary" | "warning" | "danger" | "success" | "info" | "rose";
+  color?: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
 
   direction?: string;
   horizontal?: any;
@@ -52,29 +52,22 @@ interface INavPillsState {
 interface INavPills extends INavPillsProps, WithStyles<typeof navPillsStyle> {}
 class NavPills extends React.Component<INavPills, INavPillsState> {
   constructor(props: INavPills, state: INavPillsState) {
-    super(props, state);
+    super(props);
     this.state = {
-      active: props.active
+      active: props.active as number,
     };
   }
-  handleChange = (event, active) => {
+  handleChange = (event: any, active: any) => {
     this.setState({ active });
   };
-  handleChangeIndex = index => {
+  handleChangeIndex = (index: number) => {
     this.setState({ active: index });
   };
   render() {
-    const {
-      classes,
-      tabs,
-      direction,
-      color,
-      horizontal,
-      alignCenter
-    } = this.props;
+    const { classes, tabs, direction, color, horizontal, alignCenter } = this.props;
     const flexContainerClasses = classNames({
       [classes.flexContainer]: true,
-      [classes.horizontalDisplay]: horizontal !== undefined
+      [classes.horizontalDisplay]: horizontal !== undefined,
     });
     const tabButtons = (
       <Tabs
@@ -82,21 +75,21 @@ class NavPills extends React.Component<INavPills, INavPillsState> {
           root: classes.root,
           fixed: classes.fixed,
           flexContainer: flexContainerClasses,
-          indicator: classes.displayNone
+          indicator: classes.displayNone,
         }}
         value={this.state.active}
         onChange={this.handleChange}
         centered={alignCenter}
       >
-        {tabs.map((prop, key) => {
-          var icon = {};
+        {(tabs as any[]).map((prop, key) => {
+          const icon = {} as any;
           if (prop.tabIcon !== undefined) {
-            icon["icon"] = <prop.tabIcon className={classes.tabIcon} />;
+            icon.icon = <prop.tabIcon className={classes.tabIcon} />;
           }
           const pillsClasses = classNames({
             [classes.pills]: true,
             [classes.horizontalPills]: horizontal !== undefined,
-            [classes.pillsWithIcons]: prop.tabIcon !== undefined
+            [classes.pillsWithIcons]: prop.tabIcon !== undefined,
           });
           return (
             <Tab
@@ -105,8 +98,8 @@ class NavPills extends React.Component<INavPills, INavPillsState> {
               {...icon}
               classes={{
                 root: pillsClasses,
-                selected: classes[color],
-                wrapper: classes.tabWrapper
+                selected: classes[color as keyof typeof classes],
+                wrapper: classes.tabWrapper,
               }}
             />
           );
@@ -116,12 +109,16 @@ class NavPills extends React.Component<INavPills, INavPillsState> {
     const tabContent = (
       <div className={classes.contentWrapper}>
         <SwipeableViews
-          axis={direction === "rtl" ? "x-reverse" : "x"}
+          axis={direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.active}
           onChangeIndex={this.handleChangeIndex}
         >
-          {tabs.map((prop, key) => {
-            return <div key={key} className={classes.swipeableTab}>{prop.tabContent}</div>;
+          {(tabs as any[]).map((prop, key) => {
+            return (
+              <div key={key} className={classes.swipeableTab}>
+                {prop.tabContent}
+              </div>
+            );
           })}
         </SwipeableViews>
       </div>
@@ -141,6 +138,4 @@ class NavPills extends React.Component<INavPills, INavPillsState> {
   }
 }
 
-export default withStyles<never, never, INavPillsProps>(navPillsStyle)(
-  NavPills
-);
+export default withStyles<never, never, INavPillsProps>(navPillsStyle)(NavPills as any);

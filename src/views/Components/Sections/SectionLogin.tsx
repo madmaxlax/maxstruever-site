@@ -1,17 +1,12 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
-import Card from "../../../components/Card/Card";
-import CardBody from "../../../components/Card/CardBody";
-import CardFooter from "../../../components/Card/CardFooter";
-import CardHeader from "../../../components/Card/CardHeader";
-import CustomInput from "../../../components/CustomInput/CustomInput";
-import Email from "@material-ui/icons/Email";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Icon from "@material-ui/core/Icon";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import Icon from '@material-ui/core/Icon';
+import InputAdornment from '@material-ui/core/InputAdornment';
+// nodejs library to set properties for components
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import Email from '@material-ui/icons/Email';
 // @material-ui/icons
-import People from "@material-ui/icons/People";
+import People from '@material-ui/icons/People';
+import { WithStyles } from '@material-ui/styles';
 /*!
 
 =========================================================
@@ -29,14 +24,19 @@ import People from "@material-ui/icons/People";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { WithStyles } from "@material-ui/styles";
-import loginStyle from "../../../assets/jss/material-kit-react/views/componentsSections/loginStyle";
-// nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import React from 'react';
+import loginStyle from '../../../assets/jss/material-kit-react/views/componentsSections/loginStyle';
+import Card from '../../../components/Card/Card';
+import CardBody from '../../../components/Card/CardBody';
+import CardFooter from '../../../components/Card/CardFooter';
+import CardHeader from '../../../components/Card/CardHeader';
+import Button from '../../../components/CustomButtons/ButtonLink';
+import CustomInput from '../../../components/CustomInput/CustomInput';
+// core components
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 
-interface ISectionLogin extends WithStyles<typeof loginStyle> {}
+type ISectionLogin = WithStyles<typeof loginStyle>;
 class SectionLogin extends React.Component<ISectionLogin> {
   render() {
     const { classes } = this.props;
@@ -53,37 +53,32 @@ class SectionLogin extends React.Component<ISectionLogin> {
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         color="transparent"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e: any) => e.preventDefault()}
                       >
-                        <i
-                          className={classes.socialIcons + " fab fa-twitter"}
-                        />
+                        <i className={classes.socialIcons + ' fab fa-twitter'} />
                       </Button>
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         color="transparent"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e: any) => e.preventDefault()}
                       >
-                        <i
-                          className={classes.socialIcons + " fab fa-facebook"}
-                        />
+                        <i className={classes.socialIcons + ' fab fa-facebook'} />
                       </Button>
                       <Button
                         justIcon
                         href="#pablo"
-                        target="_blank" rel="noopener noreferrer"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         color="transparent"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e: any) => e.preventDefault()}
                       >
-                        <i
-                          className={
-                            classes.socialIcons + " fab fa-google-plus-g"
-                          }
-                        />
+                        <i className={classes.socialIcons + ' fab fa-google-plus-g'} />
                       </Button>
                     </div>
                   </CardHeader>
@@ -93,48 +88,46 @@ class SectionLogin extends React.Component<ISectionLogin> {
                       labelText="First Name..."
                       id="first"
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
-                        type: "text",
+                        type: 'text',
                         endAdornment: (
                           <InputAdornment position="end">
                             <People className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
                       labelText="Email..."
                       id="email"
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
-                        type: "email",
+                        type: 'email',
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
                       }}
                     />
                     <CustomInput
                       labelText="Password"
                       id="pass"
                       formControlProps={{
-                        fullWidth: true
+                        fullWidth: true,
                       }}
                       inputProps={{
-                        type: "password",
+                        type: 'password',
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
+                            <Icon className={classes.inputIconsColor}>lock_outline</Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: "off"
+                        autoComplete: 'off',
                       }}
                     />
                   </CardBody>

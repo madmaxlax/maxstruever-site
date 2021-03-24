@@ -1,13 +1,13 @@
 import { Container, Grid } from '@material-ui/core';
-
+import { makeStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
-import React from 'react';
-import classNames from 'classnames';
-import { makeStyles } from '@material-ui/styles';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const useStyles = makeStyles((theme) => ({
   profile: {
     textAlign: 'center',
@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   iframe: {
-    minHeight: 2600, width: '100%' 
+    minHeight: 2600,
+    width: '100%',
   },
 
   name: {},
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CityRecsPage: React.FC<{}> = () => {
+const CityRecsPage = () => {
   const classes = useStyles();
 
   document.title = 'City Recommendations | Max Struever';
@@ -77,8 +78,7 @@ const CityRecsPage: React.FC<{}> = () => {
                   <div className={classes.name}>
                     <h3 className={classes.title}>City Travel Recommendations</h3>
                     <h6>
-                      Various lists of activities and places to stay in different cities I've
-                      compiled over the years
+                      Various lists of activities and places to stay in different cities I've compiled over the years
                     </h6>
                   </div>
                 </div>
@@ -86,8 +86,8 @@ const CityRecsPage: React.FC<{}> = () => {
             </Grid>
             <div className={classes.content}>
               <iframe
-              title="City Recs from Google Docs"
-              frameBorder="0"
+                title="City Recs from Google Docs"
+                frameBorder="0"
                 className={classes.iframe}
                 src="//drive.google.com/embeddedfolderview?id=0B994MvzpbbuzfjFrVFVkVTc1dmtBMktWSldnMVA0M2R5QjN6dVlGSXB2anVmQkVVTWEyWHc#list"
               ></iframe>

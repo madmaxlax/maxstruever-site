@@ -1,19 +1,18 @@
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import React from 'react';
+import profile from '../../assets/img/faces/Max-small-sq.jpg';
+import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage';
 import Footer from '../../components/Footer/Footer';
 import GridContainer from '../../components/Grid/GridContainer';
 import GridItem from '../../components/Grid/GridItem';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import Parallax from '../../components/Parallax/Parallax';
-import React from 'react';
-import { WithStyles } from '@material-ui/styles';
-import classNames from 'classnames';
-import profile from '../../assets/img/faces/Max-small-sq.jpg';
-import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage';
-import withStyles from '@material-ui/core/styles/withStyles';
 
-interface IProfilePage extends WithStyles<typeof profilePageStyle> {}
+type IProfilePage = WithStyles<typeof profilePageStyle>;
 class ProfilePage extends React.Component<IProfilePage> {
-  
   render() {
     document.title = 'Page Not Found | Max Struever';
     const { classes, ...rest } = this.props;

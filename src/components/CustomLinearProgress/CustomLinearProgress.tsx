@@ -15,29 +15,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import LinearProgress from '@material-ui/core/LinearProgress';
 // nodejs library to set properties for components
-
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 // core components
-import customLinearProgressStyle from "../../assets/jss/material-kit-react/components/customLinearProgressStyle";
-import { WithStyles } from "@material-ui/styles";
+import customLinearProgressStyle from '../../assets/jss/material-kit-react/components/customLinearProgressStyle';
 
-interface ICustomLinearProgressProps
-  extends WithStyles<typeof customLinearProgressStyle> {
-  color?:
-    | "gray"
-    | "primary"
-    | "warning"
-    | "danger"
-    | "success"
-    | "info"
-    | "rose";
+interface ICustomLinearProgressProps extends WithStyles<typeof customLinearProgressStyle> {
+  color?: 'gray' | 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose';
   variant?: any;
   value?: number;
-  style?: object;
+  style?: any;
 }
 function CustomLinearProgress({ ...props }: ICustomLinearProgressProps) {
   const { classes, color, ...rest } = props;
@@ -45,8 +36,8 @@ function CustomLinearProgress({ ...props }: ICustomLinearProgressProps) {
     <LinearProgress
       {...rest}
       classes={{
-        root: classes.root + " " + classes[color + "Background"],
-        bar: classes.bar + " " + classes[color]
+        root: classes.root + ' ' + classes[(color + 'Background') as keyof typeof classes],
+        bar: classes.bar + ' ' + classes[color as keyof typeof classes],
       }}
     />
   );

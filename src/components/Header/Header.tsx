@@ -15,24 +15,23 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import * as React from "react";
-
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-// @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import { WithStyles } from "@material-ui/styles";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-import headerStyle from "../../assets/jss/material-kit-react/components/headerStyle";
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Drawer from '@material-ui/core/Drawer';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Toolbar from '@material-ui/core/Toolbar';
+// @material-ui/icons
+import Menu from '@material-ui/icons/Menu';
+import { WithStyles } from '@material-ui/styles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import * as React from 'react';
+import headerStyle from '../../assets/jss/material-kit-react/components/headerStyle';
 
 interface IHeaderState {
   mobileOpen: boolean;
@@ -55,65 +54,57 @@ class Header extends React.Component<IHeader, IHeaderState> {
     super(props, state);
 
     this.state = {
-      mobileOpen: false
+      mobileOpen: false,
     };
   }
 
   handleDrawerToggle = () => {
     this.setState({
-      mobileOpen: !this.state.mobileOpen
+      mobileOpen: !this.state.mobileOpen,
     });
     // this.mobileOpen = !this.mobileOpen;
   };
   headerColorChange = () => {
-    const { classes, color = "white", changeColorOnScroll } = this.props;
+    const { classes, color = 'white', changeColorOnScroll } = this.props;
 
     const windowsScrollTop = window.pageYOffset;
     if (windowsScrollTop > changeColorOnScroll.height) {
+      document.body.getElementsByTagName('header')[0].classList.remove(classes[color as keyof typeof classes]);
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[color]);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[changeColorOnScroll.color]);
+        .getElementsByTagName('header')[0]
+        .classList.add(classes[changeColorOnScroll.color as keyof typeof classes]);
     } else {
+      document.body.getElementsByTagName('header')[0].classList.add(classes[color as keyof typeof classes]);
       document.body
-        .getElementsByTagName("header")[0]
-        .classList.add(classes[color]);
-      document.body
-        .getElementsByTagName("header")[0]
-        .classList.remove(classes[changeColorOnScroll.color]);
+        .getElementsByTagName('header')[0]
+        .classList.remove(classes[changeColorOnScroll.color as keyof typeof classes]);
     }
   };
   componentDidMount() {
     if (this.props.changeColorOnScroll) {
-      window.addEventListener("scroll", this.headerColorChange);
+      window.addEventListener('scroll', this.headerColorChange);
     }
   }
   componentWillUnmount() {
     if (this.props.changeColorOnScroll) {
-      window.removeEventListener("scroll", this.headerColorChange);
+      window.removeEventListener('scroll', this.headerColorChange);
     }
   }
   render() {
-    const {
-      classes,
-      color,
-      rightLinks,
-      leftLinks,
-      brand,
-      fixed,
-      absolute
-    } = this.props;
+    const { classes, color, rightLinks, leftLinks, brand, fixed, absolute } = this.props;
     const appBarClasses = classNames({
       [classes.appBar]: true,
-      [classes[color]]: color,
+      [classes[color as keyof typeof classes]]: color,
       [classes.absolute]: absolute,
-      [classes.fixed]: fixed
+      [classes.fixed]: fixed,
     });
     // var mobileOpen: boolean = this.state;
 
-    const brandComponent = <Button className={classes.title} href="/">{brand}</Button>;
+    const brandComponent = (
+      <Button className={classes.title} href="/">
+        {brand}
+      </Button>
+    );
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
@@ -131,11 +122,7 @@ class Header extends React.Component<IHeader, IHeaderState> {
             {rightLinks}
           </Hidden>
           <Hidden mdUp>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-            >
+            <IconButton color="inherit" aria-label="open drawer" onClick={this.handleDrawerToggle}>
               <Menu />
             </IconButton>
           </Hidden>
@@ -143,10 +130,10 @@ class Header extends React.Component<IHeader, IHeaderState> {
         <Hidden mdUp implementation="js">
           <Drawer
             variant="temporary"
-            anchor={"right"}
+            anchor={'right'}
             open={this.state.mobileOpen}
             classes={{
-              paper: classes.drawerPaper
+              paper: classes.drawerPaper,
             }}
             onClose={this.handleDrawerToggle}
           >
@@ -161,6 +148,6 @@ class Header extends React.Component<IHeader, IHeaderState> {
   }
 }
 
-export default withStyles<never, never, IHeaderProps>(headerStyle)(Header);
+export default withStyles<never, never, IHeaderProps>(headerStyle)(Header as any);
 
 // export default Header;

@@ -3,35 +3,77 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.2.1",
-    "@material-ui/icons": "^4.2.1",
-    "@types/history": "^4.7.2",
-    "@types/node": "14.0.20",
-    "@types/react-dom": "16.9.8",
-    "@types/react-router-dom": "^5.1.5",
-    "classnames": "^2.2.6",
-    "history": "^5.0.0",
-    "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
-    "nouislider": "14.6.0",
-    "query-string": "^6.13.1",
-    "react": "^16.8.6",
-    "react-datetime": "^2.16.3",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.4.1",
-    "react-slick": "^0.26.1",
-    "react-swipeable-views": "^0.13.3",
-    "typescript": "3.9.6"
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router-dom": "latest",
+    "classnames": "latest",
+    "moment": "latest",
+    "nouislider": "^14.6.4",
+    "query-string": "^7.0.0",
+    "react": "latest",
+    "react-datetime": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest",
+    "react-scripts": "latest",
+    "react-slick": "latest",
+    "react-swipeable-views": "latest",
+    "typescript": "latest"
   },
   "scripts": {
+    "clean": "rm -rf node_modules && rm -rf yarn.lock",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --transformIgnorePatterns \"node_modules/(?!your-module-name)/\"",
+    "eject": "react-scripts eject",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "gql-codegen": "graphql-codegen --config codegen.yml"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "@graphql-codegen/cli": "latest",
+    "@graphql-codegen/introspection": "latest",
+    "@graphql-codegen/typescript": "latest",
+    "@graphql-codegen/typescript-operations": "latest",
+    "@graphql-codegen/typescript-react-apollo": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@types/classnames": "latest",
+    "@types/jest": "latest",
+    "@types/nouislider": "^9.0.10",
+    "@types/react-slick": "^0.23.4",
+    "@types/react-swipeable-views": "^0.13.0",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "babel-eslint": "latest",
+    "babel-jest": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-react": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
+    "pretty-quick": "^3.1.0",
+    "ts-jest": "latest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "clover"
+    ]
   },
   "browserslist": {
     "production": [
@@ -44,14 +86,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolutions": {
-    "lodash": "^4.17.19"
-  },
-  "devDependencies": {
-    "@types/classnames": "^2.2.9",
-    "@types/nouislider": "^9.0.5",
-    "@types/react": "^16.8.23",
-    "@types/react-slick": "^0.23.4"
   }
 }

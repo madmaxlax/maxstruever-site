@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-
-import classNames from 'classnames';
 import { makeStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import React, { useEffect, useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   parallax: {
@@ -62,21 +61,20 @@ const Parallax = (props: IParallaxProps) => {
     [classes.filter]: filter,
     [classes.small]: small,
     [classes.xSmall]: xSmall,
-    [className]: className !== undefined,
+    [className as string]: className !== undefined,
   });
-  var windowScrollTop = window.pageYOffset / 3;
-  const [transform, setTransform] = React.useState('translate3d(0,' + windowScrollTop + 'px,0)');
+  const windowScrollTop = window.pageYOffset / 3;
+  const [transform, setTransform] = useState('translate3d(0,' + windowScrollTop + 'px,0)');
   // eslint-disable-next-line
-  const [imageToUse, setImageToUse] = React.useState(
-    random ? bgImages[Math.floor(Math.random() * bgImages.length)] : image
-  );
+  const [imageToUse, setImageToUse] = useState(random ? bgImages[Math.floor(Math.random() * bgImages.length)] : image);
+  console.log(random, image, imageToUse);
 
   const resetTransform = () => {
-    var windowScrollTop = window.pageYOffset / 3;
+    const windowScrollTop = window.pageYOffset / 3;
     setTransform('translate3d(0,' + windowScrollTop + 'px,0)');
   };
   useEffect(() => {
-    var windowScrollTop = window.pageYOffset / 3;
+    const windowScrollTop = window.pageYOffset / 3;
     setTransform('translate3d(0,' + windowScrollTop + 'px,0)');
     window.addEventListener('scroll', resetTransform);
 
@@ -91,7 +89,7 @@ const Parallax = (props: IParallaxProps) => {
       className={parallaxClasses}
       style={{
         // style,
-        backgroundImage: 'url(' + imageToUse + ')',
+        backgroundImage: `url(${(imageToUse as any).default || imageToUse})`,
         transform,
       }}
     >

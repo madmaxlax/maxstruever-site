@@ -1,17 +1,15 @@
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import Button from "../../../components/CustomButtons/ButtonLink";
-import CustomDropdown from "../../../components/CustomDropdown/CustomDropdown";
-import CustomInput from "../../../components/CustomInput/CustomInput";
-import Email from "@material-ui/icons/Email";
-import Explore from "@material-ui/icons/Explore";
-import Face from "@material-ui/icons/Face";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Header from "../../../components/Header/Header";
-import Icon from "@material-ui/core/Icon";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import Icon from '@material-ui/core/Icon';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Email from '@material-ui/icons/Email';
+import Explore from '@material-ui/icons/Explore';
+import Face from '@material-ui/icons/Face';
+// @material-ui/icons
+import Search from '@material-ui/icons/Search';
+import { WithStyles } from '@material-ui/styles';
 /*!
 
 =========================================================
@@ -29,17 +27,19 @@ import ListItem from "@material-ui/core/ListItem";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-// @material-ui/icons
-import Search from "@material-ui/icons/Search";
-import { WithStyles } from "@material-ui/styles";
-import image from "../../../assets/img/bg.jpg";
-import navbarsStyle from "../../../assets/jss/material-kit-react/views/componentsSections/navbarsStyle";
-import profileImage from "../../../assets/img/faces/avatar.jpg";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import React from 'react';
+import image from '../../../assets/img/bg.jpg';
+import profileImage from '../../../assets/img/faces/avatar.jpg';
+import navbarsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/navbarsStyle';
+import Button from '../../../components/CustomButtons/ButtonLink';
+import CustomDropdown from '../../../components/CustomDropdown/CustomDropdown';
+import CustomInput from '../../../components/CustomInput/CustomInput';
+// core components
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
+import Header from '../../../components/Header/Header';
 
-interface ISectionNavbarsProps extends WithStyles<typeof navbarsStyle> {}
+type ISectionNavbarsProps = WithStyles<typeof navbarsStyle>;
 
 class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
   render() {
@@ -61,7 +61,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                       <Button
                         href="#pablo"
                         className={classes.navLink}
-                        onClick={e => e.preventDefault()}
+                        onClick={(e: any) => e.preventDefault()}
                         color="transparent"
                       >
                         Link
@@ -71,7 +71,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                       <Button
                         href="#pablo"
                         className={classes.navLink}
-                        onClick={e => e.preventDefault()}
+                        onClick={(e: any) => e.preventDefault()}
                         color="transparent"
                       >
                         Link
@@ -83,16 +83,16 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                         dropdownHeader="Dropdown Header"
                         buttonProps={{
                           className: classes.navLink,
-                          color: "transparent"
+                          color: 'transparent',
                         }}
                         dropdownList={[
-                          "Action",
-                          "Another action",
-                          "Something else here",
+                          'Action',
+                          'Another action',
+                          'Something else here',
                           { divider: true },
-                          "Separated link",
+                          'Separated link',
                           { divider: true },
-                          "One more separated link"
+                          'One more separated link',
                         ]}
                       />
                     </ListItem>
@@ -127,16 +127,16 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                         buttonIcon="settings"
                         buttonProps={{
                           className: classes.navLink,
-                          color: "transparent"
+                          color: 'transparent',
                         }}
                         dropdownList={[
-                          "Action",
-                          "Another action",
-                          "Something else here",
+                          'Action',
+                          'Another action',
+                          'Something else here',
                           { divider: true },
-                          "Separated link",
+                          'Separated link',
                           { divider: true },
-                          "One more separated link"
+                          'One more separated link',
                         ]}
                       />
                     </ListItem>
@@ -150,10 +150,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
           </div>
         </div>
         <div id="navbar" className={classes.navbar}>
-          <div
-            className={classes.navigation}
-            style={{ backgroundImage: "url(" + image + ")" }}
-          >
+          <div className={classes.navigation} style={{ backgroundImage: 'url(' + image + ')' }}>
             <Header
               brand="Brand"
               color="rose"
@@ -163,7 +160,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Link
@@ -173,7 +170,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Link
@@ -187,14 +184,14 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     white
                     inputRootCustomClasses={classes.inputRootCustomClasses}
                     formControlProps={{
-                      className: classes.formControl
+                      className: classes.formControl,
                     }}
                     inputProps={{
-                      placeholder: "Search",
+                      placeholder: 'Search',
                       inputProps: {
-                        "aria-label": "Search",
-                        className: classes.searchInput
-                      }
+                        'aria-label': 'Search',
+                        className: classes.searchInput,
+                      },
                     }}
                   />
                   <Button justIcon round color="white">
@@ -211,8 +208,8 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                   <ListItem className={classes.listItem}>
                     <Button
                       href="#pablo"
-                      className={classes.navLink + " " + classes.navLinkActive}
-                      onClick={e => e.preventDefault()}
+                      className={classes.navLink + ' ' + classes.navLinkActive}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Discover
@@ -222,7 +219,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Profile
@@ -232,7 +229,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Settings
@@ -249,8 +246,8 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                   <ListItem className={classes.listItem}>
                     <Button
                       href="#pablo"
-                      className={classes.navLink + " " + classes.navLinkActive}
-                      onClick={e => e.preventDefault()}
+                      className={classes.navLink + ' ' + classes.navLinkActive}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       <Explore className={classes.icons} /> Discover
@@ -260,7 +257,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       <AccountCircle className={classes.icons} /> Profile
@@ -270,7 +267,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       <Icon className={classes.icons}>settings</Icon> Settings
@@ -288,7 +285,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Discover
@@ -298,7 +295,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Wishlist
@@ -310,7 +307,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                       round
                       href="#pablo"
                       className={classes.notificationNavLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="rose"
                     >
                       <Email className={classes.icons} />
@@ -322,23 +319,12 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                       caret={false}
                       hoverColor="black"
                       dropdownHeader="Dropdown Header"
-                      buttonText={
-                        <img
-                          src={profileImage}
-                          className={classes.img}
-                          alt="profile"
-                        />
-                      }
+                      buttonText={<img src={profileImage} className={classes.img} alt="profile" />}
                       buttonProps={{
-                        className:
-                          classes.navLink + " " + classes.imageDropdownButton,
-                        color: "transparent"
+                        className: classes.navLink + ' ' + classes.imageDropdownButton,
+                        color: 'transparent',
                       }}
-                      dropdownList={[
-                        "Me",
-                        "Settings and other stuff",
-                        "Sign out"
-                      ]}
+                      dropdownList={['Me', 'Settings and other stuff', 'Sign out']}
                     />
                   </ListItem>
                 </List>
@@ -352,7 +338,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Discover
@@ -362,7 +348,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.navLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="transparent"
                     >
                       Wishlist
@@ -372,7 +358,7 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
                     <Button
                       href="#pablo"
                       className={classes.registerNavLink}
-                      onClick={e => e.preventDefault()}
+                      onClick={(e: any) => e.preventDefault()}
                       color="rose"
                       round
                     >
@@ -388,57 +374,18 @@ class SectionNavbars extends React.Component<ISectionNavbarsProps, any> {
               rightLinks={
                 <List className={classes.list}>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-twitter"
-                        }
-                      />{" "}
-                      Twitter
+                    <Button color="transparent" className={classes.navLink + ' ' + classes.socialIconsButton}>
+                      <i className={classes.socialIcons + ' ' + classes.marginRight5 + ' fab fa-twitter'} /> Twitter
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-facebook"
-                        }
-                      />{" "}
-                      Facebook
+                    <Button color="transparent" className={classes.navLink + ' ' + classes.socialIconsButton}>
+                      <i className={classes.socialIcons + ' ' + classes.marginRight5 + ' fab fa-facebook'} /> Facebook
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
-                      <i
-                        className={
-                          classes.socialIcons +
-                          " " +
-                          classes.marginRight5 +
-                          " fab fa-instagram"
-                        }
-                      />{" "}
-                      Instagram
+                    <Button color="transparent" className={classes.navLink + ' ' + classes.socialIconsButton}>
+                      <i className={classes.socialIcons + ' ' + classes.marginRight5 + ' fab fa-instagram'} /> Instagram
                     </Button>
                   </ListItem>
                 </List>

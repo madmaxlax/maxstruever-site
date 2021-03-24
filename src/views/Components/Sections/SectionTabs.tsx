@@ -15,22 +15,22 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 
 // @material-ui/icons
-import Face from "@material-ui/icons/Face";
-import Chat from "@material-ui/icons/Chat";
-import Build from "@material-ui/icons/Build";
+import Face from '@material-ui/icons/Face';
+import Chat from '@material-ui/icons/Chat';
+import Build from '@material-ui/icons/Build';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import CustomTabs from "../../../components/CustomTabs/CustomTabs";
-import tabsStyle from "../../../assets/jss/material-kit-react/views/componentsSections/tabsStyle";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
+import CustomTabs from '../../../components/CustomTabs/CustomTabs';
+import tabsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/tabsStyle';
 
-interface ISectionTabsProps extends WithStyles<typeof tabsStyle> {}
+type ISectionTabsProps = WithStyles<typeof tabsStyle>;
 class SectionTabs extends React.Component<ISectionTabsProps> {
   render() {
     const { classes } = this.props;
@@ -48,53 +48,44 @@ class SectionTabs extends React.Component<ISectionTabsProps> {
                   headerColor="primary"
                   tabs={[
                     {
-                      tabName: "Profile",
+                      tabName: 'Profile',
                       tabIcon: Face,
                       tabContent: (
                         <p className={classes.textCenter}>
-                          I think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. So when you get something that has
-                          the name Kanye West on it, it’s supposed to be pushing
-                          the furthest possibilities. I will be the leader of a
-                          company that ends up being worth billions of dollars,
-                          because I got the answers. I understand culture. I am
-                          the nucleus.
+                          I think that’s a responsibility that I have, to push possibilities, to show people, this is
+                          the level that things could be at. So when you get something that has the name Kanye West on
+                          it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company
+                          that ends up being worth billions of dollars, because I got the answers. I understand culture.
+                          I am the nucleus.
                         </p>
-                      )
+                      ),
                     },
                     {
-                      tabName: "Messages",
+                      tabName: 'Messages',
                       tabIcon: Chat,
                       tabContent: (
                         <p className={classes.textCenter}>
-                          I think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. I will be the leader of a company
-                          that ends up being worth billions of dollars, because
-                          I got the answers. I understand culture. I am the
-                          nucleus. I think that’s a responsibility that I have,
-                          to push possibilities, to show people, this is the
+                          I think that’s a responsibility that I have, to push possibilities, to show people, this is
+                          the level that things could be at. I will be the leader of a company that ends up being worth
+                          billions of dollars, because I got the answers. I understand culture. I am the nucleus. I
+                          think that’s a responsibility that I have, to push possibilities, to show people, this is the
                           level that things could be at.
                         </p>
-                      )
+                      ),
                     },
                     {
-                      tabName: "Settings",
+                      tabName: 'Settings',
                       tabIcon: Build,
                       tabContent: (
                         <p className={classes.textCenter}>
-                          think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. So when you get something that has
-                          the name Kanye West on it, it’s supposed to be pushing
-                          the furthest possibilities. I will be the leader of a
-                          company that ends up being worth billions of dollars,
-                          because I got the answers. I understand culture. I am
+                          think that’s a responsibility that I have, to push possibilities, to show people, this is the
+                          level that things could be at. So when you get something that has the name Kanye West on it,
+                          it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that
+                          ends up being worth billions of dollars, because I got the answers. I understand culture. I am
                           the nucleus.
                         </p>
-                      )
-                    }
+                      ),
+                    },
                   ]}
                 />
               </GridItem>
@@ -107,50 +98,41 @@ class SectionTabs extends React.Component<ISectionTabsProps> {
                   headerColor="danger"
                   tabs={[
                     {
-                      tabName: "Home",
+                      tabName: 'Home',
                       tabContent: (
                         <p className={classes.textCenter}>
-                          I think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. So when you get something that has
-                          the name Kanye West on it, it’s supposed to be pushing
-                          the furthest possibilities. I will be the leader of a
-                          company that ends up being worth billions of dollars,
-                          because I got the answers. I understand culture. I am
-                          the nucleus.
+                          I think that’s a responsibility that I have, to push possibilities, to show people, this is
+                          the level that things could be at. So when you get something that has the name Kanye West on
+                          it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company
+                          that ends up being worth billions of dollars, because I got the answers. I understand culture.
+                          I am the nucleus.
                         </p>
-                      )
+                      ),
                     },
                     {
-                      tabName: "Updates",
+                      tabName: 'Updates',
                       tabContent: (
                         <p className={classes.textCenter}>
-                          I think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. I will be the leader of a company
-                          that ends up being worth billions of dollars, because
-                          I got the answers. I understand culture. I am the
-                          nucleus. I think that’s a responsibility that I have,
-                          to push possibilities, to show people, this is the
+                          I think that’s a responsibility that I have, to push possibilities, to show people, this is
+                          the level that things could be at. I will be the leader of a company that ends up being worth
+                          billions of dollars, because I got the answers. I understand culture. I am the nucleus. I
+                          think that’s a responsibility that I have, to push possibilities, to show people, this is the
                           level that things could be at.
                         </p>
-                      )
+                      ),
                     },
                     {
-                      tabName: "History",
+                      tabName: 'History',
                       tabContent: (
                         <p className={classes.textCenter}>
-                          think that’s a responsibility that I have, to push
-                          possibilities, to show people, this is the level that
-                          things could be at. So when you get something that has
-                          the name Kanye West on it, it’s supposed to be pushing
-                          the furthest possibilities. I will be the leader of a
-                          company that ends up being worth billions of dollars,
-                          because I got the answers. I understand culture. I am
+                          think that’s a responsibility that I have, to push possibilities, to show people, this is the
+                          level that things could be at. So when you get something that has the name Kanye West on it,
+                          it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that
+                          ends up being worth billions of dollars, because I got the answers. I understand culture. I am
                           the nucleus.
                         </p>
-                      )
-                    }
+                      ),
+                    },
                   ]}
                 />
               </GridItem>

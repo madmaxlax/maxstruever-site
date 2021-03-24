@@ -15,20 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import React from 'react';
 // @material-ui/icons
-
 // core components
-import cardHeaderStyle from "../../assets/jss/material-kit-react/components/cardHeaderStyle";
+import cardHeaderStyle from '../../assets/jss/material-kit-react/components/cardHeaderStyle';
 
 interface ICardHeaderProps extends WithStyles<typeof cardHeaderStyle> {
   className?: string;
-  color?: "warning" | "success" | "danger" | "info" | "primary" | "rose";
+  color?: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
   plain?: boolean;
   children?: any;
 }
@@ -36,9 +35,9 @@ function CardHeader({ ...props }: ICardHeaderProps) {
   const { classes, className, children, color, plain, ...rest } = props;
   const cardHeaderClasses = classNames({
     [classes.cardHeader]: true,
-    [classes[color + "CardHeader"]]: color,
+    [classes[(color + 'CardHeader') as keyof typeof classes]]: color,
     [classes.cardHeaderPlain]: plain,
-    [className]: className !== undefined
+    [className as string]: className !== undefined,
   });
   return (
     <div className={cardHeaderClasses} {...rest}>

@@ -11,9 +11,8 @@ const isInternalURL = (to: string) => {
   }
 };
 
-export const Link = <D extends React.ElementType = LinkTypeMap['defaultComponent'], P = {}>(
-  props: any
-) => {
+// eslint-disable-next-line
+export const Link = <D extends React.ElementType = LinkTypeMap['defaultComponent'], P = {}>(props: any) => {
   return (
     <MaterialUILink
       {...props}

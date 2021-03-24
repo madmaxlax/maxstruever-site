@@ -1,24 +1,22 @@
-import { Favorite, SportsHandball, Work } from '@material-ui/icons';
-
-import Button from '../../components/CustomButtons/ButtonLink';
-import Footer from '../../components/Footer/Footer';
+import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { Favorite, SportsHandball, Work } from '@material-ui/icons';
+import { WithStyles } from '@material-ui/styles';
+import classNames from 'classnames';
+import React from 'react';
+import profile from '../../assets/img/faces/Max-small-sq.jpg';
+import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage';
+import Button, { Link } from '../../components/CustomButtons/ButtonLink';
+import Footer from '../../components/Footer/Footer';
 import GridContainer from '../../components/Grid/GridContainer';
 import GridItem from '../../components/Grid/GridItem';
 import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
-import { Link } from '../../components/CustomButtons/ButtonLink';
 import NavPills from '../../components/NavPills/NavPills';
 import Parallax from '../../components/Parallax/Parallax';
-import React from 'react';
-import { Typography } from '@material-ui/core';
-import { WithStyles } from '@material-ui/styles';
-import classNames from 'classnames';
-import profile from '../../assets/img/faces/Max-small-sq.jpg';
-import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage';
-import withStyles from '@material-ui/core/styles/withStyles';
 
-interface IProfilePage extends WithStyles<typeof profilePageStyle> {}
+type IProfilePage = WithStyles<typeof profilePageStyle>;
 class ProfilePage extends React.Component<IProfilePage> {
   render() {
     const { classes, ...rest } = this.props;
@@ -123,8 +121,8 @@ class ProfilePage extends React.Component<IProfilePage> {
               <div className={classes.description}>
                 <p>
                   What's Good? <br />
-                  I'm Max Struever. Sometimes Maxwell Struever. I'm a geek who loves sports.
-                  Activities and country music are my love languages. Please check out my{' '}
+                  I'm Max Struever. Sometimes Maxwell Struever. I'm a geek who loves sports. Activities and country
+                  music are my love languages. Please check out my{' '}
                   <a href="http://portfolio.maxstruever.com">portfolio</a> while I work on my site.
                 </p>
 
@@ -150,16 +148,13 @@ class ProfilePage extends React.Component<IProfilePage> {
                           <Grid container spacing={2} alignItems="center" justify="center">
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                I am a full stack developer, currently a Senior Engineer at BCG
-                                Platinion
+                                I am a full stack developer, currently a Senior Engineer at BCG Platinion
                               </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
                               <img
                                 alt="Work"
-                                src={
-                                  'https://y.yarn.co/4e6d5870-2c84-4b73-afa8-7484ef3649a6_screenshot.jpg'
-                                }
+                                src={'https://y.yarn.co/4e6d5870-2c84-4b73-afa8-7484ef3649a6_screenshot.jpg'}
                                 className={navImageClasses}
                               />
                             </Grid>
@@ -197,9 +192,8 @@ class ProfilePage extends React.Component<IProfilePage> {
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                I Love every kind of sport and activity. Lacrosse I've played the
-                                most, even having been lucky enough to play for the Netherlands
-                                national team
+                                I Love every kind of sport and activity. Lacrosse I've played the most, even having been
+                                lucky enough to play for the Netherlands national team
                               </Typography>
                             </Grid>
                           </Grid>
@@ -217,14 +211,10 @@ class ProfilePage extends React.Component<IProfilePage> {
                               <Typography>I can solve a rubiks cube in about 2 minutes </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
-                              <Typography>
-                                I can speak Dutch and passed the citizenship exams
-                              </Typography>
+                              <Typography>I can speak Dutch and passed the citizenship exams</Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
-                              <Typography>
-                                I broke my jaw on the 4th day after moving to the Netherlands
-                              </Typography>
+                              <Typography>I broke my jaw on the 4th day after moving to the Netherlands</Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
                               <img
@@ -245,9 +235,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                               />
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
-                              <Typography>
-                                I owned a boat named Freedom with some buddies in Amsterdam
-                              </Typography>
+                              <Typography>I owned a boat named Freedom with some buddies in Amsterdam</Typography>
                             </Grid>
                           </Grid>
                         ),

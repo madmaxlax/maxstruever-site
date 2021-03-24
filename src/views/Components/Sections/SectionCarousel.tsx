@@ -15,25 +15,25 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+// @material-ui/icons
+import LocationOn from '@material-ui/icons/LocationOn';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 // nodejs library to set properties for components
 // react component for creating beautiful carousel
-import Carousel from "react-slick";
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
-import LocationOn from "@material-ui/icons/LocationOn";
+import Carousel from 'react-slick';
+import image1 from '../../../assets/img/bg.jpg';
+import image2 from '../../../assets/img/bg2.jpg';
+import image3 from '../../../assets/img/bg3.jpg';
+import carouselStyle from '../../../assets/jss/material-kit-react/views/componentsSections/carouselStyle';
+import Card from '../../../components/Card/Card';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import Card from "../../../components/Card/Card";
-import carouselStyle from "../../../assets/jss/material-kit-react/views/componentsSections/carouselStyle";
-import image1 from "../../../assets/img/bg.jpg";
-import image2 from "../../../assets/img/bg2.jpg";
-import image3 from "../../../assets/img/bg3.jpg";
-import { WithStyles } from "@material-ui/styles";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 
-interface ISectionCarousel extends WithStyles<typeof carouselStyle> {}
+type ISectionCarousel = WithStyles<typeof carouselStyle>;
 class SectionCarousel extends React.Component<ISectionCarousel> {
   render() {
     const { classes } = this.props;
@@ -43,7 +43,7 @@ class SectionCarousel extends React.Component<ISectionCarousel> {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false
+      autoplay: false,
     };
     return (
       <div className={classes.section}>
@@ -53,11 +53,7 @@ class SectionCarousel extends React.Component<ISectionCarousel> {
               <Card carousel>
                 <Carousel {...settings}>
                   <div>
-                    <img
-                      src={image1}
-                      alt="First slide"
-                      className="slick-image"
-                    />
+                    <img src={image1} alt="First slide" className="slick-image" />
                     <div className="slick-caption">
                       <h4>
                         <LocationOn className="slick-icons" />
@@ -66,11 +62,7 @@ class SectionCarousel extends React.Component<ISectionCarousel> {
                     </div>
                   </div>
                   <div>
-                    <img
-                      src={image2}
-                      alt="Second slide"
-                      className="slick-image"
-                    />
+                    <img src={image2} alt="Second slide" className="slick-image" />
                     <div className="slick-caption">
                       <h4>
                         <LocationOn className="slick-icons" />
@@ -79,11 +71,7 @@ class SectionCarousel extends React.Component<ISectionCarousel> {
                     </div>
                   </div>
                   <div>
-                    <img
-                      src={image3}
-                      alt="Third slide"
-                      className="slick-image"
-                    />
+                    <img src={image3} alt="Third slide" className="slick-image" />
                     <div className="slick-caption">
                       <h4>
                         <LocationOn className="slick-icons" />

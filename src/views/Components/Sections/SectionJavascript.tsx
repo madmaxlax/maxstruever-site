@@ -1,90 +1,69 @@
-import Button from "../../../components/CustomButtons/ButtonLink";
-import Close from "@material-ui/icons/Close";
-// react plugin for creating date-time-picker
-import Datetime from "react-datetime";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import FormControl from "@material-ui/core/FormControl";
-// core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import IconButton from "@material-ui/core/IconButton";
-import InputLabel from "@material-ui/core/InputLabel";
-// @material-ui/icons
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import Popover from "@material-ui/core/Popover";
-/*!
-
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-import Slide from "@material-ui/core/Slide";
-import Tooltip from "@material-ui/core/Tooltip";
-import { TransitionProps } from "@material-ui/core/transitions/transition";
-import { WithStyles } from "@material-ui/styles";
-import javascriptStyles from "../../../assets/jss/material-kit-react/views/componentsSections/javascriptStyles";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import FormControl from '@material-ui/core/FormControl';
+import IconButton from '@material-ui/core/IconButton';
+import InputLabel from '@material-ui/core/InputLabel';
+import Popover from '@material-ui/core/Popover';
+import Slide from '@material-ui/core/Slide';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tooltip from '@material-ui/core/Tooltip';
+import { TransitionProps } from '@material-ui/core/transitions/transition';
+import Close from '@material-ui/icons/Close';
+import LibraryBooks from '@material-ui/icons/LibraryBooks';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
+// react plugin for creating date-time-picker
+import Datetime from 'react-datetime';
+import javascriptStyles from '../../../assets/jss/material-kit-react/views/componentsSections/javascriptStyles';
+import Button from '../../../components/CustomButtons/ButtonLink';
+// core components
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps,
-  ref
-) {
+const Transition = React.forwardRef(function Transition(props: TransitionProps, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-Transition.displayName = "Transition";
+Transition.displayName = 'Transition';
 
-interface ISectionJavascriptProps extends WithStyles<typeof javascriptStyles> {}
+type ISectionJavascriptProps = WithStyles<typeof javascriptStyles>;
 
 class SectionJavascript extends React.Component<ISectionJavascriptProps, any> {
   anchorElLeft = null;
   anchorElTop = null;
   anchorElBottom = null;
   anchorElRight = null;
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       classicModal: false,
       openLeft: false,
       openTop: false,
       openBottom: false,
-      openRight: false
+      openRight: false,
     };
   }
-  handleClickOpen(modal) {
-    var x = [];
+  handleClickOpen(modal: any) {
+    const x = [];
     x[modal] = true;
     this.setState(x);
   }
-  handleClose(modal) {
-    var x = [];
+  handleClose(modal: any) {
+    const x = [] as any;
     x[modal] = false;
     this.setState(x);
   }
-  handleClosePopover(state) {
+  handleClosePopover(state: string) {
     this.setState({
-      [state]: false
+      [state]: false,
     });
   }
-  handleClickButton(state) {
+  handleClickButton(state: string) {
     this.setState({
-      [state]: true
+      [state]: true,
     });
   }
   render() {
@@ -102,70 +81,50 @@ class SectionJavascript extends React.Component<ISectionJavascriptProps, any> {
               </div>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6} lg={4}>
-                  <Button
-                    color="primary"
-                    block
-                    onClick={() => this.handleClickOpen("classicModal")}
-                  >
+                  <Button color="primary" block onClick={() => this.handleClickOpen('classicModal')}>
                     <LibraryBooks className={classes.icon} />
                     Classic
                   </Button>
                   <Dialog
                     classes={{
                       root: classes.center,
-                      paper: classes.modal
+                      paper: classes.modal,
                     }}
                     open={this.state.classicModal}
                     TransitionComponent={Transition}
                     keepMounted
-                    onClose={() => this.handleClose("classicModal")}
+                    onClose={() => this.handleClose('classicModal')}
                     aria-labelledby="classic-modal-slide-title"
                     aria-describedby="classic-modal-slide-description"
                   >
-                    <DialogTitle
-                      id="classic-modal-slide-title"
-                      disableTypography
-                      className={classes.modalHeader}
-                    >
+                    <DialogTitle id="classic-modal-slide-title" disableTypography className={classes.modalHeader}>
                       <IconButton
                         className={classes.modalCloseButton}
                         key="close"
                         aria-label="Close"
                         color="inherit"
-                        onClick={() => this.handleClose("classicModal")}
+                        onClick={() => this.handleClose('classicModal')}
                       >
                         <Close className={classes.modalClose} />
                       </IconButton>
                       <h4 className={classes.modalTitle}>Modal title</h4>
                     </DialogTitle>
-                    <DialogContent
-                      id="classic-modal-slide-description"
-                      className={classes.modalBody}
-                    >
+                    <DialogContent id="classic-modal-slide-description" className={classes.modalBody}>
                       <p>
-                        Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts. Separated they live in Bookmarksgrove right at
-                        the coast of the Semantics, a large language ocean. A
-                        small river named Duden flows by their place and
-                        supplies it with the necessary regelialia. It is a
-                        paradisematic country, in which roasted parts of
-                        sentences fly into your mouth. Even the all-powerful
-                        Pointing has no control about the blind texts it is an
-                        almost unorthographic life One day however a small line
-                        of blind text by the name of Lorem Ipsum decided to
-                        leave for the far World of Grammar.
+                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
+                        a large language ocean. A small river named Duden flows by their place and supplies it with the
+                        necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                        into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an
+                        almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
+                        decided to leave for the far World of Grammar.
                       </p>
                     </DialogContent>
                     <DialogActions className={classes.modalFooter}>
                       <Button color="transparent" simple>
                         Nice Button
                       </Button>
-                      <Button
-                        onClick={() => this.handleClose("classicModal")}
-                        color="danger"
-                        simple
-                      >
+                      <Button onClick={() => this.handleClose('classicModal')} color="danger" simple>
                         Close
                       </Button>
                     </DialogActions>
@@ -178,14 +137,10 @@ class SectionJavascript extends React.Component<ISectionJavascriptProps, any> {
                 </div>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={6}>
-                    <InputLabel className={classes.label}>
-                      Datetime Picker
-                    </InputLabel>
+                    <InputLabel className={classes.label}>Datetime Picker</InputLabel>
                     <br />
                     <FormControl fullWidth>
-                      <Datetime
-                        inputProps={{ placeholder: "Datetime Picker Here" }}
-                      />
+                      <Datetime inputProps={{ placeholder: 'Datetime Picker Here' }} />
                     </FormControl>
                   </GridItem>
                 </GridContainer>
@@ -196,125 +151,119 @@ class SectionJavascript extends React.Component<ISectionJavascriptProps, any> {
                 <h3>Popovers</h3>
               </div>
               <Button
-                buttonRef={node => {
+                buttonRef={(node: any) => {
                   this.anchorElLeft = node;
                 }}
-                onClick={() => this.handleClickButton("openLeft")}
+                onClick={() => this.handleClickButton('openLeft')}
               >
                 On left
               </Button>
               <Popover
                 classes={{
-                  paper: classes.popover
+                  paper: classes.popover,
                 }}
                 open={this.state.openLeft}
                 anchorEl={this.anchorElLeft}
-                anchorReference={"anchorEl"}
-                onClose={() => this.handleClosePopover("openLeft")}
+                anchorReference={'anchorEl'}
+                onClose={() => this.handleClosePopover('openLeft')}
                 anchorOrigin={{
-                  vertical: "center",
-                  horizontal: "left"
+                  vertical: 'center',
+                  horizontal: 'left',
                 }}
                 transformOrigin={{
-                  vertical: "center",
-                  horizontal: "right"
+                  vertical: 'center',
+                  horizontal: 'right',
                 }}
               >
                 <h3 className={classes.popoverHeader}>Popover on left</h3>
                 <div className={classes.popoverBody}>
-                  Here will be some very useful information about his popover.
-                  Here will be some very useful information about his popover.
+                  Here will be some very useful information about his popover. Here will be some very useful information
+                  about his popover.
                 </div>
               </Popover>
               <Button
-                buttonRef={node => {
+                buttonRef={(node: any) => {
                   this.anchorElTop = node;
                 }}
-                onClick={() => this.handleClickButton("openTop")}
+                onClick={() => this.handleClickButton('openTop')}
               >
                 On top
               </Button>
               <Popover
                 classes={{
-                  paper: classes.popover
+                  paper: classes.popover,
                 }}
                 open={this.state.openTop}
                 anchorEl={this.anchorElTop}
-                anchorReference={"anchorEl"}
-                onClose={() => this.handleClosePopover("openTop")}
+                anchorReference={'anchorEl'}
+                onClose={() => this.handleClosePopover('openTop')}
                 anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "center"
+                  vertical: 'top',
+                  horizontal: 'center',
                 }}
                 transformOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center"
+                  vertical: 'bottom',
+                  horizontal: 'center',
                 }}
               >
                 <h3 className={classes.popoverHeader}>Popover on top</h3>
-                <div className={classes.popoverBody}>
-                  Here will be some very useful information about his popover.
-                </div>
+                <div className={classes.popoverBody}>Here will be some very useful information about his popover.</div>
               </Popover>
               <Button
-                buttonRef={node => {
+                buttonRef={(node: any) => {
                   this.anchorElBottom = node;
                 }}
-                onClick={() => this.handleClickButton("openBottom")}
+                onClick={() => this.handleClickButton('openBottom')}
               >
                 On bottom
               </Button>
               <Popover
                 classes={{
-                  paper: classes.popover
+                  paper: classes.popover,
                 }}
                 open={this.state.openBottom}
                 anchorEl={this.anchorElBottom}
-                anchorReference={"anchorEl"}
-                onClose={() => this.handleClosePopover("openBottom")}
+                anchorReference={'anchorEl'}
+                onClose={() => this.handleClosePopover('openBottom')}
                 anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center"
+                  vertical: 'bottom',
+                  horizontal: 'center',
                 }}
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "center"
+                  vertical: 'top',
+                  horizontal: 'center',
                 }}
               >
                 <h3 className={classes.popoverHeader}>Popover on bottom</h3>
-                <div className={classes.popoverBody}>
-                  Here will be some very useful information about his popover.
-                </div>
+                <div className={classes.popoverBody}>Here will be some very useful information about his popover.</div>
               </Popover>
               <Button
-                buttonRef={node => {
+                buttonRef={(node: any) => {
                   this.anchorElRight = node;
                 }}
-                onClick={() => this.handleClickButton("openRight")}
+                onClick={() => this.handleClickButton('openRight')}
               >
                 On right
               </Button>
               <Popover
                 classes={{
-                  paper: classes.popover
+                  paper: classes.popover,
                 }}
                 open={this.state.openRight}
                 anchorEl={this.anchorElRight}
-                anchorReference={"anchorEl"}
-                onClose={() => this.handleClosePopover("openRight")}
+                anchorReference={'anchorEl'}
+                onClose={() => this.handleClosePopover('openRight')}
                 anchorOrigin={{
-                  vertical: "center",
-                  horizontal: "right"
+                  vertical: 'center',
+                  horizontal: 'right',
                 }}
                 transformOrigin={{
-                  vertical: "center",
-                  horizontal: "left"
+                  vertical: 'center',
+                  horizontal: 'left',
                 }}
               >
                 <h3 className={classes.popoverHeader}>Popover on right</h3>
-                <div className={classes.popoverBody}>
-                  Here will be some very useful information about his popover.
-                </div>
+                <div className={classes.popoverBody}>Here will be some very useful information about his popover.</div>
               </Popover>
               <br />
               <br />
@@ -329,12 +278,7 @@ class SectionJavascript extends React.Component<ISectionJavascriptProps, any> {
               >
                 <Button>On left</Button>
               </Tooltip>
-              <Tooltip
-                id="tooltip-top"
-                title="Tooltip on top"
-                placement="top"
-                classes={{ tooltip: classes.tooltip }}
-              >
+              <Tooltip id="tooltip-top" title="Tooltip on top" placement="top" classes={{ tooltip: classes.tooltip }}>
                 <Button>On top</Button>
               </Tooltip>
               <Tooltip

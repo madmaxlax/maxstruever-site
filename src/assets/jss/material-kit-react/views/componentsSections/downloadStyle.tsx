@@ -15,31 +15,31 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { container } from "../../../material-kit-react";
-import { createStyles } from "@material-ui/core";
+import { createStyles } from '@material-ui/core';
+import { container } from '../../../material-kit-react';
 
 const downloadStyle = createStyles({
   section: {
-    padding: "70px 0"
+    padding: '70px 0',
   },
   container,
   textCenter: {
-    textAlign: "center"
+    textAlign: 'center',
   },
   sharingArea: {
-    marginTop: "80px"
+    marginTop: '80px',
   },
   socials: {
-    maxWidth: "24px",
-    marginTop: "0",
-    width: "100%",
-    transform: "none",
-    left: "0",
-    top: "0",
-    height: "100%",
-    fontSize: "20px",
-    marginRight: "4px"
-  }
+    maxWidth: '24px',
+    marginTop: '0',
+    width: '100%',
+    transform: 'none',
+    left: '0',
+    top: '0',
+    height: '100%',
+    fontSize: '20px',
+    marginRight: '4px',
+  },
 });
 
 export default downloadStyle;

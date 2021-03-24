@@ -1,8 +1,7 @@
 import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import RegularButton, { Link } from '../CustomButtons/ButtonLink';
-
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import RegularButton, { Link } from '../CustomButtons/ButtonLink';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,12 +57,7 @@ const ReferralItem = (props: ReferralItemProps) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <RegularButton
-          size="small"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={card.attachments[0]?.url || ''}
-        >
+        <RegularButton size="small" target="_blank" rel="noopener noreferrer" href={card.attachments[0]?.url || ''}>
           Go to
         </RegularButton>
       </CardActions>

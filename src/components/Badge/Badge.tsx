@@ -15,30 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
 // nodejs library to set properties for components
-
 // @material-ui/core components
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
-
-import badgeStyle from "../../assets/jss/material-kit-react/components/badgeStyle";
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+import React from 'react';
+import badgeStyle from '../../assets/jss/material-kit-react/components/badgeStyle';
 
 interface IBadgeProps extends WithStyles<typeof badgeStyle> {
-  color?:
-    | "primary"
-    | "warning"
-    | "danger"
-    | "success"
-    | "info"
-    | "rose"
-    | "gray";
+  color?: 'primary' | 'warning' | 'danger' | 'success' | 'info' | 'rose' | 'gray';
   children: any;
 }
 function Badge({ ...props }: IBadgeProps) {
   const { classes, color, children } = props;
-  return (
-    <span className={classes.badge + " " + classes[color]}>{children}</span>
-  );
+  return <span className={classes.badge + ' ' + classes[color as keyof typeof classes]}>{children}</span>;
 }
 
 export default withStyles(badgeStyle)(Badge);

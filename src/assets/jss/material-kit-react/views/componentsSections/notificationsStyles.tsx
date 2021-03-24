@@ -15,24 +15,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { container, title } from "../../../material-kit-react";
-import { createStyles } from "@material-ui/core";
+import { createStyles } from '@material-ui/core';
+import { container, title } from '../../../material-kit-react';
 
 const notificationsStyles = createStyles({
   section: {
-    backgroundColor: "#FFFFFF",
-    display: "block",
-    width: "100%",
-    position: "relative",
-    padding: "0"
+    backgroundColor: '#FFFFFF',
+    display: 'block',
+    width: '100%',
+    position: 'relative',
+    padding: '0',
   },
   title: {
     ...title,
-    marginTop: "30px",
-    minHeight: "32px",
-    textDecoration: "none"
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
   },
-  container
+  container,
 });
 
 export default notificationsStyles;

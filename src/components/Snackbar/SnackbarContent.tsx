@@ -15,22 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
+import Snack from '@material-ui/core/SnackbarContent';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Snack from "@material-ui/core/SnackbarContent";
-import IconButton from "@material-ui/core/IconButton";
-import Icon from "@material-ui/core/Icon";
+import withStyles from '@material-ui/core/styles/withStyles';
 // @material-ui/icons
-import Close from "@material-ui/icons/Close";
-
-import snackbarContentStyle from "../../assets/jss/material-kit-react/components/snackbarContentStyle";
-import { WithStyles } from "@material-ui/styles";
+import Close from '@material-ui/icons/Close';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
+import snackbarContentStyle from '../../assets/jss/material-kit-react/components/snackbarContentStyle';
 
 interface ISnackbarContentProps {
   message?: any;
-  color?: "info" | "success" | "warning" | "danger" | "primary";
+  color?: 'info' | 'success' | 'warning' | 'danger' | 'primary';
   close?: boolean;
   icon?: any;
 }
@@ -38,19 +37,14 @@ interface ISnackbarContentState {
   alert: any;
 }
 
-interface ISnackbarContent
-  extends ISnackbarContentProps,
-    WithStyles<typeof snackbarContentStyle> {}
-class SnackbarContent extends React.Component<
-  ISnackbarContent,
-  ISnackbarContentState
-> {
+interface ISnackbarContent extends ISnackbarContentProps, WithStyles<typeof snackbarContentStyle> {}
+class SnackbarContent extends React.Component<ISnackbarContent, ISnackbarContentState> {
   constructor(props: ISnackbarContent, state: ISnackbarContentState) {
     super(props, state);
     this.closeAlert = this.closeAlert.bind(this);
     const { classes, message, color, close, icon } = props;
 
-    var action = [];
+    let action = [] as any[];
     if (close !== undefined) {
       action = [
         <IconButton
@@ -61,16 +55,16 @@ class SnackbarContent extends React.Component<
           onClick={this.closeAlert}
         >
           <Close className={classes.close} />
-        </IconButton>
+        </IconButton>,
       ];
     }
 
     let snackIcon = null;
     switch (typeof icon) {
-      case "object":
+      case 'object':
         snackIcon = <props.icon className={classes.icon} />;
         break;
-      case "string":
+      case 'string':
         snackIcon = <Icon className={classes.icon}>{props.icon}</Icon>;
         break;
       default:
@@ -89,11 +83,11 @@ class SnackbarContent extends React.Component<
             </div>
           }
           classes={{
-            root: classes.root + " " + classes[color],
-            message: classes.message + " " + classes.container
+            root: classes.root + ' ' + classes[color as keyof typeof classes],
+            message: classes.message + ' ' + classes.container,
           }}
         />
-      )
+      ),
     };
   }
   closeAlert() {
@@ -104,6 +98,4 @@ class SnackbarContent extends React.Component<
   }
 }
 
-export default withStyles<never, never, ISnackbarContentProps>(
-  snackbarContentStyle
-)(SnackbarContent);
+export default withStyles<never, never, ISnackbarContentProps>(snackbarContentStyle)(SnackbarContent as any);

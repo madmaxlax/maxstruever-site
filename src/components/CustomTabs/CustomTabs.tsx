@@ -15,26 +15,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
+import Icon from '@material-ui/core/Icon';
 // nodejs library to set properties for components
-
 // material-ui components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Icon from "@material-ui/core/Icon";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+import { WithStyles } from '@material-ui/styles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import React from 'react';
+import customTabsStyle from '../../assets/jss/material-kit-react/components/customTabsStyle';
 // core components
-import Card from "../Card/Card";
-import CardBody from "../Card/CardBody";
-import CardHeader from "../Card/CardHeader";
-
-import customTabsStyle from "../../assets/jss/material-kit-react/components/customTabsStyle";
-import { WithStyles } from "@material-ui/styles";
+import Card from '../Card/Card';
+import CardBody from '../Card/CardBody';
+import CardHeader from '../Card/CardHeader';
 
 interface ICustomTabsProps {
-  headerColor?: "warning" | "success" | "danger" | "info" | "primary" | "rose";
+  headerColor?: 'warning' | 'success' | 'danger' | 'info' | 'primary' | 'rose';
 
   title?: string;
   tabs?: any;
@@ -44,56 +42,40 @@ interface ICustomTabsProps {
 interface ICustomTabsState {
   value: number;
 }
-interface ICustomTabs
-  extends ICustomTabsProps,
-    WithStyles<typeof customTabsStyle> {}
+interface ICustomTabs extends ICustomTabsProps, WithStyles<typeof customTabsStyle> {}
 class CustomTabs extends React.Component<ICustomTabs, ICustomTabsState> {
   state = {
-    value: 0
+    value: 0,
   };
 
-  handleChange = (event, value) => {
+  handleChange = (event: any, value: any) => {
     this.setState({ value });
   };
 
   render() {
-    const {
-      classes,
-      headerColor,
-      plainTabs,
-      tabs,
-      title,
-      rtlActive
-    } = this.props;
+    const { classes, headerColor, plainTabs, tabs, title, rtlActive } = this.props;
 
     const cardTitle = classNames({
       [classes.cardTitle]: true,
-      [classes.cardTitleRTL]: rtlActive
+      [classes.cardTitleRTL]: rtlActive,
     });
     return (
       <Card plain={plainTabs}>
         <CardHeader color={headerColor} plain={plainTabs}>
-          {title !== undefined ? (
-            <div className={cardTitle}>{title}</div>
-          ) : null}
+          {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
             classes={{
               root: classes.tabsRoot,
-              indicator: classes.displayNone
+              indicator: classes.displayNone,
             }}
           >
-            {tabs.map((prop, key) => {
-              var icon = {};
+            {(tabs as any[]).map((prop, key) => {
+              let icon = {};
               if (prop.tabIcon) {
                 icon = {
-                  icon:
-                    typeof prop.tabIcon === "string" ? (
-                      <Icon>{prop.tabIcon}</Icon>
-                    ) : (
-                      <prop.tabIcon />
-                    )
+                  icon: typeof prop.tabIcon === 'string' ? <Icon>{prop.tabIcon}</Icon> : <prop.tabIcon />,
                 };
               }
               return (
@@ -102,7 +84,7 @@ class CustomTabs extends React.Component<ICustomTabs, ICustomTabsState> {
                     root: classes.tabRootButton,
                     // label: classes.tabLabel,
                     selected: classes.tabSelected,
-                    wrapper: classes.tabWrapper
+                    wrapper: classes.tabWrapper,
                   }}
                   key={key}
                   label={prop.tabName}
@@ -113,7 +95,7 @@ class CustomTabs extends React.Component<ICustomTabs, ICustomTabsState> {
           </Tabs>
         </CardHeader>
         <CardBody>
-          {tabs.map((prop, key) => {
+          {(tabs as any[]).map((prop, key) => {
             if (key === this.state.value) {
               return <div key={key}>{prop.tabContent}</div>;
             }

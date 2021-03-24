@@ -1,8 +1,8 @@
-import Favorite from "@material-ui/icons/Favorite";
-import React from "react";
-import classNames from "classnames";
-import footerStyle from "../../assets/jss/material-kit-react/components/footerStyle";
-import { withStyles } from "@material-ui/core";
+import { withStyles } from '@material-ui/core';
+import Favorite from '@material-ui/icons/Favorite';
+import classNames from 'classnames';
+import React from 'react';
+import footerStyle from '../../assets/jss/material-kit-react/components/footerStyle';
 
 interface IFooter {
   classes?: any;
@@ -13,11 +13,11 @@ function Footer({ ...props }: IFooter) {
   const { classes, whiteFont } = props;
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   const aClasses = classNames({
     [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [classes.footerWhiteFont]: whiteFont,
   });
   return (
     <footer className={footerClasses}>
@@ -63,13 +63,18 @@ function Footer({ ...props }: IFooter) {
           </List> */}
         </div>
         <div className={classes.right}>
-          &copy; 1989-{(new Date()).getFullYear()}, made with <Favorite className={classes.icon} /> by Max Struever (duh). <br/>Design based off of <a
+          &copy; 1989-{new Date().getFullYear()}, made with <Favorite className={classes.icon} /> by Max Struever (duh).{' '}
+          <br />
+          Design based off of{' '}
+          <a
             href="https://www.creative-tim.com/product/material-kit-react"
             className={aClasses}
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             this template
-          </a>...sorry, I'm not that creative.
+          </a>
+          ...sorry, I'm not that creative.
         </div>
       </div>
     </footer>

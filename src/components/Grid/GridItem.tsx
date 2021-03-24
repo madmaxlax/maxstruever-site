@@ -15,24 +15,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import { createStyles } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
-import { createStyles } from "@material-ui/core";
-import { WithStyles } from "@material-ui/styles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 
 const style = createStyles({
   grid: {
-    position: "relative",
-    width: "100%",
-    minHeight: "1px",
-    paddingRight: "15px",
-    paddingLeft: "15px",
-    flexBasis: "auto"
-  }
+    position: 'relative',
+    width: '100%',
+    minHeight: '1px',
+    paddingRight: '15px',
+    paddingLeft: '15px',
+    flexBasis: 'auto',
+  },
 });
 
 interface IGridItemProps extends WithStyles<typeof style> {
@@ -45,9 +45,9 @@ interface IGridItemProps extends WithStyles<typeof style> {
 }
 
 function GridItem({ ...props }: IGridItemProps) {
-  const { classes, children, className = "", ...rest } = props;
+  const { classes, children, className = '', ...rest } = props;
   return (
-    <Grid item {...rest} className={classes.grid + " " + className}>
+    <Grid item {...rest} className={classes.grid + ' ' + className}>
       {children}
     </Grid>
   );

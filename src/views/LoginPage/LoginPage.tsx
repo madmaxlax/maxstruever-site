@@ -1,20 +1,12 @@
-import Button from "../../components/CustomButtons/ButtonLink";
-import Card from "../../components/Card/Card";
-import CardBody from "../../components/Card/CardBody";
-import CardFooter from "../../components/Card/CardFooter";
-import CardHeader from "../../components/Card/CardHeader";
-import CustomInput from "../../components/CustomInput/CustomInput";
+import Icon from '@material-ui/core/Icon';
+import InputAdornment from '@material-ui/core/InputAdornment';
+// nodejs library to set properties for components
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
 // @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import Footer from "../../components/Footer/Footer";
-import GridContainer from "../../components/Grid/GridContainer";
-import GridItem from "../../components/Grid/GridItem";
-// core components
-import Header from "../../components/Header/Header";
-import HeaderLinks from "../../components/Header/HeaderLinks";
-import Icon from "@material-ui/core/Icon";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import People from "@material-ui/icons/People";
+import Email from '@material-ui/icons/Email';
+import People from '@material-ui/icons/People';
+import { WithStyles } from '@material-ui/styles';
 /*!
 
 =========================================================
@@ -32,15 +24,23 @@ import People from "@material-ui/icons/People";
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import { WithStyles } from "@material-ui/styles";
-import image from "../../assets/img/bg7.jpg";
-import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage";
-// nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import React from 'react';
+import image from '../../assets/img/bg7.jpg';
+import loginPageStyle from '../../assets/jss/material-kit-react/views/loginPage';
+import Card from '../../components/Card/Card';
+import CardBody from '../../components/Card/CardBody';
+import CardFooter from '../../components/Card/CardFooter';
+import CardHeader from '../../components/Card/CardHeader';
+import Button from '../../components/CustomButtons/ButtonLink';
+import CustomInput from '../../components/CustomInput/CustomInput';
+import Footer from '../../components/Footer/Footer';
+import GridContainer from '../../components/Grid/GridContainer';
+import GridItem from '../../components/Grid/GridItem';
+// core components
+import Header from '../../components/Header/Header';
+import HeaderLinks from '../../components/Header/HeaderLinks';
 
-interface ILoginPageProps extends WithStyles<typeof loginPageStyle> {}
+type ILoginPageProps = WithStyles<typeof loginPageStyle>;
 interface ILoginPageState {
   cardAnimaton: string;
 }
@@ -49,41 +49,35 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
     super(props, state);
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      cardAnimaton: "cardHidden"
+      cardAnimaton: 'cardHidden',
     };
   }
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     setTimeout(
-      function() {
-        this.setState({ cardAnimaton: "" });
-      }.bind(this),
-      700
+      (() => {
+        this.setState({ cardAnimaton: '' });
+      }).bind(this),
+      700,
     );
   }
   render() {
     const { classes, ...rest } = this.props;
     return (
       <div>
-        <Header
-          absolute
-          color="transparent"
-          brand="Material Kit React"
-          rightLinks={<HeaderLinks />}
-          {...rest}
-        />
+        <Header absolute color="transparent" brand="Material Kit React" rightLinks={<HeaderLinks />} {...rest} />
         <div
           className={classes.pageHeader}
           style={{
-            backgroundImage: "url(" + image + ")",
-            backgroundSize: "cover",
-            backgroundPosition: "top center"
+            backgroundImage: 'url(' + image + ')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
           }}
         >
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={4}>
-                <Card className={classes[this.state.cardAnimaton]}>
+                <Card className={classes[this.state.cardAnimaton as keyof typeof classes]}>
                   <form className={classes.form}>
                     <CardHeader color="primary" className={classes.cardHeader}>
                       <h4>Login</h4>
@@ -91,29 +85,32 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           color="transparent"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e: any) => e.preventDefault()}
                         >
-                          <i className={"fab fa-twitter"} />
+                          <i className={'fab fa-twitter'} />
                         </Button>
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           color="transparent"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e: any) => e.preventDefault()}
                         >
-                          <i className={"fab fa-facebook"} />
+                          <i className={'fab fa-facebook'} />
                         </Button>
                         <Button
                           justIcon
                           href="#pablo"
-                          target="_blank" rel="noopener noreferrer"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           color="transparent"
-                          onClick={e => e.preventDefault()}
+                          onClick={(e: any) => e.preventDefault()}
                         >
-                          <i className={"fab fa-google-plus-g"} />
+                          <i className={'fab fa-google-plus-g'} />
                         </Button>
                       </div>
                     </CardHeader>
@@ -123,48 +120,46 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
                         labelText="First Name..."
                         id="first"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
-                          type: "text",
+                          type: 'text',
                           endAdornment: (
                             <InputAdornment position="end">
                               <People className={classes.inputIconsColor} />
                             </InputAdornment>
-                          )
+                          ),
                         }}
                       />
                       <CustomInput
                         labelText="Email..."
                         id="email"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
-                          type: "email",
+                          type: 'email',
                           endAdornment: (
                             <InputAdornment position="end">
                               <Email className={classes.inputIconsColor} />
                             </InputAdornment>
-                          )
+                          ),
                         }}
                       />
                       <CustomInput
                         labelText="Password"
                         id="pass"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
-                          type: "password",
+                          type: 'password',
                           endAdornment: (
                             <InputAdornment position="end">
-                              <Icon className={classes.inputIconsColor}>
-                                lock_outline
-                              </Icon>
+                              <Icon className={classes.inputIconsColor}>lock_outline</Icon>
                             </InputAdornment>
                           ),
-                          autoComplete: "off"
+                          autoComplete: 'off',
                         }}
                       />
                     </CardBody>
@@ -185,4 +180,4 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
   }
 }
 
-export default withStyles(loginPageStyle)(LoginPage);
+export default withStyles(loginPageStyle)(LoginPage as any);

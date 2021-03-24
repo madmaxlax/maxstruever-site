@@ -1,6 +1,9 @@
+import { Button } from '@material-ui/core';
+import { default as MaterialUILink, LinkTypeMap } from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import classNames from 'classnames';
 import * as React from 'react';
-
-import { LinkTypeMap, default as MaterialUILink } from '@material-ui/core/Link';
+import { NavLink } from 'react-router-dom';
 import {
   dangerColor,
   grayColor,
@@ -10,11 +13,6 @@ import {
   successColor,
   warningColor,
 } from '../../assets/jss/material-kit-react';
-
-import { Button } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
-import classNames from 'classnames';
-import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   button: {
@@ -34,8 +32,7 @@ const useStyles = makeStyles({
     textTransform: 'uppercase',
     letterSpacing: '0',
     willChange: 'box-shadow, transform',
-    transition:
-      'box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
     lineHeight: '1.42857143',
     textAlign: 'center',
     whiteSpace: 'nowrap',
@@ -377,7 +374,6 @@ const RegularButton = React.forwardRef((props: IRegularButtonProps, ref: any) =>
     link,
     justIcon,
     className,
-    target,
     ...rest
   } = props;
 
@@ -385,8 +381,8 @@ const RegularButton = React.forwardRef((props: IRegularButtonProps, ref: any) =>
 
   const btnClasses = classNames({
     [classes.button]: true,
-    [classes[size]]: size,
-    [classes[color]]: color,
+    [classes[size as keyof typeof classes]]: size,
+    [classes[color as keyof typeof classes]]: color,
     [classes.round]: round,
     [classes.fullWidth]: fullWidth,
     [classes.disabled]: disabled,
@@ -394,7 +390,7 @@ const RegularButton = React.forwardRef((props: IRegularButtonProps, ref: any) =>
     [classes.block]: block,
     [classes.link]: link,
     [classes.justIcon]: justIcon,
-    [className]: className,
+    [className || ' ']: className,
   });
   return (
     <Button {...rest} ref={ref} className={btnClasses}>
@@ -405,9 +401,8 @@ const RegularButton = React.forwardRef((props: IRegularButtonProps, ref: any) =>
 
 export default RegularButton;
 
-export const Link = <D extends React.ElementType = LinkTypeMap['defaultComponent'], P = {}>(
-  props: any
-) => {
+// eslint-disable-next-line
+export const Link = <D extends React.ElementType = LinkTypeMap['defaultComponent'], P = {}>(props: any) => {
   return (
     <MaterialUILink
       {...props}

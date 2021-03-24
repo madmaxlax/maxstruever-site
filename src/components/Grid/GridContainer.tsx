@@ -15,22 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import { createStyles } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
-
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
-import { createStyles } from "@material-ui/core";
-import { WithStyles } from "@material-ui/styles";
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
+import React from 'react';
 
 const style = createStyles({
   grid: {
-    marginRight: "-15px",
-    marginLeft: "-15px",
-    width: "auto"
-  }
+    marginRight: '-15px',
+    marginLeft: '-15px',
+    width: 'auto',
+  },
 });
 
 interface IGridContainerProps extends WithStyles<typeof style> {
@@ -40,9 +39,9 @@ interface IGridContainerProps extends WithStyles<typeof style> {
   justify?: any;
 }
 function GridContainer({ ...props }: IGridContainerProps) {
-  const { classes, children, className = "", ...rest } = props;
+  const { classes, children, className = '', ...rest } = props;
   return (
-    <Grid container {...rest} className={classes.grid + " " + className}>
+    <Grid container {...rest} className={classes.grid + ' ' + className}>
       {children}
     </Grid>
   );

@@ -15,16 +15,15 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles, { WithStyles } from "@material-ui/core/styles/withStyles";
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+// nodejs library that concatenates classes
+import classNames from 'classnames';
+import React from 'react';
 // @material-ui/icons
-
 // core components
-import cardBodyStyle from "../../assets/jss/material-kit-react/components/cardBodyStyle";
+import cardBodyStyle from '../../assets/jss/material-kit-react/components/cardBodyStyle';
 
 interface ICardBodyProps extends WithStyles<typeof cardBodyStyle> {
   className?: string;
@@ -34,7 +33,7 @@ function CardBody({ ...props }: ICardBodyProps) {
   const { classes, className, children, ...rest } = props;
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,
-    [className]: className !== undefined
+    [className as string]: className !== undefined,
   });
   return (
     <div className={cardBodyClasses} {...rest}>

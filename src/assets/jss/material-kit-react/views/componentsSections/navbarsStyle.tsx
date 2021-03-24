@@ -15,64 +15,64 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { container, title } from "../../../material-kit-react";
-import headerLinksStyle from "../../components/headerLinksStyle";
-import { createStyles, Theme } from "@material-ui/core";
+import { createStyles, Theme } from '@material-ui/core';
+import { container, title } from '../../../material-kit-react';
+import headerLinksStyle from '../../components/headerLinksStyle';
 
 const navbarsStyle = (theme: Theme) =>
   createStyles({
     section: {
-      padding: "70px 0",
-      paddingTop: "0"
+      padding: '70px 0',
+      paddingTop: '0',
     },
     container,
     title: {
       ...title,
-      marginTop: "30px",
-      minHeight: "32px",
-      textDecoration: "none"
+      marginTop: '30px',
+      minHeight: '32px',
+      textDecoration: 'none',
     },
     navbar: {
-      marginBottom: "-20px",
+      marginBottom: '-20px',
       zIndex: 100,
-      position: "relative",
-      overflow: "hidden",
-      "& header": {
-        borderRadius: "0"
-      }
+      position: 'relative',
+      overflow: 'hidden',
+      '& header': {
+        borderRadius: '0',
+      },
     },
     navigation: {
-      backgroundPosition: "center center",
-      backgroundSize: "cover",
-      marginTop: "0",
-      minHeight: "740px"
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover',
+      marginTop: '0',
+      minHeight: '740px',
     },
     formControl: {
-      margin: "0 !important",
-      paddingTop: "0"
+      margin: '0 !important',
+      paddingTop: '0',
     },
     inputRootCustomClasses: {
-      margin: "0!important"
+      margin: '0!important',
     },
     searchIcon: {
-      width: "20px",
-      height: "20px",
-      color: "inherit"
+      width: '20px',
+      height: '20px',
+      color: 'inherit',
     },
     searchInput: {},
     socialIconsButton: {},
     ...headerLinksStyle(theme),
     img: {
-      width: "40px",
-      height: "40px",
-      borderRadius: "50%"
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
     },
     imageDropdownButton: {
-      padding: "0px",
-      top: "4px",
-      borderRadius: "50%",
-      marginLeft: "5px"
-    }
+      padding: '0px',
+      top: '4px',
+      borderRadius: '50%',
+      marginLeft: '5px',
+    },
   });
 
 export default navbarsStyle;

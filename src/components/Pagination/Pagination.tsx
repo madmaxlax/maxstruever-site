@@ -15,31 +15,29 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import Button from '@material-ui/core/Button';
+// @material-ui/core components
+import withStyles from '@material-ui/core/styles/withStyles';
+import { WithStyles } from '@material-ui/styles';
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
-import classNames from "classnames";
-
-// @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Button from "@material-ui/core/Button";
-
-import paginationStyle from "../../assets/jss/material-kit-react/components/paginationStyle";
-import { WithStyles } from "@material-ui/styles";
+import classNames from 'classnames';
+import React from 'react';
+import paginationStyle from '../../assets/jss/material-kit-react/components/paginationStyle';
 
 interface IPaginationProps extends WithStyles<typeof paginationStyle> {
-  pages?: any;
-  color?: "primary" | "info" | "success" | "warning" | "danger";
+  pages?: any[];
+  color?: 'primary' | 'info' | 'success' | 'warning' | 'danger';
 }
 function Pagination({ ...props }: IPaginationProps) {
   const { classes, pages, color } = props;
   return (
     <ul className={classes.pagination}>
-      {pages.map((prop, key) => {
+      {pages?.map((prop, key) => {
         const paginationLink = classNames({
           [classes.paginationLink]: true,
-          [classes[color]]: prop.active,
-          [classes.disabled]: prop.disabled
+          [classes[color as keyof typeof classes]]: prop.active,
+          [classes.disabled]: prop.disabled,
         });
         return (
           <li className={classes.paginationItem} key={key}>
@@ -48,10 +46,7 @@ function Pagination({ ...props }: IPaginationProps) {
                 {prop.text}
               </Button>
             ) : (
-              <Button
-                onClick={() => alert("you've clicked " + prop.text)}
-                className={paginationLink}
-              >
+              <Button onClick={() => alert("you've clicked " + prop.text)} className={paginationLink}>
                 {prop.text}
               </Button>
             )}

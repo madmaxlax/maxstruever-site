@@ -15,24 +15,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+import Chat from '@material-ui/icons/Chat';
+import VerifiedUser from '@material-ui/icons/VerifiedUser';
+import Fingerprint from '@material-ui/icons/Fingerprint';
 // core components
-import GridContainer from "../../../components/Grid/GridContainer";
-import GridItem from "../../../components/Grid/GridItem";
-import InfoArea from "../../../components/InfoArea/InfoArea";
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
+import InfoArea from '../../../components/InfoArea/InfoArea';
 
-import productStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/productStyle";
-import { WithStyles } from "@material-ui/styles";
+import productStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/productStyle';
+import { WithStyles } from '@material-ui/styles';
 
-interface IProductSection extends WithStyles<typeof productStyle> {}
+type IProductSection = WithStyles<typeof productStyle>;
 class ProductSection extends React.Component<IProductSection> {
   render() {
     const { classes } = this.props;
@@ -42,11 +42,9 @@ class ProductSection extends React.Component<IProductSection> {
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Let{"'"}s talk product</h2>
             <h5 className={classes.description}>
-              This is the paragraph where you can write more details about your
-              product. Keep you user engaged by providing meaningful
-              information. Remember that by this time, the user is curious,
-              otherwise he wouldn{"'"}t scroll to get here. Add a button if you
-              want the user to see more.
+              This is the paragraph where you can write more details about your product. Keep you user engaged by
+              providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn
+              {"'"}t scroll to get here. Add a button if you want the user to see more.
             </h5>
           </GridItem>
         </GridContainer>
