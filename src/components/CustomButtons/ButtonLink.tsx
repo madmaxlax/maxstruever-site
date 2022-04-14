@@ -11,7 +11,8 @@ import {
   primaryColor,
   roseColor,
   successColor,
-  warningColor,
+  // eslint-disable-next-line prettier/prettier
+  warningColor
 } from '../../assets/jss/material-kit-react';
 
 const useStyles = makeStyles({
@@ -398,6 +399,7 @@ const RegularButton = React.forwardRef((props: IRegularButtonProps, ref: any) =>
     </Button>
   );
 });
+RegularButton.displayName = 'RegularButton';
 
 export default RegularButton;
 
