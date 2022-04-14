@@ -74,7 +74,7 @@ function Footer({ ...props }: IFooter) {
           >
             this template
           </a>
-          ...sorry, I'm not that creative.
+          ...sorry, I&apos;m not that creative.
         </div>
       </div>
     </footer>

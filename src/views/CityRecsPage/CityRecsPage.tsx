@@ -78,7 +78,8 @@ const CityRecsPage = () => {
                   <div className={classes.name}>
                     <h3 className={classes.title}>City Travel Recommendations</h3>
                     <h6>
-                      Various lists of activities and places to stay in different cities I've compiled over the years
+                      Various lists of activities and places to stay in different cities I&apos;ve compiled over the
+                      years
                     </h6>
                   </div>
                 </div>

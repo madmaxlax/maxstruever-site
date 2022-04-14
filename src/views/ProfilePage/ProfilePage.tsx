@@ -120,9 +120,9 @@ class ProfilePage extends React.Component<IProfilePage> {
               </GridContainer>
               <div className={classes.description}>
                 <p>
-                  What's Good? <br />
-                  I'm Max Struever. Sometimes Maxwell Struever. I'm a geek who loves sports. Activities and country
-                  music are my love languages. Please check out my{' '}
+                  What&apos;s Good? <br />
+                  I&apos;m Max Struever. Sometimes Maxwell Struever. I&apos;m a geek who loves sports. Activities and
+                  country music are my love languages. Please check out my{' '}
                   <a href="http://portfolio.maxstruever.com">portfolio</a> while I work on my site.
                 </p>
 
@@ -192,8 +192,8 @@ class ProfilePage extends React.Component<IProfilePage> {
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                I Love every kind of sport and activity. Lacrosse I've played the most, even having been
-                                lucky enough to play for the Netherlands national team
+                                I Love every kind of sport and activity. Lacrosse I&apos;ve played the most, even having
+                                been lucky enough to play for the Netherlands national team
                               </Typography>
                             </Grid>
                           </Grid>

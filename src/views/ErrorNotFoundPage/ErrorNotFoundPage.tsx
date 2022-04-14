@@ -42,7 +42,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                     </div>
                     <div className={classes.name}>
                       <h3 className={classes.title}>Page Not Found</h3>
-                      <h6>Maybe it's still in progress ¯\_(ツ)_/¯</h6>
+                      <h6>Maybe it&apos;s still in progress ¯\_(ツ)_/¯</h6>
                     </div>
                   </div>
                 </GridItem>
@@ -51,7 +51,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                 <p>
                   You tried to go to {window.location.pathname}
                   <br />
-                  but that page doesn't exist. Perhaps a bad link?
+                  but that page doesn&apos;t exist. Perhaps a bad link?
                 </p>
               </div>
             </div>
