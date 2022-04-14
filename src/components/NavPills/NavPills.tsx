@@ -51,6 +51,7 @@ interface INavPillsState {
 
 interface INavPills extends INavPillsProps, WithStyles<typeof navPillsStyle> {}
 class NavPills extends React.Component<INavPills, INavPillsState> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   constructor(props: INavPills, state: INavPillsState) {
     super(props);
     this.state = {

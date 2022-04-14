@@ -21,7 +21,6 @@ import modalStyle from '../../modalStyle';
 import popoverStyles from '../../popoverStyles';
 import tooltipsStyle from '../../tooltipsStyle';
 
-
 const javascriptStyles = createStyles({
   section: {
     padding: '70px 0 0',

@@ -29,6 +29,7 @@ import {
   successBoxShadow,
   successColor,
   warningBoxShadow,
+  // eslint-disable-next-line prettier/prettier
   warningColor
 } from '../../material-kit-react';
 

@@ -22,6 +22,7 @@ import {
   infoColor,
   primaryColor,
   successColor,
+  // eslint-disable-next-line prettier/prettier
   warningColor
 } from '../../material-kit-react';
 
