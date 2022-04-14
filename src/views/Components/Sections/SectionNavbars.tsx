@@ -1,15 +1,15 @@
-import Icon from '@material-ui/core/Icon';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Email from '@material-ui/icons/Email';
-import Explore from '@material-ui/icons/Explore';
-import Face from '@material-ui/icons/Face';
-// @material-ui/icons
-import Search from '@material-ui/icons/Search';
-import { WithStyles } from '@material-ui/styles';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Email from '@mui/icons-material/Email';
+import Explore from '@mui/icons-material/Explore';
+import Face from '@mui/icons-material/Face';
+// @mui/icons-material
+import Search from '@mui/icons-material/Search';
+import Icon from '@mui/material/Icon';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 /*!
 
 =========================================================

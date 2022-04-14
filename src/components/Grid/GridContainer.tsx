@@ -15,13 +15,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { createStyles } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
+import { createStyles } from '@mui/material';
+import Grid from '@mui/material/Grid';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 import React from 'react';
 
 const style = createStyles({

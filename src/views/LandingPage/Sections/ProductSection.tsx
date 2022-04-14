@@ -15,22 +15,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+// @mui/icons-material
+import Chat from '@mui/icons-material/Chat';
+import Fingerprint from '@mui/icons-material/Fingerprint';
+import VerifiedUser from '@mui/icons-material/VerifiedUser';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-
-// @material-ui/icons
-import Chat from '@material-ui/icons/Chat';
-import VerifiedUser from '@material-ui/icons/VerifiedUser';
-import Fingerprint from '@material-ui/icons/Fingerprint';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
+import React from 'react';
+import productStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/productStyle';
 // core components
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
 import InfoArea from '../../../components/InfoArea/InfoArea';
-
-import productStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/productStyle';
-import { WithStyles } from '@material-ui/styles';
 
 type IProductSection = WithStyles<typeof productStyle>;
 class ProductSection extends React.Component<IProductSection> {

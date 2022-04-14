@@ -1,8 +1,8 @@
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import withStyles from '@material-ui/core/styles/withStyles';
-import Tooltip from '@material-ui/core/Tooltip';
-import { Apps } from '@material-ui/icons';
+import { Apps } from '@mui/icons-material';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import withStyles from '@mui/material/styles/withStyles';
+import Tooltip from '@mui/material/Tooltip';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';

@@ -1,7 +1,7 @@
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 /*!
 
 =========================================================
@@ -24,7 +24,7 @@ import React from "react";
 // core components
 import downloadStyle from "../../../assets/jss/material-kit-react/views/componentsSections/downloadStyle";
 import Button from '../../../components/CustomButtons/ButtonLink';
-// @material-ui/icons
+// @mui/icons-material
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
 

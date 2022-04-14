@@ -16,8 +16,8 @@
 
 */
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+// @mui/material components
+import withStyles, { WithStyles } from '@mui/material/styles/withStyles';
 import React from 'react';
 import badgeStyle from '../../assets/jss/material-kit-react/components/badgeStyle';
 

@@ -15,20 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+import Build from '@mui/icons-material/Build';
+import Chat from '@mui/icons-material/Chat';
+// @mui/icons-material
+import Face from '@mui/icons-material/Face';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
-
-// @material-ui/icons
-import Face from '@material-ui/icons/Face';
-import Chat from '@material-ui/icons/Chat';
-import Build from '@material-ui/icons/Build';
+// @mui/material components
+import withStyles, { WithStyles } from '@mui/material/styles/withStyles';
+import React from 'react';
+import tabsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/tabsStyle';
+import CustomTabs from '../../../components/CustomTabs/CustomTabs';
 // core components
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
-import CustomTabs from '../../../components/CustomTabs/CustomTabs';
-import tabsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/tabsStyle';
 
 type ISectionTabsProps = WithStyles<typeof tabsStyle>;
 class SectionTabs extends React.Component<ISectionTabsProps> {

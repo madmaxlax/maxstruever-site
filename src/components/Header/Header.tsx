@@ -15,19 +15,19 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
+// @mui/icons-material
+import Menu from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Toolbar from '@material-ui/core/Toolbar';
-// @material-ui/icons
-import Menu from '@material-ui/icons/Menu';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import Toolbar from '@mui/material/Toolbar';
+import { WithStyles } from '@mui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import * as React from 'react';

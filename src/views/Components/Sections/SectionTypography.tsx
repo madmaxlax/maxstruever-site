@@ -15,26 +15,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
-
-// @material-ui/icons
-
+// @mui/material components
+import withStyles, { WithStyles } from '@mui/material/styles/withStyles';
+import React from 'react';
+import image from '../../../assets/img/faces/avatar.jpg';
+import typographyStyle from '../../../assets/jss/material-kit-react/views/componentsSections/typographyStyle';
+// @mui/icons-material
 // core components
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
-import Small from '../../../components/Typography/Small';
 import Danger from '../../../components/Typography/Danger';
-import Warning from '../../../components/Typography/Warning';
-import Success from '../../../components/Typography/Success';
 import Info from '../../../components/Typography/Info';
-import Primary from '../../../components/Typography/Primary';
 import Muted from '../../../components/Typography/Muted';
+import Primary from '../../../components/Typography/Primary';
 import Quote from '../../../components/Typography/Quote';
-import typographyStyle from '../../../assets/jss/material-kit-react/views/componentsSections/typographyStyle';
-import image from '../../../assets/img/faces/avatar.jpg';
+import Small from '../../../components/Typography/Small';
+import Success from '../../../components/Typography/Success';
+import Warning from '../../../components/Typography/Warning';
 
 type ISectionTypographyProps = WithStyles<typeof typographyStyle>;
 class SectionTypography extends React.Component<ISectionTypographyProps> {

@@ -1,17 +1,17 @@
-import { Button } from '@material-ui/core';
-import { default as MaterialUILink, LinkTypeMap } from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button } from '@mui/material';
+import { default as MaterialUILink, LinkTypeMap } from '@mui/material/Link';
+import { makeStyles } from '@mui/material/styles';
 import classNames from 'classnames';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  dangerColor,
-  grayColor,
-  infoColor,
-  primaryColor,
-  roseColor,
-  successColor,
-  warningColor,
+    dangerColor,
+    grayColor,
+    infoColor,
+    primaryColor,
+    roseColor,
+    successColor,
+    warningColor
 } from '../../assets/jss/material-kit-react';
 
 const useStyles = makeStyles({

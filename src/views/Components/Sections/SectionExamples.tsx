@@ -1,10 +1,6 @@
-import Button from '../../../components/CustomButtons/ButtonLink';
-// core components
-import GridContainer from '../../../components/Grid/GridContainer';
-import GridItem from '../../../components/Grid/GridItem';
-// nodejs library to set properties for components
-// react components for routing our app without refresh
-import { Link } from 'react-router-dom';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 /*!
 
 =========================================================
@@ -23,13 +19,17 @@ import { Link } from 'react-router-dom';
 
 */
 import React from 'react';
-import { WithStyles } from '@material-ui/styles';
-import exampleStyle from '../../../assets/jss/material-kit-react/views/componentsSections/exampleStyle';
+// nodejs library to set properties for components
+// react components for routing our app without refresh
+import { Link } from 'react-router-dom';
 import landing from '../../../assets/img/landing.jpg';
 import profile from '../../../assets/img/profile.jpg';
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-// @material-ui/icons
+import exampleStyle from '../../../assets/jss/material-kit-react/views/componentsSections/exampleStyle';
+import Button from '../../../components/CustomButtons/ButtonLink';
+// core components
+import GridContainer from '../../../components/Grid/GridContainer';
+import GridItem from '../../../components/Grid/GridItem';
+// @mui/icons-material
 
 type ISectionExamples = WithStyles<typeof exampleStyle>;
 class SectionExamples extends React.Component<ISectionExamples> {

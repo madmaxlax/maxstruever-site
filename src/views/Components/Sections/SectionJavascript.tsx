@@ -1,19 +1,19 @@
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import FormControl from '@material-ui/core/FormControl';
-import IconButton from '@material-ui/core/IconButton';
-import InputLabel from '@material-ui/core/InputLabel';
-import Popover from '@material-ui/core/Popover';
-import Slide from '@material-ui/core/Slide';
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Tooltip from '@material-ui/core/Tooltip';
-import { TransitionProps } from '@material-ui/core/transitions/transition';
-import Close from '@material-ui/icons/Close';
-import LibraryBooks from '@material-ui/icons/LibraryBooks';
-import { WithStyles } from '@material-ui/styles';
+import Close from '@mui/icons-material/Close';
+import LibraryBooks from '@mui/icons-material/LibraryBooks';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import InputLabel from '@mui/material/InputLabel';
+import Popover from '@mui/material/Popover';
+import Slide from '@mui/material/Slide';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import Tooltip from '@mui/material/Tooltip';
+import { TransitionProps } from '@mui/material/transitions/transition';
+import { WithStyles } from '@mui/styles';
 import React from 'react';
 // react plugin for creating date-time-picker
 import Datetime from 'react-datetime';

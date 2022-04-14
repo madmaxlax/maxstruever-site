@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { createStyles } from '@material-ui/core';
+import { createStyles } from '@mui/material';
 import { conatinerFluid } from '../../../material-kit-react';
 import imagesStyle from '../../imagesStyles';
 

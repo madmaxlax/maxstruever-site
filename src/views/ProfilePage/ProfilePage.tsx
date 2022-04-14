@@ -1,8 +1,8 @@
-import { Typography } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import withStyles from '@material-ui/core/styles/withStyles';
-import { Favorite, SportsHandball, Work } from '@material-ui/icons';
-import { WithStyles } from '@material-ui/styles';
+import { Favorite, SportsHandball, Work } from '@mui/icons-material';
+import { Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 import classNames from 'classnames';
 import React from 'react';
 import profile from '../../assets/img/faces/Max-small-sq.jpg';

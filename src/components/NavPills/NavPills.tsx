@@ -1,9 +1,9 @@
 // core components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import { WithStyles } from '@mui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 /*!

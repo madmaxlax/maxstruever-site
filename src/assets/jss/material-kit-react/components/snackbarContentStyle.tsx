@@ -15,15 +15,15 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { createStyles } from '@material-ui/core';
+import { createStyles } from '@mui/material';
 import {
-  container,
-  dangerBoxShadow,
-  defaultFont,
-  infoBoxShadow,
-  primaryBoxShadow,
-  successBoxShadow,
-  warningBoxShadow,
+    container,
+    dangerBoxShadow,
+    defaultFont,
+    infoBoxShadow,
+    primaryBoxShadow,
+    successBoxShadow,
+    warningBoxShadow
 } from '../../material-kit-react';
 
 const snackbarContentStyle = createStyles({

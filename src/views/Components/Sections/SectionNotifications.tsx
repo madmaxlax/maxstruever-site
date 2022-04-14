@@ -15,17 +15,17 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+// @mui/icons-material
+import Check from '@mui/icons-material/Check';
+import Warning from '@mui/icons-material/Warning';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
-// @material-ui/icons
-import Check from '@material-ui/icons/Check';
-import Warning from '@material-ui/icons/Warning';
+// @mui/material components
+import withStyles, { WithStyles } from '@mui/material/styles/withStyles';
+import React from 'react';
+import notificationsStyles from '../../../assets/jss/material-kit-react/views/componentsSections/notificationsStyles';
+import Clearfix from '../../../components/Clearfix/Clearfix';
 // core components
 import SnackbarContent from '../../../components/Snackbar/SnackbarContent';
-import Clearfix from '../../../components/Clearfix/Clearfix';
-import notificationsStyles from '../../../assets/jss/material-kit-react/views/componentsSections/notificationsStyles';
 
 type ISectionNotificationsProps = WithStyles<typeof notificationsStyles>;
 class SectionNotifications extends React.Component<ISectionNotificationsProps> {

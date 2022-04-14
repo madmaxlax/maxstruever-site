@@ -1,5 +1,5 @@
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 import classNames from 'classnames';
 import React from 'react';
 import profile from '../../assets/img/faces/Max-small-sq.jpg';

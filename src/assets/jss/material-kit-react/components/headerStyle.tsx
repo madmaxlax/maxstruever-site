@@ -15,21 +15,21 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+// import { StyleRules } from "@mui/styles";
+import { createStyles } from '@mui/material/styles';
 import {
-  container,
-  defaultFont,
-  primaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor,
-  roseColor,
-  transition,
-  boxShadow,
-  drawerWidth,
+    boxShadow,
+    container,
+    dangerColor,
+    defaultFont,
+    drawerWidth,
+    infoColor,
+    primaryColor,
+    roseColor,
+    successColor,
+    transition,
+    warningColor
 } from '../../material-kit-react';
-// import { StyleRules } from "@material-ui/styles";
-import { createStyles } from '@material-ui/core/styles';
 
 // interface IAbsolute {
 //   absolute: React.CSSProperties;

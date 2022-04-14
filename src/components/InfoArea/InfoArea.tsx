@@ -15,15 +15,14 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import React from 'react';
 import infoStyle from '../../assets/jss/material-kit-react/components/infoStyle';
-
 
 interface IInfoArea extends WithStyles<typeof infoStyle> {
   icon: any;

@@ -16,9 +16,9 @@
 
 */
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 import React from 'react';
 // core components
 import typographyStyle from '../../assets/jss/material-kit-react/components/typographyStyle';

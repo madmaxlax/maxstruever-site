@@ -15,22 +15,22 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { createStyles } from '@material-ui/core';
+import { createStyles } from '@mui/material';
 import {
-  dangerColor,
+    dangerColor,
 
 
 
-  grayColor, infoColor, primaryColor,
+    grayColor, infoColor, primaryColor,
 
 
 
 
-  roseColor, successColor,
+    roseColor, successColor,
 
 
 
-  title, warningColor
+    title, warningColor
 } from '../../material-kit-react';
 
 const infoStyle = createStyles({

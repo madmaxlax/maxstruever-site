@@ -1,10 +1,10 @@
-import { Container, Grid, InputAdornment } from '@material-ui/core';
-import { FilterList } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/styles';
+import { FilterList } from '@mui/icons-material';
+import { Container, Grid, InputAdornment } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import classNames from 'classnames';
 import queryString from 'query-string';
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ReferralsPage = () => {
   const classes = useStyles();
-  const history = useHistory();
+  const history = useNavigate();
   const [data, setData] = useState({ cards: [] });
   const { q: filterStarter } = queryString.parse(window.location.search) as {
     q: string;
@@ -96,7 +96,7 @@ const ReferralsPage = () => {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <Container>
-            <Grid container justify="center">
+            <Grid container justifyContent="center">
               <Grid item xs={12} sm={12} md={8}>
                 <div className={classes.profile}>
                   <div></div>
@@ -118,9 +118,9 @@ const ReferralsPage = () => {
                   value: filterString,
                   onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
                     setFilterString(e.target.value);
-                    if (history.replace) {
+                    if (history) {
                       const newurl = window.location.pathname + '?q=' + e.target.value;
-                      history.replace(newurl);
+                      history(newurl, { replace: true });
                     }
                   },
                   endAdornment: (
@@ -132,19 +132,22 @@ const ReferralsPage = () => {
               />
               <br />
               <Grid container spacing={2} className={classes.referralsList}>
-                {data.cards.map((card: any, i) => {
-                  const filterStringLower = filterString.trim().toLowerCase();
-                  const cardMatched =
-                    !card.closed &&
-                    (!Boolean(filterString) ||
-                      card.desc.toLowerCase()?.includes(filterStringLower) ||
-                      card.name.toLowerCase()?.includes(filterStringLower));
-                  return cardMatched ? (
-                    <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
-                      <ReferralItem card={card} />
-                    </Grid>
-                  ) : null;
-                })}
+                {
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  data.cards.map((card: any, i) => {
+                    const filterStringLower = filterString.trim().toLowerCase();
+                    const cardMatched =
+                      !card.closed &&
+                      (!Boolean(filterString) ||
+                        card.desc.toLowerCase()?.includes(filterStringLower) ||
+                        card.name.toLowerCase()?.includes(filterStringLower));
+                    return cardMatched ? (
+                      <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+                        <ReferralItem card={card} />
+                      </Grid>
+                    ) : null;
+                  })
+                }
               </Grid>
             </div>
           </Container>

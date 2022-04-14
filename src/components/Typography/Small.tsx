@@ -16,15 +16,19 @@
 
 */
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+// import withStyles from '@mui/material/styles/withStyles';
+import { withStyles } from '@mui/styles';
 import React from 'react';
 // core components
 import typographyStyle from '../../assets/jss/material-kit-react/components/typographyStyle';
 
-interface ISmall extends WithStyles<typeof typographyStyle> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+interface ISmall {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  classes?: any;
 }
 function Small({ ...props }: ISmall) {
   const { classes, children } = props;

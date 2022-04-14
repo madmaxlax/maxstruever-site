@@ -15,11 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-// @material-ui/core components
-import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
+import FormControl from '@mui/material/FormControl';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+// @mui/material components
+import withStyles, { WithStyles } from '@mui/material/styles/withStyles';
 // nodejs library to set properties for components
 // nodejs library that concatenates classes
 import classNames from 'classnames';

@@ -15,15 +15,15 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
-import Snack from '@material-ui/core/SnackbarContent';
+// @mui/icons-material
+import Close from '@mui/icons-material/Close';
+import Icon from '@mui/material/Icon';
+import IconButton from '@mui/material/IconButton';
+import Snack from '@mui/material/SnackbarContent';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-// @material-ui/icons
-import Close from '@material-ui/icons/Close';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 import React from 'react';
 import snackbarContentStyle from '../../assets/jss/material-kit-react/components/snackbarContentStyle';
 

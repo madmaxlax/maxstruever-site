@@ -15,13 +15,13 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Icon from '@material-ui/core/Icon';
+import Icon from '@mui/material/Icon';
 // nodejs library to set properties for components
 // material-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
-import { WithStyles } from '@material-ui/styles';
+import withStyles from '@mui/material/styles/withStyles';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import { WithStyles } from '@mui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import React from 'react';

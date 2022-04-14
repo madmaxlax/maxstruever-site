@@ -1,16 +1,16 @@
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Radio from '@material-ui/core/Radio';
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import Switch from '@material-ui/core/Switch';
-import Check from '@material-ui/icons/Check';
-// @material-ui/icons
-import Favorite from '@material-ui/icons/Favorite';
-import FiberManualRecord from '@material-ui/icons/FiberManualRecord';
-import People from '@material-ui/icons/People';
-import { WithStyles } from '@material-ui/styles';
+import Check from '@mui/icons-material/Check';
+// @mui/icons-material
+import Favorite from '@mui/icons-material/Favorite';
+import FiberManualRecord from '@mui/icons-material/FiberManualRecord';
+import People from '@mui/icons-material/People';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import Radio from '@mui/material/Radio';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import Switch from '@mui/material/Switch';
+import { WithStyles } from '@mui/styles';
 // plugin that creates slider
 import nouislider from 'nouislider';
 /*!

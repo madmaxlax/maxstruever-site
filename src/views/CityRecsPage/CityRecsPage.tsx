@@ -1,5 +1,5 @@
-import { Container, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { Container, Grid } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import classNames from 'classnames';
 import React from 'react';
 import Footer from '../../components/Footer/Footer';

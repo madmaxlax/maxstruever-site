@@ -1,12 +1,12 @@
-import Icon from '@material-ui/core/Icon';
-import InputAdornment from '@material-ui/core/InputAdornment';
+// @mui/icons-material
+import Email from '@mui/icons-material/Email';
+import People from '@mui/icons-material/People';
+import Icon from '@mui/material/Icon';
+import InputAdornment from '@mui/material/InputAdornment';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-// @material-ui/icons
-import Email from '@material-ui/icons/Email';
-import People from '@material-ui/icons/People';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 /*!
 
 =========================================================
@@ -58,7 +58,7 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
       (() => {
         this.setState({ cardAnimaton: '' });
       }).bind(this),
-      700,
+      700
     );
   }
   render() {

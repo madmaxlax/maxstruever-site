@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import './assets/css/material-kit-react.css';
 import CityRecsPage from './views/CityRecsPage/CityRecsPage';
 import Components from './views/Components/Components';
@@ -11,22 +11,29 @@ import ReferralsPage from './views/ReferralsPage/ReferralsPage';
 // import LandingPage from "./views/LandingPage/LandingPage";
 // import LoginPage from "./views/LoginPage/LoginPage";
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root') as HTMLElement);
+root.render(
   <Router>
-    <Switch>
-      {/* <Route path="/landing-page" component={LandingPage} /> */}
-      {/* <Route path="/login-page" component={LoginPage} /> */}
-      <Route path="/all-components-examples" component={Components} />
-      <Route path="/city-recs" component={CityRecsPage} />
-      <Redirect path="/referals" to={'/referrals'} />
-      <Route path="/referrals" component={ReferralsPage} />
-      <Route path="/" exact component={ProfilePage} />
+    <Routes>
+      {/* <Route path="/landing-page" element={LandingPage} /> */}
+      {/* <Route path="/login-page" element={LoginPage} /> */}
+      <Route path="/all-components-examples" element={Components} />
+      <Route path="/city-recs" element={<CityRecsPage />} />
+      <Route path="/referals" element={<Navigate to={'/referrals'} />} />
+      <Route path="/referrals" element={<ReferralsPage />} />
+      <Route path="/" element={<ProfilePage />} />
+      <Route path={'/404-not-found'} element={<ErrorNotFoundPage />} />
       <Route
-        component={ErrorNotFoundPage}
-        exact
-        // path="/404-not-found"
+        path="*"
+        element={
+          <Navigate
+            to={{
+              pathname: '/404-not-found',
+              search: '?from=' + encodeURIComponent(window.location.href),
+            }}
+          />
+        }
       />
-    </Switch>
-  </Router>,
-  document.getElementById('root'),
+    </Routes>
+  </Router>
 );

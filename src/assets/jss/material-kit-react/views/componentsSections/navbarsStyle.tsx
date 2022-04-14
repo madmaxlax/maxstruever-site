@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { createStyles, Theme } from '@material-ui/core';
+import { createStyles, Theme } from '@mui/material';
 import { container, title } from '../../../material-kit-react';
 import headerLinksStyle from '../../components/headerLinksStyle';
 

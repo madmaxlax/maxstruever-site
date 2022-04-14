@@ -1,5 +1,5 @@
-import { withStyles } from '@material-ui/core';
-import Favorite from '@material-ui/icons/Favorite';
+import Favorite from '@mui/icons-material/Favorite';
+import { withStyles } from '@mui/material';
 import classNames from 'classnames';
 import React from 'react';
 import footerStyle from '../../assets/jss/material-kit-react/components/footerStyle';

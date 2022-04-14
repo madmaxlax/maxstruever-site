@@ -1,5 +1,5 @@
-import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardActions, CardContent, Typography } from '@mui/material';
+import { makeStyles } from '@mui/material/styles';
 import React from 'react';
 import RegularButton, { Link } from '../CustomButtons/ButtonLink';
 

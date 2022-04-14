@@ -15,12 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+import { createStyles, WithStyles } from '@mui/material';
 // nodejs library to set properties for components
-
 // mterial-ui components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { createStyles, WithStyles } from '@material-ui/core';
+import withStyles from '@mui/material/styles/withStyles';
+import React from 'react';
 
 const style = createStyles({
   clearfix: {

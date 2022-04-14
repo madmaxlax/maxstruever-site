@@ -16,13 +16,13 @@
 
 */
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import React from 'react';
-// @material-ui/icons
+// @mui/icons-material
 // core components
 import cardStyle from '../../assets/jss/material-kit-react/components/cardStyle';
 

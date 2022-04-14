@@ -15,17 +15,17 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Divider from '@material-ui/core/Divider';
-import Grow from '@material-ui/core/Grow';
-import Icon from '@material-ui/core/Icon';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-import { WithStyles } from '@material-ui/styles';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Divider from '@mui/material/Divider';
+import Grow from '@mui/material/Grow';
+import Icon from '@mui/material/Icon';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import * as React from 'react';

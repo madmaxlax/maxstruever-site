@@ -15,23 +15,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
+// @mui/icons-material
+import Dashboard from '@mui/icons-material/Dashboard';
+import List from '@mui/icons-material/List';
+import Schedule from '@mui/icons-material/Schedule';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-
-// @material-ui/icons
-import Dashboard from '@material-ui/icons/Dashboard';
-import Schedule from '@material-ui/icons/Schedule';
-import List from '@material-ui/icons/List';
-
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
+import React from 'react';
+import pillsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/pillsStyle';
 // core components
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
 import NavPills from '../../../components/NavPills/NavPills';
-
-import pillsStyle from '../../../assets/jss/material-kit-react/views/componentsSections/pillsStyle';
-import { WithStyles } from '@material-ui/styles';
 
 type ISectionPillsProps = WithStyles<typeof pillsStyle>;
 

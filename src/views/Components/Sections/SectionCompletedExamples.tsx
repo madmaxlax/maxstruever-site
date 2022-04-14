@@ -15,18 +15,16 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from 'react';
 // nodejs library to set properties for components
-// @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
-// @material-ui/icons
-
+// @mui/material components
+import withStyles from '@mui/material/styles/withStyles';
+import { WithStyles } from '@mui/styles';
+import React from 'react';
+import completedStyle from '../../../assets/jss/material-kit-react/views/componentsSections/completedStyle';
+// @mui/icons-material
 // core components
 import GridContainer from '../../../components/Grid/GridContainer';
 import GridItem from '../../../components/Grid/GridItem';
-
-import completedStyle from '../../../assets/jss/material-kit-react/views/componentsSections/completedStyle';
-import { WithStyles } from '@material-ui/styles';
 
 type ISectionCompletedExamples = WithStyles<typeof completedStyle>;
 class SectionCompletedExamples extends React.Component<ISectionCompletedExamples> {
