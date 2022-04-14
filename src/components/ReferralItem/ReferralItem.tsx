@@ -36,7 +36,6 @@ interface ReferralItemProps {
 const ReferralItem = (props: ReferralItemProps) => {
   const { card } = props;
   const classes = useStyles();
-  if (card.closed) return null;
   return (
     <Card className={classes.root}>
       <CardContent>

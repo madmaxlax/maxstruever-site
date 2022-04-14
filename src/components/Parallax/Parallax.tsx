@@ -68,7 +68,6 @@ const Parallax = (props: IParallaxProps) => {
   const [transform, setTransform] = useState('translate3d(0,' + windowScrollTop + 'px,0)');
   // eslint-disable-next-line
   const [imageToUse, setImageToUse] = useState(random ? bgImages[Math.floor(Math.random() * bgImages.length)] : image);
-  console.log(random, image, imageToUse);
 
   const resetTransform = () => {
     const windowScrollTop = window.pageYOffset / 3;

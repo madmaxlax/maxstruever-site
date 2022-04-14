@@ -135,16 +135,15 @@ const ReferralsPage = () => {
                 {data.cards.map((card: any, i) => {
                   const filterStringLower = filterString.trim().toLowerCase();
                   const cardMatched =
-                    !Boolean(filterString) ||
-                    card.desc.toLowerCase()?.includes(filterStringLower) ||
-                    card.name.toLowerCase()?.includes(filterStringLower);
-                  return (
-                    cardMatched && (
-                      <Grid item xs={6} sm={3} key={i}>
-                        <ReferralItem card={card} />
-                      </Grid>
-                    )
-                  );
+                    !card.closed &&
+                    (!Boolean(filterString) ||
+                      card.desc.toLowerCase()?.includes(filterStringLower) ||
+                      card.name.toLowerCase()?.includes(filterStringLower));
+                  return cardMatched ? (
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
+                      <ReferralItem card={card} />
+                    </Grid>
+                  ) : null;
                 })}
               </Grid>
             </div>
