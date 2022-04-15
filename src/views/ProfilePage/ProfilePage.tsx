@@ -148,7 +148,10 @@ class ProfilePage extends React.Component<IProfilePage> {
                           <Grid container spacing={2} alignItems="center" justify="center">
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                I am a full stack developer, currently a Senior Engineer at BCG Platinion
+                                I am a full stack developer (and occasional data engineer), currently a Lead Engineer at{' '}
+                                <a href="https://bcgplatinion.com/" target="_blank" rel="noreferrer">
+                                  BCG Platinion
+                                </a>
                               </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
