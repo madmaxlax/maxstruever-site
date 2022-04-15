@@ -14,20 +14,20 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+
 */
 import AppBar from '@material-ui/core/AppBar';
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 // nodejs library to set properties for components
 // import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles';
+import { withStyles, WithStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 // @material-ui/icons
 import Menu from '@material-ui/icons/Menu';
-import { WithStyles } from '@material-ui/styles';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
 import * as React from 'react';
@@ -47,7 +47,9 @@ interface IHeaderProps {
   routes?: any;
   changeColorOnScroll?: any;
 }
-interface IHeader extends IHeaderProps, WithStyles<typeof headerStyle> {}
+interface IHeader extends IHeaderProps, WithStyles<typeof headerStyle> {
+  [name: string]: any;
+}
 class Header extends React.Component<IHeader, IHeaderState> {
   // mobileOpen: boolean = false;
   constructor(props: IHeader, state: IHeaderState) {
@@ -111,23 +113,20 @@ class Header extends React.Component<IHeader, IHeaderState> {
           {leftLinks !== undefined ? brandComponent : null}
           <div className={classes.flex}>
             {leftLinks !== undefined ? (
-              <Hidden smDown implementation="css">
-                {leftLinks}
-              </Hidden>
+              <Box sx={{ display: { xs: 'none', md: 'block' } }}>{leftLinks}</Box>
             ) : (
               brandComponent
             )}
           </div>
-          <Hidden smDown implementation="css">
-            {rightLinks}
-          </Hidden>
-          <Hidden mdUp>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>{rightLinks}</Box>
+
+          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
             <IconButton color="inherit" aria-label="open drawer" onClick={this.handleDrawerToggle}>
               <Menu />
             </IconButton>
-          </Hidden>
+          </Box>
         </Toolbar>
-        <Hidden mdUp implementation="js">
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <Drawer
             variant="temporary"
             anchor={'right'}
@@ -142,7 +141,7 @@ class Header extends React.Component<IHeader, IHeaderState> {
               {rightLinks}
             </div>
           </Drawer>
-        </Hidden>
+        </Box>
       </AppBar>
     );
   }
