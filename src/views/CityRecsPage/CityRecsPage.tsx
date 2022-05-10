@@ -90,7 +90,9 @@ const CityRecsPage = () => {
                 title="City Recs from Google Docs"
                 frameBorder="0"
                 className={classes.iframe}
-                src="//drive.google.com/embeddedfolderview?id=0B994MvzpbbuzfjFrVFVkVTc1dmtBMktWSldnMVA0M2R5QjN6dVlGSXB2anVmQkVVTWEyWHc#list"
+                src={
+                  '//drive.google.com/embeddedfolderview?id=0B994MvzpbbuzfjFrVFVkVTc1dmtBMktWSldnMVA0M2R5QjN6dVlGSXB2anVmQkVVTWEyWHc&resourcekey=0-Ufq5iBoLMkvcB-Ct-oQ1IQ#list'
+                }
               ></iframe>
             </div>
           </Container>
