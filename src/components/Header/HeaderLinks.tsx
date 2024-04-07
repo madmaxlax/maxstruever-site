@@ -1,9 +1,10 @@
+import React from 'react';
+import { Link as ExternalLink } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import withStyles from '@material-ui/core/styles/withStyles';
 import Tooltip from '@material-ui/core/Tooltip';
+import withStyles from '@material-ui/core/styles/withStyles';
 import { Apps } from '@material-ui/icons';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
 import Button from '../CustomButtons/ButtonLink';
@@ -38,7 +39,16 @@ function HeaderLinks(props: HeaderLinksProps) {
             <Link key={4} to="/city-recs" className={classes.dropdownLink}>
               City Recommendations
             </Link>,
-            <Link key={5} to="/referrals" className={classes.dropdownLink}>
+            ,
+            <ExternalLink
+              key={5}
+              target="_blank"
+              href="https://settlers.madmaxlax.com/"
+              className={classes.dropdownLink}
+            >
+              Settlers Board Randomizer
+            </ExternalLink>,
+            <Link key={6} to="/referrals" className={classes.dropdownLink}>
               Referral Links
             </Link>,
           ]}
