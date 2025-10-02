@@ -4,6 +4,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Tooltip from '@material-ui/core/Tooltip';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
 import Button from '../CustomButtons/ButtonLink';
+import { menuItems, socialMediaLinks } from './headerNavigationData';
 
 interface HeaderLinksMobileProps {
   classes: any;
@@ -11,101 +12,49 @@ interface HeaderLinksMobileProps {
 
 function HeaderLinksMobile(props: HeaderLinksMobileProps) {
   const { classes } = props;
+
   return (
     <List className={classes.list}>
-      {/* Exploded menu items - each as a separate row */}
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="/"
-          className={classes.navLink}
-        >
-          Home
-        </Button>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="http://resume.maxstruever.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.navLink}
-        >
-          Download Resume
-        </Button>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="http://portfolio.maxstruever.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.navLink}
-        >
-          Portfolio
-        </Button>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="/city-recs"
-          className={classes.navLink}
-        >
-          City Recommendations
-        </Button>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          href="/referrals"
-          className={classes.navLink}
-        >
-          Referral Links
-        </Button>
-      </ListItem>
+      {/* Menu items - each as a separate row */}
+      {menuItems.map((item, index) => (
+        <ListItem key={index} className={classes.listItem}>
+          <Button
+            color="transparent"
+            href={item.href}
+            className={classes.navLink}
+            onClick={item.onClick}
+            {...(item.external && {
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            })}
+          >
+            {item.label}
+          </Button>
+        </ListItem>
+      ))}
 
       {/* Social media links */}
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="github-tooltip"
-          title="My Github"
-          placement="left"
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://github.com/madmaxlax"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.navLink}
+      {socialMediaLinks.map((social) => (
+        <ListItem key={social.id} className={classes.listItem}>
+          <Tooltip
+            id={`${social.id}-tooltip`}
+            title={social.title}
+            placement="left"
+            classes={{ tooltip: classes.tooltip }}
           >
-            <i className={classes.socialIcons + ' fab fa-github'} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow me on instagram"
-          placement="left"
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/dadmaxlax"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + ' fab fa-instagram'} />
-          </Button>
-        </Tooltip>
-      </ListItem>
+            <Button
+              color="transparent"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.navLink}
+              aria-label={social.ariaLabel}
+            >
+              <i className={`${classes.socialIcons} ${social.iconClass}`} />
+            </Button>
+          </Tooltip>
+        </ListItem>
+      ))}
     </List>
   );
 }
