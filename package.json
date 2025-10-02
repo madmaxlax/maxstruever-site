@@ -11,12 +11,13 @@
     "@types/react-dom": "^18.0.0",
     "@types/react-router-dom": "^5.3.3",
     "classnames": "^2.3.1",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "nouislider": "^14.6.4",
     "query-string": "^7.0.0",
     "react": "^18.0.0",
     "react-datetime": "^3.1.1",
     "react-dom": "^18.0.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^5.0.1",
     "react-slick": "latest",
@@ -30,7 +31,8 @@
     "test": "react-scripts test --env=jsdom --transformIgnorePatterns \"node_modules/(?!your-module-name)/\"",
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "gql-codegen": "graphql-codegen --config codegen.yml"
+    "gql-codegen": "graphql-codegen --config codegen.yml",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
@@ -58,11 +60,6 @@
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.0",
     "ts-jest": "^27.1.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [

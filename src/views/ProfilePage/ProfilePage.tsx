@@ -68,7 +68,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                       </Button>
                       <Button
                         title="Instagram"
-                        href="https://www.instagram.com/madmaxlax/"
+                        href="https://www.instagram.com/dadmaxlax/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -82,12 +82,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                       >
                         <i className="fab fa-facebook"></i>
                       </Button>
-                      <Button
-                        title="Twitter"
-                        href="https://www.twitter.com/madmaxlax"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Button title="Twitter" href="https://x.com/dadmaxlax" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-twitter"></i>
                       </Button>
                       <Button
@@ -122,8 +117,8 @@ class ProfilePage extends React.Component<IProfilePage> {
                 <p>
                   What&apos;s Good? <br />
                   I&apos;m Max Struever. Sometimes Maxwell Struever. I&apos;m a geek who loves sports. Activities and
-                  country music are my love languages. Please check out my{' '}
-                  <a href="http://portfolio.maxstruever.com">portfolio</a> while I work on my site.
+                  country music are my love languages. Please check out my <Link to="/portfolio">portfolio</Link> to see
+                  examples of my work.
                 </p>
 
                 <iframe
@@ -162,18 +157,11 @@ class ProfilePage extends React.Component<IProfilePage> {
                               />
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
-                              <img
-                                alt="Hudson Yards"
-                                src={
-                                  'https://lh3.googleusercontent.com/pw/ACtC-3eMxX1a2BH4bt5LlD3X1C5gMc4DLGoD7xrOcmCJ05xj1frw35RmU_crucdFZiqJIjsu5p9_ZlDBhd2IwD09YHyZck2K7Z5DcVyMrVEWimoxbx5a5hZwlXPRAp6BHC1tsBaf0UArF_X6FtmQ_gA94f4e_w=w1204-h903-no?authuser=0'
-                                }
-                                className={navImageClasses}
-                              />
+                              <img alt="Hudson Yards" src={'/hudsonyards.jpg'} className={navImageClasses} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                To check out more of my work, head over to{' '}
-                                <Link to="http://portfolio.maxstruever.com">my portfolio</Link>
+                                To check out more of my work, head over to <Link to="/portfolio">my portfolio</Link>
                               </Typography>
                             </Grid>
                           </Grid>
@@ -186,10 +174,8 @@ class ProfilePage extends React.Component<IProfilePage> {
                           <Grid container spacing={2} alignItems="center" justify="center">
                             <Grid item xs={12} sm={12} md={8}>
                               <img
-                                alt="Work"
-                                src={
-                                  'https://lh3.googleusercontent.com/TC6XEjQuCFzHtICbYtrynMCv_wxHVPyx9cZnKAzNZZIR7L8wK-A7rGdAlXqKeKZOYKJcmX9cFxGDpm7eVRw6sveb3HxiotJk85I-_ncZKA6Y3LOdJli35Cnze6k2Oz3g6ktsUSRYYbaEOfdr1g1bsBPRbPapmDaOEOKGSYKag8z0bLz78LWMGOIwMznPusMetAV5_rfNTzK33FQqZ80ygOX-IJ12uVqkNsGrY2oAPhKQMzLyjMtBXv5-oFFjmerWEEBN83nRoF2tHzqE6JWl8aoqjaB3MBsuHPYGezRodshJ9MPHtUJ9uOG2o86IRmQFt_XI9ZQoh-bCUHQJMPizVgjK-kEa-vXXOnjQyiOwErJlh3LvKVtuR-YTtyHayGGEBrRYKHhFGTMN_n7XTIu0zRWrplkQWkSSk3kwCxMB9JGzTxTj3kfOumWzJaB-Y0MM7P1seTMHfpSdvmCr9pbcXXf36AvGE09twGsmjdpBP9f0dN4hh3ouk3dAUGQsmRjytibz0GGf6jw8_l_l-YBdbfTKDjYQ_18wE9wUINXijCVAyOMfeEoFZVgHljerEfuCrFlej3yauHeXfaRffKR4CemFA0RNNlDQT5Zj5yOrv-hviqnfeWZrDVo10xeUkc5I6DjfpSLt-LTGOUEo-K__sEOZFc-GM9K1DT_B3RcbDnjwOsonb_sHe3e9C4u-5g=w1354-h903-no?authuser=0'
-                                }
+                                alt="Dutch lacrosse team"
+                                src={'dutch_lacrosse_team.jpg'}
                                 className={navImageClasses}
                               />
                             </Grid>
@@ -220,13 +206,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                               <Typography>I broke my jaw on the 4th day after moving to the Netherlands</Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
-                              <img
-                                alt="jaw"
-                                src={
-                                  'https://lh3.googleusercontent.com/4nlZwpm5ZE1hCumO_6A_rGBOcvIw88-sl72yVfsCpgLU-UNf3qQsiUB1svWGOq4AAznAAa2h9tTrymidJhcwCEQWkD4jRqxQjjZGRIi6Tev21QrD6NTZ5ogUYpVi7XVkqs3PjTWzVJFwy2oovBxR9VXwUcmg_Wep_fHgxEfBHQZ8ksCC79UoJAXM2wSV3Bgw5d1rtuwfKoURN5LnYRUH40rM5Vv78IOSjxMpBmQZq_QEI72NT3gnPLT_wSwq2X-_nbimS8te_j7Y1YE3wk-d6KBEp2gJ-BL8iVsMWxDS1JIk4mb1ttLx4lXiH3U-HJYPYcR-Z2aQWGJbADgVB8fs68ZudC6xFz5fo5fJtaxXkusFViWjthKZ-c2MoMUZNo1A7rvFbvJ0jAPwD1K24ypHVefkF22nlTPltoYvG2meBrgTHuX2_qbDd39WVC-3aHv4ecAZR7iIVVq6zs8t2rtquFkwAxgU_VxgjDq94YtaIQ8g1Fv7ywv-h9NRU3moyfvyhO8p9lBEkmMTHoNGLQ0QSPaMWaV8WL33jP--_4drrVvNYS8eQvP68KDpgGAGoMQiIU8BHitC1n3U4ZIsOsxS9NMxtePHoApuvzIeOQFjESV-hXeP-vB8VGM0d409CVj7-GxLJKXOvWOF4K8lkGEBFarJJ6gQ1wvdHUCaH7VwIsjh7dIYkP8hvDCfKTmIHw=w1602-h903-no?authuser=0'
-                                }
-                                className={navImageClasses}
-                              />
+                              <img alt="jaw" src={'jaw_xray.jpg'} className={navImageClasses} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
                               <img
