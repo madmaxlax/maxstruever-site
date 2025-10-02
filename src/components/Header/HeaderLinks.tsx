@@ -3,7 +3,6 @@ import ListItem from '@material-ui/core/ListItem';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Apps } from '@material-ui/icons';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
 import Button from '../CustomButtons/ButtonLink';
@@ -73,7 +72,7 @@ function HeaderLinks(props: HeaderLinksProps) {
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/madmaxlax"
+            href="https://www.instagram.com/dadmaxlax"
             target="_blank"
             rel="noopener noreferrer"
             className={classes.navLink}

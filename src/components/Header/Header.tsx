@@ -32,6 +32,7 @@ import Menu from '@material-ui/icons/Menu';
 import classNames from 'classnames';
 import * as React from 'react';
 import headerStyle from '../../assets/jss/material-kit-react/components/headerStyle';
+import HeaderLinksMobile from './HeaderLinksMobile';
 
 interface IHeaderState {
   mobileOpen: boolean;
@@ -138,7 +139,7 @@ class Header extends React.Component<IHeader, IHeaderState> {
           >
             <div className={classes.appResponsive}>
               {leftLinks}
-              {rightLinks}
+              <HeaderLinksMobile />
             </div>
           </Drawer>
         </Box>
