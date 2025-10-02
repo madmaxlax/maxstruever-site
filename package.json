@@ -30,7 +30,8 @@
     "test": "react-scripts test --env=jsdom --transformIgnorePatterns \"node_modules/(?!your-module-name)/\"",
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "gql-codegen": "graphql-codegen --config codegen.yml"
+    "gql-codegen": "graphql-codegen --config codegen.yml",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
@@ -58,11 +59,6 @@
     "prettier": "^2.6.2",
     "pretty-quick": "^3.1.0",
     "ts-jest": "^27.1.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
