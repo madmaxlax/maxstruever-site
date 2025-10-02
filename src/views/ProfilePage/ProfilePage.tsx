@@ -117,8 +117,8 @@ class ProfilePage extends React.Component<IProfilePage> {
                 <p>
                   What&apos;s Good? <br />
                   I&apos;m Max Struever. Sometimes Maxwell Struever. I&apos;m a geek who loves sports. Activities and
-                  country music are my love languages. Please check out my{' '}
-                  <a href="http://portfolio.maxstruever.com">portfolio</a> while I work on my site.
+                  country music are my love languages. Please check out my <Link to="/portfolio">portfolio</Link> to see
+                  examples of my work.
                 </p>
 
                 <iframe
@@ -161,8 +161,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>
-                                To check out more of my work, head over to{' '}
-                                <Link to="http://portfolio.maxstruever.com">my portfolio</Link>
+                                To check out more of my work, head over to <Link to="/portfolio">my portfolio</Link>
                               </Typography>
                             </Grid>
                           </Grid>

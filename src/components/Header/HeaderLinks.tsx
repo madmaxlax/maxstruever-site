@@ -7,12 +7,36 @@ import { Link } from 'react-router-dom';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
 import Button from '../CustomButtons/ButtonLink';
 import CustomDropdown from '../CustomDropdown/CustomDropdown';
+import { menuItems, socialMediaLinks } from './headerNavigationData';
 
 interface HeaderLinksProps {
   classes: any;
 }
+
 function HeaderLinks(props: HeaderLinksProps) {
   const { classes } = props;
+
+  const dropdownMenuItems = menuItems.map((item, index) => {
+    const commonProps = {
+      className: classes.dropdownLink,
+      onClick: item.onClick,
+    };
+
+    if (item.external) {
+      return (
+        <a key={index + 1} {...commonProps} href={item.href} target="_blank" rel="noopener noreferrer">
+          {item.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link key={index + 1} {...commonProps} to={item.href}>
+        {item.label}
+      </Link>
+    );
+  });
+
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -24,63 +48,33 @@ function HeaderLinks(props: HeaderLinksProps) {
             color: 'transparent',
           }}
           buttonIcon={Apps}
-          dropdownList={[
-            <Link key={1} to="/" className={classes.dropdownLink}>
-              Home
-            </Link>,
-            <a key={2} href="http://resume.maxstruever.com/" className={classes.dropdownLink}>
-              Download Resume
-            </a>,
-            <a key={3} href="http://portfolio.maxstruever.com/" className={classes.dropdownLink}>
-              Portfolio
-            </a>,
-            <Link key={4} to="/city-recs" className={classes.dropdownLink}>
-              City Recommendations
-            </Link>,
-            <Link key={5} to="/referrals" className={classes.dropdownLink}>
-              Referral Links
-            </Link>,
-          ]}
+          dropdownList={dropdownMenuItems}
         />
       </ListItem>
 
       <ListItem className={classes.listItem}></ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="My Github"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://github.com/madmaxlax"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.navLink}
+
+      {socialMediaLinks.map((social) => (
+        <ListItem key={social.id} className={classes.listItem}>
+          <Tooltip
+            id={`${social.id}-tooltip`}
+            title={social.title}
+            placement={window.innerWidth > 959 ? 'top' : 'left'}
+            classes={{ tooltip: classes.tooltip }}
           >
-            <i className={classes.socialIcons + ' fab fa-github'} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow me on instagram"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/dadmaxlax"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + ' fab fa-instagram'} />
-          </Button>
-        </Tooltip>
-      </ListItem>
+            <Button
+              color="transparent"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={classes.navLink}
+              aria-label={social.ariaLabel}
+            >
+              <i className={`${classes.socialIcons} ${social.iconClass}`} />
+            </Button>
+          </Tooltip>
+        </ListItem>
+      ))}
     </List>
   );
 }
