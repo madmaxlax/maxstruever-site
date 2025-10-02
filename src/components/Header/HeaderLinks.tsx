@@ -1,7 +1,7 @@
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import withStyles from '@material-ui/core/styles/withStyles';
 import Tooltip from '@material-ui/core/Tooltip';
+import withStyles from '@material-ui/core/styles/withStyles';
 import { Apps } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle';
