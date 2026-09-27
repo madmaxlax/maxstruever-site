@@ -9,40 +9,37 @@ A personal portfolio and blog website for Maxwell (Max) Struever, built with Rea
 ## 🚀 Quick Start
 
 ### Prerequisites
-- **Node.js 17** (use nvm to manage versions)
-- **Yarn** package manager
+- **Node.js 22** (use nvm to manage versions)
+- **npm** package manager
 - **Git**
 
 ### Local Development Setup
 
 1. **Set up Node.js version** (if using nvm):
    ```bash
-   # Install and use Node 17 (as specified in yarn.lock)
-   nvm install 17
-   nvm use 17
-   
-   # Create .nvmrc file for automatic version switching
-   echo "17" > .nvmrc
+   # Install and use Node 22 (as specified in .nvmrc)
+   nvm install 22
+   nvm use 22
    ```
 
 2. **Install dependencies**:
    ```bash
-   yarn install
+   npm install
    ```
 
 3. **Start development server**:
    ```bash
-   yarn start
+   npm start
    ```
    The site will be available at `http://localhost:3000`
 
 ### Available Scripts
 
-- `yarn start` - Runs the app in development mode (port 3000)
-- `yarn build` - Builds the app for production to the `build` folder
-- `yarn test` - Launches the test runner
-- `yarn lint` - Runs ESLint to fix code style issues
-- `yarn clean` - Removes node_modules and yarn.lock (use with caution!)
+- `npm start` - Runs the app in development mode (port 3000)
+- `npm run build` - Builds the app for production to the `build` folder
+- `npm test` - Launches the test runner
+- `npm run lint` - Runs ESLint to fix code style issues
+- `npm run clean` - Removes node_modules and package-lock.json (use with caution!)
 
 ## 🏗️ Tech Stack
 
@@ -51,8 +48,8 @@ A personal portfolio and blog website for Maxwell (Max) Struever, built with Rea
 - **Routing**: React Router DOM v5
 - **Styling**: SCSS + Material-UI styles
 - **Build Tool**: Create React App (react-scripts)
-- **Package Manager**: Yarn
-- **Node Version**: 17 (as determined from yarn.lock)
+- **Package Manager**: npm
+- **Node Version**: 22 (as specified in .nvmrc)
 
 ## 📁 Site Structure
 
@@ -80,7 +77,7 @@ The site is a single-page application with multiple routes:
 
 ### Build Process
 1. Netlify automatically builds on push to `main`
-2. Uses `yarn build` to create production build
+2. Uses `npm run build` to create production build
 3. Serves static files from `build/` directory
 
 ## 🐳 Docker Support
@@ -127,9 +124,9 @@ docker run -p 3000:3000 maxstruever-site
 
 ## 🚨 Common Issues & Solutions
 
-1. **Node Version Mismatch**: Always use Node 17 (check with `node --version`)
-2. **Yarn Install Fails**: Try `yarn install --network-timeout 900000` (large Material-UI icons package)
-3. **Build Errors**: Run `yarn clean && yarn install` to reset dependencies
+1. **Node Version Mismatch**: Always use Node 22 (check with `node --version`)
+2. **npm Install Fails**: Try `npm install --legacy-peer-deps` (Material-UI v4 has peer dependency quirks)
+3. **Build Errors**: Run `npm run clean && npm install` to reset dependencies
 4. **Port Conflicts**: Change port in `package.json` scripts if 3000 is occupied
 
 ## 📞 Contact & Links
