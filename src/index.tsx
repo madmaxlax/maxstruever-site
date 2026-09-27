@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './assets/css/material-kit-react.css';
 import CityRecsPage from './views/CityRecsPage/CityRecsPage';
@@ -13,7 +13,9 @@ import ShruggiePage from './views/ShruggiePage/ShruggiePage';
 // import LandingPage from "./views/LandingPage/LandingPage";
 // import LoginPage from "./views/LoginPage/LoginPage";
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Missing #root element');
+createRoot(rootElement).render(
   <Router>
     <Switch>
       {/* <Route path="/landing-page" component={LandingPage} /> */}
@@ -32,6 +34,5 @@ ReactDOM.render(
         // path="/404-not-found"
       />
     </Switch>
-  </Router>,
-  document.getElementById('root')
+  </Router>
 );
