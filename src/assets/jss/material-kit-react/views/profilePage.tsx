@@ -75,6 +75,20 @@ const profilePageStyle = createStyles({
     margin: '20px auto 50px auto',
     textAlign: 'center',
   },
+  latest: {
+    margin: '0 auto 40px',
+  },
+  latestTitle: {
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 500,
+    margin: '0 0 20px',
+  },
+  latestMore: {
+    textAlign: 'right',
+    marginTop: 16,
+    fontWeight: 500,
+  },
 });
 
 export default profilePageStyle;

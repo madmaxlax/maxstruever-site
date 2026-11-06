@@ -6,6 +6,7 @@ import Components from './views/Components/Components';
 import ErrorNotFoundPage from './views/ErrorNotFoundPage/ErrorNotFoundPage';
 import PortfolioPage from './views/PortfolioPage/PortfolioPage';
 import ProfilePage from './views/ProfilePage/ProfilePage';
+import PublicationsPage from './views/PublicationsPage/PublicationsPage';
 import ReferralsPage from './views/ReferralsPage/ReferralsPage';
 
 // import LandingPage from "./views/LandingPage/LandingPage";
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/all-components-examples" component={Components} />
       <Route path="/city-recs" component={CityRecsPage} />
       <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/publications" component={PublicationsPage} />
       <Redirect path="/referals" to={'/referrals'} />
       <Route path="/referrals" component={ReferralsPage} />
       <Route path="/" exact component={ProfilePage} />

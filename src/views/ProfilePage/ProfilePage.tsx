@@ -15,6 +15,8 @@ import Header from '../../components/Header/Header';
 import HeaderLinks from '../../components/Header/HeaderLinks';
 import NavPills from '../../components/NavPills/NavPills';
 import Parallax from '../../components/Parallax/Parallax';
+import PublicationCard from '../../components/PublicationCard/PublicationCard';
+import { writing } from '../PublicationsPage/publications';
 
 type IProfilePage = WithStyles<typeof profilePageStyle>;
 class ProfilePage extends React.Component<IProfilePage> {
@@ -120,7 +122,21 @@ class ProfilePage extends React.Component<IProfilePage> {
                   country music are my love languages. Please check out my <Link to="/portfolio">portfolio</Link> to see
                   examples of my work.
                 </p>
-
+              </div>
+              <div className={classes.latest}>
+                <h4 className={classes.latestTitle}>Latest publications</h4>
+                <Grid container spacing={3}>
+                  {writing.slice(0, 3).map((item) => (
+                    <Grid item xs={12} sm={6} md={4} key={item.url}>
+                      <PublicationCard item={item} />
+                    </Grid>
+                  ))}
+                </Grid>
+                <div className={classes.latestMore}>
+                  <Link to="/publications">More publications and links →</Link>
+                </div>
+              </div>
+              <div className={classes.description}>
                 <iframe
                   frameBorder="0"
                   title="Max's Map!"
@@ -150,16 +166,9 @@ class ProfilePage extends React.Component<IProfilePage> {
                               </Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
-                              <img
-                                alt="Work"
-                                src={'https://y.yarn.co/4e6d5870-2c84-4b73-afa8-7484ef3649a6_screenshot.jpg'}
-                                className={navImageClasses}
-                              />
-                            </Grid>
-                            <Grid item xs={12} sm={12} md={8}>
                               <img alt="Hudson Yards" src={'/hudsonyards.jpg'} className={navImageClasses} />
                             </Grid>
-                            <Grid item xs={12} sm={12} md={4}>
+                            <Grid item xs={12} sm={12} md={12}>
                               <Typography>
                                 To check out more of my work, head over to <Link to="/portfolio">my portfolio</Link>
                               </Typography>
@@ -175,7 +184,7 @@ class ProfilePage extends React.Component<IProfilePage> {
                             <Grid item xs={12} sm={12} md={8}>
                               <img
                                 alt="Dutch lacrosse team"
-                                src={'dutch_lacrosse_team.jpg'}
+                                src={'/dutch_lacrosse_team.jpg'}
                                 className={navImageClasses}
                               />
                             </Grid>
@@ -206,16 +215,10 @@ class ProfilePage extends React.Component<IProfilePage> {
                               <Typography>I broke my jaw on the 4th day after moving to the Netherlands</Typography>
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
-                              <img alt="jaw" src={'jaw_xray.jpg'} className={navImageClasses} />
+                              <img alt="jaw" src={'/jaw_xray.jpg'} className={navImageClasses} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={8}>
-                              <img
-                                alt="freedom"
-                                src={
-                                  'https://lh3.googleusercontent.com/pw/ACtC-3cceV4-nwZlYyhrM9UWX9GwbzpNJF-VN2tw7av5oMqSeKSX3KdZEiWRyTNfBQsuUP71fvrKFDeO53WQsZGykKc0W1zpQ0Vg8oBsDqKvgK6KW8sJbpjJEn4m0jxKxin4sz3qJqSquOI0oxGeCFbPK35SsQ=w1024-h768-no?authuser=0'
-                                }
-                                className={navImageClasses}
-                              />
+                              <img alt="freedom" src={'/freedom-boat.jpg'} className={navImageClasses} />
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <Typography>I owned a boat named Freedom with some buddies in Amsterdam</Typography>

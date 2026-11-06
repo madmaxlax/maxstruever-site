@@ -29,6 +29,10 @@ export const menuItems: MenuItem[] = [
     },
   },
   {
+    label: 'Publications',
+    href: '/publications',
+  },
+  {
     label: 'Portfolio',
     href: '/portfolio',
   },
