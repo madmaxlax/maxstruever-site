@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b1220" />
+    <title>Max Struever</title>
+    <meta
+      name="description"
+      content="Max Struever is a Principal Engineer at Boston Consulting Group building AI products, multi-agent simulations and GenAI evaluation tools."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Max Struever" />
+    <meta property="og:title" content="Max Struever" />
+    <meta
+      property="og:description"
+      content="Principal Engineer at Boston Consulting Group. Publications, portfolio and links."
+    />
+    <meta property="og:url" content="https://maxstruever.com/" />
+    <meta property="og:image" content="https://maxstruever.com/img/max.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-icon-180x180.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Apply the saved or system color scheme before the bundle loads to avoid a light flash. Matches MUI's mui-mode key and class selector. -->
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem('mui-mode') || 'system';
+          if (mode === 'system') mode = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.classList.add(mode);
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      html.light { background: #f7f7f5; }
+      html.dark { background: #0b1220; }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this site.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
