@@ -31,7 +31,7 @@ export const publications: Publication[] = [
     title: 'Testing the Tests: How to Measure RAG Evaluation Completeness',
     url: 'https://www.bcg.com/x/the-multiplier/how-measure-rag-evaluation-completeness',
     outlet: 'BCG X',
-    date: '2025-10-01',
+    date: '2025-12-19',
     type: 'Article',
     authors: 'Max Struever, Noah Broestl, Hersh Gupta, Adel Abdalla, Rajprakash Bale',
     summary:

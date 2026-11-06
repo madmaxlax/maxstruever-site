@@ -25,7 +25,8 @@ Rebuilt on 2026-11-06 from a 2019 Material Kit React / CRA / MUI v4 template. Th
 ## Layout
 
 - `src/pages/` has one file per route. Routes are in `src/App.tsx`. Trello-backed pages are lazy-loaded.
-- `src/components/` holds the shared layout: `SiteHeader` (priority+ nav that folds links into "More" as width shrinks, drawer below `sm`), `SiteFooter`, `PageHero`, `PublicationCard`.
+- `src/components/` holds the shared layout: `SiteHeader`, `SiteFooter`, `PageHero`, `PublicationCard`. `SiteHeader` is a priority+ nav. It folds links into "More" as width shrinks and switches to a drawer below `sm`.
+- `index.html` has an inline script that applies the saved `mui-mode` color scheme before the bundle loads.
 - `src/data/publications.ts` is the publications list. To add one, add an object and drop a 1200x630 image in `public/img/publications/`. The home page shows the newest three.
 - `src/data/site.ts` holds nav items, social links and hero photos.
 - `src/lib/trello.ts` fetches content. Portfolio and Referrals read public Trello board JSON at runtime. Edit content on Trello, not in code.

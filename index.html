@@ -24,6 +24,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-icon-180x180.png" />
     <link rel="manifest" href="/manifest.json" />
+    <!-- Apply the saved or system color scheme before the bundle loads to avoid a light flash. Matches MUI's mui-mode key and class selector. -->
+    <script>
+      (function () {
+        try {
+          var mode = localStorage.getItem('mui-mode') || 'system';
+          if (mode === 'system') mode = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.classList.add(mode);
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      html.light { background: #f7f7f5; }
+      html.dark { background: #0b1220; }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this site.</noscript>
