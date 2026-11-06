@@ -9,10 +9,10 @@ Source for [maxstruever.com](https://maxstruever.com). It's a React 19 + MUI 9 s
 
 ```bash
 fnm use        # Node 26, from .nvmrc
-yarn install
-yarn dev       # http://localhost:3000
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-`yarn build` writes to `dist/`. `yarn preview` serves that build locally.
+`npm run build` writes to `dist/`. `npm run preview` serves that build locally.
 
 Architecture, content locations and deploy notes are in [AGENTS.md](./AGENTS.md).
