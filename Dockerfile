@@ -1,15 +1,11 @@
-FROM node:lts-alpine as build
+FROM node:26-alpine
 
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
-
 COPY package.json yarn.lock ./
-#longer timeout is sometimes needed for the large marterial ui icons package
-RUN yarn install --network-timeout 900000
-RUN npm rebuild node-sass
+RUN (command -v yarn || npm i -g yarn@1.22.22) && yarn install --frozen-lockfile
 
 COPY . ./
 
-CMD ["yarn", "start"]
-
+EXPOSE 3000
+CMD ["yarn", "dev", "--host", "0.0.0.0"]
