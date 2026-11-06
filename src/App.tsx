@@ -3,7 +3,9 @@ import { Navigate, Route, Routes } from 'react-router';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
+import PrivacyTermsPage from './pages/PrivacyTermsPage';
 import PublicationsPage from './pages/PublicationsPage';
+import ShruggiePage from './pages/ShruggiePage';
 
 // Trello-backed pages pull in markdown rendering, so load them on demand
 const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="city-recs" element={<CityRecsPage />} />
         <Route path="referrals" element={<ReferralsPage />} />
         <Route path="referals" element={<Navigate to="/referrals" replace />} />
+        <Route path="privacy-and-terms" element={<PrivacyTermsPage />} />
+        <Route path="shruggie/privacy" element={<ShruggiePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
