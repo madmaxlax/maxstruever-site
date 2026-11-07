@@ -39,5 +39,5 @@ Non-interactive shells need `zsh -i -c "fnm use 26 && npm run ..."`. CI in `.git
 
 ## Notes
 
-- Google Analytics UA-9932775-5 was removed in the rebuild because Universal Analytics no longer collects data. Add GA4 or Plausible in `index.html` if analytics are wanted.
+- Analytics run through Google Tag Manager container `GTM-KS7GDDDP`, loaded from `index.html`. The loader only runs on `maxstruever.com`, so localhost and Netlify previews send nothing. GA4 config lives in the GTM container, not in code. The old UA-9932775-5 tag was removed in the rebuild.
 - The Fortune thumbnails in `public/img/publications/` are Getty stock pulled from the article og:image. Swap them for generated tiles if licensing is a concern.
