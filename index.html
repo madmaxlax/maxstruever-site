@@ -3,6 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager. Loads only on the production host so dev servers and Netlify previews stay out of analytics. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      if (/(^|\.)maxstruever\.com$/.test(location.hostname)) {
+        var gtm = document.createElement('script');
+        gtm.async = true;
+        gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KS7GDDDP';
+        document.head.appendChild(gtm);
+      }
+    </script>
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#0b1220" />
     <title>Max Struever</title>
